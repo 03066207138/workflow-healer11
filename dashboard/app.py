@@ -62,27 +62,41 @@ Monetized AI Automation powered by <b>Paywalls.ai</b> × <b>FlowXO</b>
 with st.sidebar:
     st.markdown("## ⚙️ Simulation Controls")
 
-    # Health check
-    if st.button("🔎 Test Backend"):
+    def safe_json_get(url, timeout=5):
+        """Safely get JSON response or None"""
         try:
-            health = requests.get(f"{BACKEND}/health", timeout=5).json()
-            st.success(f"✅ Backend OK — Mode: {health.get('mode')} | Paywalls: {health.get('paywalls_ready')}")
+            r = requests.get(url, timeout=timeout)
+            if r.status_code == 200:
+                return r.json()
+            else:
+                st.warning(f"⚠️ {url} → {r.status_code}")
+                return None
         except Exception as e:
-            st.error(f"❌ Backend not reachable: {e}")
+            st.error(f"❌ Error contacting backend: {e}")
+            return None
 
-    # Start simulation
+    if st.button("🔎 Test Backend"):
+        health = safe_json_get(f"{BACKEND}/health")
+        if health:
+            st.success(f"✅ Backend OK — Mode: {health.get('mode')} | Paywalls: {health.get('paywalls_ready')}")
+
     if st.button("🚀 Start Simulation"):
         try:
             res = requests.post(f"{BACKEND}/sim/start", timeout=5)
-            st.success("✅ Healing simulation started!") if res.status_code == 200 else st.warning("⚠️ Could not start simulation.")
+            if res.status_code == 200:
+                st.success("✅ Healing simulation started!")
+            else:
+                st.warning(f"⚠️ Could not start simulation: {res.status_code}")
         except Exception as e:
             st.error(f"❌ Error starting: {e}")
 
-    # Stop simulation
     if st.button("🧊 Stop Simulation"):
         try:
             res = requests.post(f"{BACKEND}/sim/stop", timeout=5)
-            st.warning("🛑 Simulation stopped.") if res.status_code == 200 else st.warning("⚠️ Could not stop simulation.")
+            if res.status_code == 200:
+                st.warning("🛑 Simulation stopped.")
+            else:
+                st.warning(f"⚠️ Could not stop simulation ({res.status_code})")
         except Exception as e:
             st.error(f"❌ Error stopping: {e}")
 
@@ -97,7 +111,7 @@ with st.sidebar:
                 rj = res.json()
                 st.success(f"✅ {rj['workflow']} healed | Recovery: {rj['recovery_pct']}% | Billed via Paywalls.ai")
             else:
-                st.warning("⚠️ Healing trigger failed.")
+                st.warning(f"⚠️ Healing trigger failed ({res.status_code})")
         except Exception as e:
             st.error(f"❌ Failed to trigger: {e}")
 
@@ -106,12 +120,13 @@ with st.sidebar:
 
     wf = st.selectbox("Workflow:", ["invoice_processing", "order_processing", "customer_support"])
     anomaly = st.selectbox("Anomaly:", ["workflow_delay", "queue_pressure", "data_error", "api_failure"])
+
     if st.button("🚨 Send FlowXO Webhook"):
         try:
             payload = {"workflow_id": wf, "anomaly": anomaly, "user_id": "demo_client"}
             res = requests.post(f"{BACKEND}/integrations/flowxo/webhook", json=payload, timeout=10)
             if res.status_code == 200:
-                st.success("✅ FlowXO event processed and logged!")
+                st.success("✅ FlowXO event processed!")
                 st.json(res.json())
             else:
                 st.warning(f"⚠️ Webhook failed ({res.status_code})")
@@ -128,10 +143,11 @@ st_autorefresh(interval=5000, key="refresh")
 # ============================================================
 try:
     metrics = requests.get(f"{BACKEND}/metrics/summary", timeout=7).json()
-    revenue_data = requests.get(f"{BACKEND}/metrics/revenue", timeout=7).json()
-    logs = requests.get(f"{BACKEND}/healing/logs?n=60", timeout=7).json().get("logs", [])
+    rev_resp = requests.get(f"{BACKEND}/metrics/revenue", timeout=7)
+    revenue_data = rev_resp.json() if rev_resp.status_code == 200 else {}
+    logs_resp = requests.get(f"{BACKEND}/healing/logs?n=60", timeout=7)
+    logs = logs_resp.json().get("logs", []) if logs_resp.status_code == 200 else []
 
-    # Healing performance
     st.markdown("### ⚡ Healing Performance Metrics")
     k1, k2, k3, k4 = st.columns(4)
     k1.metric("🩺 Total Healings", metrics.get("healings", 0))
@@ -139,7 +155,6 @@ try:
     k3.metric("🎯 Avg Reward", f"{metrics.get('avg_reward', 0):.2f}")
     k4.metric("📈 Revenue ($)", f"{revenue_data.get('total_revenue', 0.0):.2f}")
 
-    # Monetization
     st.divider()
     st.markdown("### 💰 Prototype → Profit (Paywalls.ai Monetization)")
 
@@ -174,7 +189,6 @@ try:
     else:
         st.warning("📭 No revenue logs found — start simulation or trigger healing.")
 
-    # Healing Logs
     st.divider()
     st.markdown("### 🩹 Real-Time Healing Queue")
 
