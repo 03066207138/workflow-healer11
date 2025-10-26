@@ -1,8 +1,5 @@
-# Environment & local files
-.env
-backend/.env
 *.log
 data/
 __pycache__/
-*.pyc
-
+backend/__pycache__/
+backend/data/
