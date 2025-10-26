@@ -1,5 +1,4 @@
 import os
-import random
 import requests
 import pandas as pd
 import streamlit as st
@@ -48,22 +47,6 @@ h1,h2,h3,h4 { color: var(--accent) !important; }
 """, unsafe_allow_html=True)
 
 # ============================================================
-# 🔍 Locate Paywalls.ai Revenue Log
-# ============================================================
-def find_revenue_log():
-    possible_paths = [
-        "../data/healing_revenue.log",
-        "data/healing_revenue.log",
-        "./data/healing_revenue.log",
-    ]
-    for path in possible_paths:
-        if os.path.exists(path):
-            st.sidebar.success(f"✅ Found Paywalls.ai log: {path}")
-            return path
-    st.sidebar.warning("⚠️ No Paywalls.ai log found.")
-    return None
-
-# ============================================================
 # 🧠 Header
 # ============================================================
 st.markdown("""
@@ -87,7 +70,7 @@ with st.sidebar:
         except Exception as e:
             st.error(f"❌ Backend not reachable: {e}")
 
-    # Simulation start/stop
+    # Start simulation
     if st.button("🚀 Start Simulation"):
         try:
             res = requests.post(f"{BACKEND}/sim/start", timeout=5)
@@ -95,6 +78,7 @@ with st.sidebar:
         except Exception as e:
             st.error(f"❌ Error starting: {e}")
 
+    # Stop simulation
     if st.button("🧊 Stop Simulation"):
         try:
             res = requests.post(f"{BACKEND}/sim/stop", timeout=5)
@@ -103,9 +87,8 @@ with st.sidebar:
             st.error(f"❌ Error stopping: {e}")
 
     st.divider()
-
-    # Manual healing trigger
     st.markdown("### ⚡ Trigger Manual Healing")
+
     selected_event = st.selectbox("Select anomaly:", ["workflow_delay", "queue_pressure", "data_error", "api_failure"])
     if st.button("💥 Trigger Healing"):
         try:
@@ -119,12 +102,10 @@ with st.sidebar:
             st.error(f"❌ Failed to trigger: {e}")
 
     st.divider()
-
-    # FlowXO Webhook trigger and recent logs
     st.markdown("### 🔁 FlowXO Integration")
+
     wf = st.selectbox("Workflow:", ["invoice_processing", "order_processing", "customer_support"])
     anomaly = st.selectbox("Anomaly:", ["workflow_delay", "queue_pressure", "data_error", "api_failure"])
-
     if st.button("🚨 Send FlowXO Webhook"):
         try:
             payload = {"workflow_id": wf, "anomaly": anomaly, "user_id": "demo_client"}
@@ -137,75 +118,42 @@ with st.sidebar:
         except Exception as e:
             st.error(f"❌ FlowXO webhook error: {e}")
 
-    # Recent FlowXO events
-    st.markdown("#### 🗂️ Recent FlowXO Events")
-    flow_log = "data/flowxo_events.log"
-    if os.path.exists(flow_log):
-        with open(flow_log, "r", encoding="utf-8") as f:
-            lines = f.readlines()[-10:]
-        if lines:
-            for line in reversed(lines):
-                st.caption(line.strip())
-        else:
-            st.info("📭 No FlowXO events yet.")
-
 # ============================================================
 # 🔁 Auto Refresh
 # ============================================================
 st_autorefresh(interval=5000, key="refresh")
 
 # ============================================================
-# 📊 Metrics & Monetization Dashboard
+# 📊 Unified Metrics & Monetization Dashboard
 # ============================================================
 try:
     metrics = requests.get(f"{BACKEND}/metrics/summary", timeout=7).json()
+    revenue_data = requests.get(f"{BACKEND}/metrics/revenue", timeout=7).json()
     logs = requests.get(f"{BACKEND}/healing/logs?n=60", timeout=7).json().get("logs", [])
 
-    # Top KPIs
+    # Healing performance
     st.markdown("### ⚡ Healing Performance Metrics")
     k1, k2, k3, k4 = st.columns(4)
     k1.metric("🩺 Total Healings", metrics.get("healings", 0))
     k2.metric("⚡ Avg Recovery %", f"{metrics.get('avg_recovery_pct', 0):.2f}")
     k3.metric("🎯 Avg Reward", f"{metrics.get('avg_reward', 0):.2f}")
-    k4.metric("📈 Revenue ($)", f"{metrics.get('healings', 0) * 0.05:.2f}")
+    k4.metric("📈 Revenue ($)", f"{revenue_data.get('total_revenue', 0.0):.2f}")
 
     # Monetization
     st.divider()
     st.markdown("### 💰 Prototype → Profit (Paywalls.ai Monetization)")
 
-    log_path = find_revenue_log()
-    total_rev, total_heals = 0.0, 0
-    parsed = []
-
-    if log_path and os.path.exists(log_path):
-        with open(log_path, "r", encoding="utf-8") as f:
-            lines = f.readlines()
-        for line in lines[-100:]:
-            parts = line.strip().split("|")
-            if len(parts) >= 4:
-                ts, workflow, anomaly, cost, *_ = [p.strip() for p in parts]
-                try:
-                    cost_val = float(cost.replace("$", "").strip())
-                except:
-                    cost_val = 0.0
-                total_rev += cost_val
-                total_heals += 1
-                parsed.append({
-                    "Timestamp": ts,
-                    "Workflow": workflow,
-                    "Anomaly": anomaly,
-                    "Cost ($)": cost_val
-                })
-
+    parsed = revenue_data.get("logs", [])
     if parsed:
         df_rev = pd.DataFrame(parsed)
         df_rev["Timestamp"] = pd.to_datetime(df_rev["Timestamp"], errors="coerce")
         df_rev["Cumulative Revenue ($)"] = df_rev["Cost ($)"].cumsum()
 
         c1, c2, c3 = st.columns(3)
-        c1.metric("💸 Total Revenue", f"${total_rev:.2f}")
-        c2.metric("🩹 Total Heals", total_heals)
-        c3.metric("📊 Avg $/Heal", f"${(total_rev/total_heals):.2f}" if total_heals else "$0.00")
+        c1.metric("💸 Total Revenue", f"${revenue_data.get('total_revenue', 0.0):.2f}")
+        c2.metric("🩹 Total Heals", revenue_data.get("total_heals", 0))
+        avg_per_heal = revenue_data.get("total_revenue", 0.0) / max(1, revenue_data.get("total_heals", 1))
+        c3.metric("📊 Avg $/Heal", f"${avg_per_heal:.2f}")
 
         chart = alt.Chart(df_rev).mark_area(
             line={"color": "#34d399"},
@@ -222,15 +170,9 @@ try:
         ).properties(height=250)
 
         st.altair_chart(chart, use_container_width=True)
-
-        st.markdown("#### 💵 Detailed Revenue Table (No Status Column)")
-        st.dataframe(
-            df_rev.sort_values(by="Timestamp", ascending=False)
-            .style.format({"Cost ($)": "${:.4f}", "Cumulative Revenue ($)": "${:.4f}"}),
-            use_container_width=True
-        )
+        st.dataframe(df_rev.sort_values(by="Timestamp", ascending=False), use_container_width=True)
     else:
-        st.warning("📭 No Paywalls.ai log found yet — start the simulator or trigger healing.")
+        st.warning("📭 No revenue logs found — start simulation or trigger healing.")
 
     # Healing Logs
     st.divider()

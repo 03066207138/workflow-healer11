@@ -258,6 +258,49 @@ def startup_event():
         print("   ▪ Mode: Offline Fallback (Static Policies)")
     print(f"   ▪ Paywalls.ai Integrated: {use_paywalls}")
     print(f"   ▪ Loaded Policies: {list(policies.POLICY_MAP.keys())}\n")
+    
+    
+    
+    
+    # ============================================================
+# 💹 Unified Revenue Data Endpoint for Streamlit Dashboard
+# ============================================================
+@app.get("/metrics/revenue")
+def get_revenue_data():
+    """
+    Provides monetization data (from Paywalls.ai log)
+    for the Streamlit dashboard.
+    """
+    data = []
+    total_revenue = 0.0
+    total_heals = 0
+    path = PAYWALL_LOG  # already defined earlier in main.py
+
+    if os.path.exists(path):
+        with open(path, "r", encoding="utf-8") as f:
+            for line in f.readlines():
+                parts = line.strip().split("|")
+                if len(parts) >= 4:
+                    ts, workflow, anomaly, cost, *_ = [p.strip() for p in parts]
+                    try:
+                        cost_val = float(cost.replace("$", "").strip())
+                    except:
+                        cost_val = 0.0
+                    total_revenue += cost_val
+                    total_heals += 1
+                    data.append({
+                        "Timestamp": ts,
+                        "Workflow": workflow,
+                        "Anomaly": anomaly,
+                        "Cost ($)": cost_val
+                    })
+
+    return {
+        "total_revenue": round(total_revenue, 4),
+        "total_heals": total_heals,
+        "logs": data
+    }
+
 
 # ============================================================
 # 💰 Local Monetization Log (Backup)
