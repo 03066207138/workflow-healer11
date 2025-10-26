@@ -1,3 +1,8 @@
-streamlit==1.38.0
-requests==2.32.3
-pandas==2.2.2
+streamlit
+fastapi
+uvicorn
+pandas
+altair
+requests
+python-dotenv
+streamlit-autorefresh
