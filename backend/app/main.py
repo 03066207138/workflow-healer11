@@ -282,9 +282,6 @@ def log_revenue(workflow: str, anomaly: str, recovery_pct: float, success: bool)
     except Exception as e:
         print(f"[Paywalls.ai] ⚠️ Monetization log failed: {e}")
 
-# ============================================================
-# 💹 Unified Revenue Data Endpoint for Streamlit Dashboard
-# ============================================================
 @app.get("/metrics/revenue")
 def get_revenue_data():
     """
