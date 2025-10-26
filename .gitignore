@@ -1,1 +1,8 @@
-"backend/.env" 
+# Environment & local files
+.env
+backend/.env
+*.log
+data/
+__pycache__/
+*.pyc
+
