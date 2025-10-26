@@ -248,11 +248,46 @@ def startup_event():
     print(f"   ▪ Paywalls.ai Integrated: {use_paywalls}")
     print(f"   ▪ Loaded Policies: {list(policies.POLICY_MAP.keys())}\n")
 
+# ============================================================
+# 💰 Local Monetization Log (Backup)
+# ============================================================
+PAYWALL_LOG = "data/healing_revenue.log"
+os.makedirs("data", exist_ok=True)
+
+_last_logged_event = None  # prevent duplicates
+
+def log_revenue(workflow: str, anomaly: str, recovery_pct: float, success: bool):
+    """Prevents duplicate Paywalls logs across demo_client & workflows."""
+    global _last_logged_event
+    try:
+        # Normalize: combine demo_client + workflow into one unified key
+        normalized_workflow = workflow.replace("demo_client", "").strip() or "healing_event"
+        event_key = f"{normalized_workflow}_{anomaly}_{datetime.now().strftime('%Y%m%d%H%M')}"
+        if _last_logged_event == event_key:
+            return
+        _last_logged_event = event_key
+
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        base_price = 0.05
+        multiplier = 1 + (recovery_pct / 100)
+        cost = round(base_price * multiplier, 4)
+        status = "success" if success else "partial"
+        log_line = f"{timestamp} | {workflow} | {anomaly} | ${cost:.4f} | {status}\n"
+
+        with open(PAYWALL_LOG, "a", encoding="utf-8") as f:
+            f.write(log_line)
+            f.flush()
+
+        print(f"[Paywalls.ai] 💰 Logged ${cost:.4f} for {workflow}:{anomaly}")
+    except Exception as e:
+        print(f"[Paywalls.ai] ⚠️ Monetization log failed: {e}")
+
+# ============================================================
+# 💹 Unified Revenue Data Endpoint for Streamlit Dashboard
+# ============================================================
 @app.get("/metrics/revenue")
 def get_revenue_data():
-    """
-    Provides full monetization data for Streamlit dashboard (no date filter).
-    """
+    """Provides monetization data for Streamlit dashboard."""
     data = []
     total_revenue = 0.0
     total_heals = 0
