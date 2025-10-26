@@ -1,0 +1,11 @@
+{
+  "order_processing": {
+    "sla_ms": 5000
+  },
+  "customer_support": {
+    "sla_ms": 3000
+  },
+  "invoice_approval": {
+    "sla_ms": 4000
+  }
+}
