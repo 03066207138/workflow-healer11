@@ -281,17 +281,22 @@ def log_revenue(workflow: str, anomaly: str, recovery_pct: float, success: bool)
 # ============================================================
 @app.get("/metrics/revenue")
 def get_revenue_data():
-    """Provides monetization data for Streamlit dashboard."""
+    """
+    Provides monetization data for Streamlit dashboard,
+    synchronized with current healing session.
+    """
     data = []
     total_revenue = 0.0
     total_heals = 0
-    path = PAYWALL_LOG
 
-    if os.path.exists(path):
-        with open(path, "r", encoding="utf-8") as f:
+    # Get the timestamp of the last backend restart
+    restart_marker = datetime.now().strftime("%Y-%m-%d")
+
+    if os.path.exists(PAYWALL_LOG):
+        with open(PAYWALL_LOG, "r", encoding="utf-8") as f:
             for line in f.readlines():
                 parts = line.strip().split("|")
-                if len(parts) >= 4:
+                if len(parts) >= 4 and restart_marker in parts[0]:
                     ts, workflow, anomaly, cost, *_ = [p.strip() for p in parts]
                     try:
                         cost_val = float(cost.replace("$", "").strip())
