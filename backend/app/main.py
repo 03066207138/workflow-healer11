@@ -33,7 +33,7 @@ from .healing.executor import HealingExecutor
 from .healing import policies
 from .telemetry.simulator import sim
 from .utils.metrics_logger import MetricsLogger
-from .integrations.paywalls_client import bill_healing_event
+from .integrations.paywalls_client import bill_healing_event  # ✅ Monetization Integration
 
 # ============================================================
 # ⚙️ Initialize Core Components
@@ -50,7 +50,7 @@ use_paywalls = bool(os.getenv("PAYWALLS_KEY"))
 # ============================================================
 app = FastAPI(
     title="IBM Workflow Healing Agent — Prototype-to-Profit Edition",
-    version="3.2"
+    version="3.0"
 )
 
 app.add_middleware(
@@ -121,34 +121,24 @@ def simulate(event: str = "workflow_delay"):
     Simulate one healing cycle using either Watsonx.ai or Groq backend.
     Monetize each healing event through Paywalls.ai.
     """
-    try:
-        sim.stop()  # stop background if running
-    except Exception:
-        pass
-
     workflow = random.choice(["invoice_processing", "order_processing", "customer_support"])
     anomaly = event if event in policies.POLICY_MAP else random.choice(list(policies.POLICY_MAP.keys()))
     result = executor.heal(workflow, anomaly)
 
+    # 💰 Monetization: charge per healing
     billing_info = bill_healing_event(
         user_id="demo_client",
         heal_type=anomaly,
-        cost=0.05,
+        cost=0.05,  # micro-billing per healing
     )
 
+    # Local monetization log
     try:
         recovery_pct = result.get("recovery_pct", 0.0)
         success = result.get("status", "") == "success"
         log_revenue(workflow, anomaly, recovery_pct, success)
-        metrics_logger.log_metric(
-            workflow=workflow,
-            anomaly=anomaly,
-            recovery_pct=recovery_pct,
-            reward=result.get("reward", 0.0),
-            status=result.get("status", "success"),
-        )
     except Exception as e:
-        print(f"[Simulate] ⚠️ Logging skipped: {e}")
+        print(f"[Simulate] ⚠️ Local log skipped: {e}")
 
     return {
         "workflow": workflow,
@@ -166,11 +156,13 @@ def simulate(event: str = "workflow_delay"):
 # ============================================================
 @app.post("/sim/start")
 def start_simulation():
+    """Start continuous background simulation"""
     print("🚀 Continuous simulation started.")
     return sim.start()
 
 @app.post("/sim/stop")
 def stop_simulation():
+    """Stop continuous simulation"""
     print("🧊 Simulation stopped.")
     return sim.stop()
 
@@ -191,6 +183,7 @@ def metrics_summary():
         except Exception:
             clean_summary[k] = v
 
+    # 🧩 Anomaly Distribution
     anomaly_mix = {}
     try:
         if os.path.exists(settings.METRICS_LOG_PATH):
@@ -202,6 +195,7 @@ def metrics_summary():
         print(f"[Metrics Summary] ⚠️ Failed to parse anomaly mix: {e}")
     clean_summary["anomaly_mix"] = anomaly_mix
 
+    # 🧠 Add last action
     try:
         if os.path.exists(settings.METRICS_LOG_PATH):
             df = pd.read_csv(settings.METRICS_LOG_PATH)
@@ -215,16 +209,20 @@ def metrics_summary():
 # ============================================================
 @app.post("/integrations/flowxo/webhook")
 async def flowxo_trigger(req: Request):
+    """
+    Triggered by FlowXO to execute healing externally.
+    """
     data = await req.json()
     workflow_id = data.get("workflow_id", "unknown_workflow")
     anomaly = data.get("anomaly", "unknown_anomaly")
     user_id = data.get("user_id", "demo_client")
 
+    # ✅ Log FlowXO event
     metrics_logger.log_flowxo_event(workflow_id, anomaly, user_id)
 
+    # ✅ Execute healing logic
     result = executor.heal(workflow_id, anomaly)
     billing = bill_healing_event(user_id, anomaly, cost=0.05)
-    log_revenue(workflow_id, anomaly, result.get("recovery_pct", 0.0), True)
 
     print(f"📂 [FlowXO] Logged → {metrics_logger.flowxo_log_path.resolve()}")
 
@@ -245,6 +243,12 @@ def startup_event():
     print("\n🚀 IBM Workflow Healing Agent (Prototype-to-Profit Edition) started successfully!")
     print(f"   ▪ App: {settings.APP_NAME}")
     print(f"   ▪ FlowXO log path: {metrics_logger.flowxo_log_path.resolve()}")
+    if use_watsonx:
+        print("   ▪ Mode: IBM Watsonx.ai Cloud Reasoning 🧠")
+    elif use_groq:
+        print("   ▪ Mode: Groq Local Llama Inference ⚡")
+    else:
+        print("   ▪ Mode: Offline Fallback (Static Policies)")
     print(f"   ▪ Paywalls.ai Integrated: {use_paywalls}")
     print(f"   ▪ Loaded Policies: {list(policies.POLICY_MAP.keys())}\n")
 
@@ -254,19 +258,9 @@ def startup_event():
 PAYWALL_LOG = "data/healing_revenue.log"
 os.makedirs("data", exist_ok=True)
 
-_last_logged_event = None  # prevent duplicates
-
 def log_revenue(workflow: str, anomaly: str, recovery_pct: float, success: bool):
-    """Prevents duplicate Paywalls logs across demo_client & workflows."""
-    global _last_logged_event
+    """Backup: simulate local monetization for each healing event."""
     try:
-        # Normalize: combine demo_client + workflow into one unified key
-        normalized_workflow = workflow.replace("demo_client", "").strip() or "healing_event"
-        event_key = f"{normalized_workflow}_{anomaly}_{datetime.now().strftime('%Y%m%d%H%M')}"
-        if _last_logged_event == event_key:
-            return
-        _last_logged_event = event_key
-
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         base_price = 0.05
         multiplier = 1 + (recovery_pct / 100)
@@ -291,9 +285,10 @@ def get_revenue_data():
     data = []
     total_revenue = 0.0
     total_heals = 0
+    path = PAYWALL_LOG
 
-    if os.path.exists(PAYWALL_LOG):
-        with open(PAYWALL_LOG, "r", encoding="utf-8") as f:
+    if os.path.exists(path):
+        with open(path, "r", encoding="utf-8") as f:
             for line in f.readlines():
                 parts = line.strip().split("|")
                 if len(parts) >= 4:
