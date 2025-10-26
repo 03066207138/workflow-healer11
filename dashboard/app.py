@@ -8,9 +8,9 @@ from datetime import datetime
 from streamlit_autorefresh import st_autorefresh
 
 # ============================================================
-# 🌐 Backend Configuration
+# 🌐 Backend Configuration (Render Backend)
 # ============================================================
-BACKEND = os.getenv("HEALER_BACKEND_URL", "http://127.0.0.1:8000")
+BACKEND = os.getenv("HEALER_BACKEND_URL", "https://workflow-healer11-2.onrender.com")
 
 st.set_page_config(
     page_title="Prototype to Profit – Workflow Healer",
@@ -120,7 +120,7 @@ with st.sidebar:
 
     st.divider()
 
-    # 🔁 FlowXO Webhook trigger and display recent logs
+    # FlowXO Webhook trigger and recent logs
     st.markdown("### 🔁 FlowXO Integration")
     wf = st.selectbox("Workflow:", ["invoice_processing", "order_processing", "customer_support"])
     anomaly = st.selectbox("Anomaly:", ["workflow_delay", "queue_pressure", "data_error", "api_failure"])
@@ -137,7 +137,7 @@ with st.sidebar:
         except Exception as e:
             st.error(f"❌ FlowXO webhook error: {e}")
 
-    # Display recent FlowXO events directly in sidebar
+    # Recent FlowXO events
     st.markdown("#### 🗂️ Recent FlowXO Events")
     flow_log = "data/flowxo_events.log"
     if os.path.exists(flow_log):
@@ -148,7 +148,7 @@ with st.sidebar:
                 st.caption(line.strip())
         else:
             st.info("📭 No FlowXO events yet.")
-   
+
 # ============================================================
 # 🔁 Auto Refresh
 # ============================================================
@@ -161,9 +161,7 @@ try:
     metrics = requests.get(f"{BACKEND}/metrics/summary", timeout=7).json()
     logs = requests.get(f"{BACKEND}/healing/logs?n=60", timeout=7).json().get("logs", [])
 
-    # ========================================================
-    # 💡 Top KPIs
-    # ========================================================
+    # Top KPIs
     st.markdown("### ⚡ Healing Performance Metrics")
     k1, k2, k3, k4 = st.columns(4)
     k1.metric("🩺 Total Healings", metrics.get("healings", 0))
@@ -171,9 +169,7 @@ try:
     k3.metric("🎯 Avg Reward", f"{metrics.get('avg_reward', 0):.2f}")
     k4.metric("📈 Revenue ($)", f"{metrics.get('healings', 0) * 0.05:.2f}")
 
-    # ========================================================
-    # 💰 Paywalls.ai Monetization
-    # ========================================================
+    # Monetization
     st.divider()
     st.markdown("### 💰 Prototype → Profit (Paywalls.ai Monetization)")
 
@@ -236,9 +232,7 @@ try:
     else:
         st.warning("📭 No Paywalls.ai log found yet — start the simulator or trigger healing.")
 
-    # ========================================================
-    # 🩹 Healing Logs
-    # ========================================================
+    # Healing Logs
     st.divider()
     st.markdown("### 🩹 Real-Time Healing Queue")
 
