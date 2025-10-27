@@ -11096,3 +11096,57 @@
 2025-10-27 22:03:36 | demo_client | queue_pressure | $0.0500 | success
 2025-10-27 22:03:36 | invoice_processing | queue_pressure | $0.0935 | success
 2025-10-27T17:03:36.329271 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 22:12:53 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 22:12:53 | customer_support | queue_pressure | $0.0984 | success
+2025-10-27T17:12:53.132598 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 22:13:03 | demo_client | api_failure | $0.0500 | success
+2025-10-27 22:13:03 | customer_support | api_failure | $0.0949 | success
+2025-10-27T17:13:03.156303 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 22:13:13 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 22:13:13 | order_processing | queue_pressure | $0.0952 | success
+2025-10-27T17:13:13.180672 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 22:13:21 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 22:13:21 | customer_support | queue_pressure | $0.0937 | success
+2025-10-27T17:13:21.199079 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 22:13:31 | demo_client | data_error | $0.0500 | success
+2025-10-27 22:13:31 | invoice_processing | data_error | $0.0913 | success
+2025-10-27T17:13:31.222645 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 22:13:37 | demo_client | data_error | $0.0500 | success
+2025-10-27 22:13:37 | customer_support | data_error | $0.0948 | success
+2025-10-27T17:13:37.246628 | customer_support | data_error | $0.05 | simulated
+2025-10-27 22:13:44 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 22:13:44 | invoice_processing | workflow_delay | $0.0975 | success
+2025-10-27T17:13:44.270177 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 22:13:49 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 22:13:49 | customer_support | queue_pressure | $0.0939 | success
+2025-10-27T17:13:49.288420 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 22:13:59 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 22:13:59 | invoice_processing | workflow_delay | $0.0964 | success
+2025-10-27T17:13:59.313128 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 22:14:07 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 22:14:07 | invoice_processing | workflow_delay | $0.0912 | success
+2025-10-27T17:14:07.331275 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 22:14:14 | demo_client | data_error | $0.0500 | success
+2025-10-27 22:14:14 | customer_support | data_error | $0.0915 | success
+2025-10-27T17:14:14.366504 | customer_support | data_error | $0.05 | simulated
+2025-10-27 22:14:23 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 22:14:23 | order_processing | workflow_delay | $0.0927 | success
+2025-10-27T17:14:23.389830 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 22:14:30 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 22:14:30 | order_processing | workflow_delay | $0.0978 | success
+2025-10-27T17:14:30.418558 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 22:14:35 | demo_client | data_error | $0.0500 | success
+2025-10-27 22:14:35 | customer_support | data_error | $0.0957 | success
+2025-10-27T17:14:35.447142 | customer_support | data_error | $0.05 | simulated
+2025-10-27 22:14:42 | demo_client | data_error | $0.0500 | success
+2025-10-27 22:14:42 | order_processing | data_error | $0.0904 | success
+2025-10-27T17:14:42.478328 | order_processing | data_error | $0.05 | simulated
+2025-10-27 22:14:48 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 22:14:48 | customer_support | workflow_delay | $0.0977 | success
+2025-10-27T17:14:48.505324 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 22:14:57 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 22:14:57 | customer_support | queue_pressure | $0.0941 | success
+2025-10-27T17:14:57.538901 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 22:15:07 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 22:15:07 | customer_support | queue_pressure | $0.0883 | success
+2025-10-27T17:15:07.572773 | customer_support | queue_pressure | $0.05 | simulated
