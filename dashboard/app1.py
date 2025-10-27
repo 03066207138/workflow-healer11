@@ -214,16 +214,51 @@ try:
         st.download_button("💰 Download Revenue Log", data=rev_str.encode("utf-8"),
                            file_name="healing_revenue.txt", mime="text/plain")
 
-    st.markdown("### 🧾 Generate Healing Slip (Active/Running Healings)")
+    # ============================================================
+    # 🧾 Healing Slip with Price
+    # ============================================================
+    st.markdown("### 🧾 Generate Healing Slip (with Price)")
+
     active_logs = [l for l in logs if "⚠️" in l or "anomaly detected" in l]
 
+    rev = revenue_data.get("logs", [])
+    rev_lookup = {
+        (x["Workflow"], x["Anomaly"]): x["Cost ($)"]
+        for x in rev if "Workflow" in x and "Anomaly" in x
+    }
+
     if active_logs:
-        slip_text = "\n".join(active_logs[-20:])
-        st.text_area("📋 Current Healing Slip", slip_text, height=200)
-        st.download_button(label="🧾 Download Healing Slip",
-                           data=slip_text.encode("utf-8"),
-                           file_name=f"healing_slip_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt",
-                           mime="text/plain")
+        slip_lines = []
+        total_cost = 0.0
+        for line in active_logs[-20:]:
+            matched_workflow = None
+            matched_anomaly = None
+            for wf in ["invoice_processing", "order_processing", "customer_support"]:
+                if wf in line:
+                    matched_workflow = wf
+                    break
+            for an in ["workflow_delay", "queue_pressure", "data_error", "api_failure"]:
+                if an in line:
+                    matched_anomaly = an
+                    break
+
+            cost_val = rev_lookup.get((matched_workflow, matched_anomaly), 0.0)
+            slip_lines.append(f"{line}  | 💰 Cost: ${cost_val}")
+            try:
+                total_cost += float(cost_val)
+            except:
+                pass
+
+        slip_lines.append(f"\n🧮 Total Healing Cost: ${round(total_cost, 4)}")
+        slip_text = "\n".join(slip_lines)
+
+        st.text_area("📋 Current Healing Slip (with Price)", slip_text, height=250)
+        st.download_button(
+            label="🧾 Download Healing Slip (with Price)",
+            data=slip_text.encode("utf-8"),
+            file_name=f"healing_slip_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt",
+            mime="text/plain"
+        )
     else:
         st.info("✅ No currently running healings detected.")
 
