@@ -63,6 +63,7 @@ with st.sidebar:
     st.markdown("## ⚙️ Simulation Controls")
 
     def safe_json_get(url, timeout=5):
+        """Safely get backend response."""
         try:
             r = requests.get(url, timeout=timeout)
             if r.status_code == 200:
@@ -74,11 +75,13 @@ with st.sidebar:
             st.error(f"❌ Error contacting backend: {e}")
             return None
 
+    # ---- Health Check ----
     if st.button("🔎 Test Backend"):
         health = safe_json_get(f"{BACKEND}/health")
         if health:
             st.success(f"✅ Backend OK — Mode: {health.get('mode')} | Paywalls: {health.get('paywalls_ready')}")
 
+    # ---- Simulation ----
     if st.button("🚀 Start Simulation"):
         try:
             res = requests.post(f"{BACKEND}/sim/start", timeout=5)
@@ -93,6 +96,7 @@ with st.sidebar:
         except Exception as e:
             st.error(f"❌ Error stopping: {e}")
 
+    # ---- Manual Healing ----
     st.divider()
     st.markdown("### ⚡ Trigger Manual Healing")
 
@@ -107,6 +111,25 @@ with st.sidebar:
                 st.warning(f"⚠️ Healing trigger failed ({res.status_code})")
         except Exception as e:
             st.error(f"❌ Failed to trigger: {e}")
+
+    # ---- FlowXO Webhook ----
+    st.divider()
+    st.markdown("### 🔁 FlowXO Webhook Trigger")
+
+    wf = st.selectbox("Workflow", ["invoice_processing", "order_processing", "customer_support"])
+    anomaly = st.selectbox("Anomaly Type", ["workflow_delay", "queue_pressure", "data_error", "api_failure"])
+
+    if st.button("🚨 Send Webhook"):
+        try:
+            payload = {"workflow_id": wf, "anomaly": anomaly, "user_id": "demo_client"}
+            res = requests.post(f"{BACKEND}/integrations/flowxo/webhook", json=payload, timeout=10)
+            if res.status_code == 200:
+                st.success("✅ FlowXO event processed successfully!")
+                st.json(res.json())
+            else:
+                st.warning(f"⚠️ Webhook failed ({res.status_code})")
+        except Exception as e:
+            st.error(f"❌ FlowXO webhook error: {e}")
 
 # ============================================================
 # 🔁 Auto Refresh
