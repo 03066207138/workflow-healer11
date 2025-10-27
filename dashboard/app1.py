@@ -1,4 +1,5 @@
 import os
+import json
 import requests
 import pandas as pd
 import streamlit as st
@@ -60,17 +61,12 @@ AI-Powered Workflow Healing with <b>Paywalls.ai</b> × <b>FlowXO</b>
 # ⚙️ Sidebar Controls
 # ============================================================
 with st.sidebar:
-    st.markdown("## ⚙️ Simulation Controls")
+    st.markdown("## ⚙️ Simulation & Webhook Controls")
 
     def safe_json_get(url, timeout=5):
-        """Safely get backend response."""
         try:
             r = requests.get(url, timeout=timeout)
-            if r.status_code == 200:
-                return r.json()
-            else:
-                st.warning(f"⚠️ {url} → {r.status_code}")
-                return None
+            return r.json() if r.status_code == 200 else None
         except Exception as e:
             st.error(f"❌ Error contacting backend: {e}")
             return None
@@ -82,10 +78,13 @@ with st.sidebar:
             st.success(f"✅ Backend OK — Mode: {health.get('mode')} | Paywalls: {health.get('paywalls_ready')}")
 
     # ---- Simulation ----
+    st.divider()
+    st.markdown("### 🔁 Simulation Controls")
+
     if st.button("🚀 Start Simulation"):
         try:
             res = requests.post(f"{BACKEND}/sim/start", timeout=5)
-            st.success("✅ Healing simulation started!" if res.status_code == 200 else f"⚠️ Could not start: {res.status_code}")
+            st.success("✅ Healing simulation started!" if res.status_code == 200 else f"⚠️ Could not start ({res.status_code})")
         except Exception as e:
             st.error(f"❌ Error starting: {e}")
 
@@ -99,7 +98,6 @@ with st.sidebar:
     # ---- Manual Healing ----
     st.divider()
     st.markdown("### ⚡ Trigger Manual Healing")
-
     selected_event = st.selectbox("Select anomaly:", ["workflow_delay", "queue_pressure", "data_error", "api_failure"])
     if st.button("💥 Trigger Healing"):
         try:
@@ -114,12 +112,13 @@ with st.sidebar:
 
     # ---- FlowXO Webhook ----
     st.divider()
-    st.markdown("### 🔁 FlowXO Webhook Trigger")
+    st.markdown("### 🌐 FlowXO Webhook (Manual or JSON)")
 
+    # Option 1: Quick dropdown
     wf = st.selectbox("Workflow", ["invoice_processing", "order_processing", "customer_support"])
     anomaly = st.selectbox("Anomaly Type", ["workflow_delay", "queue_pressure", "data_error", "api_failure"])
 
-    if st.button("🚨 Send Webhook"):
+    if st.button("🚨 Send Webhook (Quick Mode)"):
         try:
             payload = {"workflow_id": wf, "anomaly": anomaly, "user_id": "demo_client"}
             res = requests.post(f"{BACKEND}/integrations/flowxo/webhook", json=payload, timeout=10)
@@ -130,6 +129,34 @@ with st.sidebar:
                 st.warning(f"⚠️ Webhook failed ({res.status_code})")
         except Exception as e:
             st.error(f"❌ FlowXO webhook error: {e}")
+
+    # Option 2: Custom JSON payload
+    st.markdown("#### 🧩 Custom JSON Payload")
+    example_json = {
+        "workflow_id": "invoice_processing",
+        "anomaly": "queue_pressure",
+        "user_id": "demo_client"
+    }
+
+    json_input = st.text_area(
+        "Edit or paste your JSON payload:",
+        value=json.dumps(example_json, indent=4),
+        height=160
+    )
+
+    if st.button("📤 Send JSON Webhook"):
+        try:
+            payload = json.loads(json_input)
+            res = requests.post(f"{BACKEND}/integrations/flowxo/webhook", json=payload, timeout=10)
+            if res.status_code == 200:
+                st.success("✅ Custom JSON webhook sent successfully!")
+                st.json(res.json())
+            else:
+                st.warning(f"⚠️ Failed ({res.status_code})")
+        except json.JSONDecodeError:
+            st.error("❌ Invalid JSON format. Please check your input.")
+        except Exception as e:
+            st.error(f"❌ Webhook error: {e}")
 
 # ============================================================
 # 🔁 Auto Refresh
