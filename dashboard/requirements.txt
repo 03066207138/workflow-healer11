@@ -6,3 +6,4 @@ altair
 requests
 python-dotenv
 streamlit-autorefresh
+reportlab
