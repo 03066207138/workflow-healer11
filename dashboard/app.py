@@ -7,7 +7,7 @@ from datetime import datetime
 from streamlit_autorefresh import st_autorefresh
 
 # ============================================================
-# 🌐 Backend Configuration (Render Backend)
+# 🌐 Backend Configuration
 # ============================================================
 BACKEND = os.getenv("HEALER_BACKEND_URL", "https://workflow-healer11-2.onrender.com")
 
@@ -83,20 +83,14 @@ with st.sidebar:
     if st.button("🚀 Start Simulation"):
         try:
             res = requests.post(f"{BACKEND}/sim/start", timeout=5)
-            if res.status_code == 200:
-                st.success("✅ Healing simulation started!")
-            else:
-                st.warning(f"⚠️ Could not start simulation: {res.status_code}")
+            st.success("✅ Healing simulation started!" if res.status_code == 200 else f"⚠️ Could not start: {res.status_code}")
         except Exception as e:
             st.error(f"❌ Error starting: {e}")
 
     if st.button("🧊 Stop Simulation"):
         try:
             res = requests.post(f"{BACKEND}/sim/stop", timeout=5)
-            if res.status_code == 200:
-                st.warning("🛑 Simulation stopped.")
-            else:
-                st.warning(f"⚠️ Could not stop simulation ({res.status_code})")
+            st.warning("🛑 Simulation stopped." if res.status_code == 200 else f"⚠️ Stop failed ({res.status_code})")
         except Exception as e:
             st.error(f"❌ Error stopping: {e}")
 
@@ -125,11 +119,9 @@ with st.sidebar:
         try:
             payload = {"workflow_id": wf, "anomaly": anomaly, "user_id": "demo_client"}
             res = requests.post(f"{BACKEND}/integrations/flowxo/webhook", json=payload, timeout=10)
+            st.success("✅ FlowXO event processed!" if res.status_code == 200 else f"⚠️ Webhook failed ({res.status_code})")
             if res.status_code == 200:
-                st.success("✅ FlowXO event processed!")
                 st.json(res.json())
-            else:
-                st.warning(f"⚠️ Webhook failed ({res.status_code})")
         except Exception as e:
             st.error(f"❌ FlowXO webhook error: {e}")
 
@@ -148,34 +140,49 @@ try:
     logs_resp = requests.get(f"{BACKEND}/healing/logs?n=60", timeout=7)
     logs = logs_resp.json().get("logs", []) if logs_resp.status_code == 200 else []
 
-    st.markdown("### ⚡ Healing Performance Metrics")
-    k1, k2, k3, k4 = st.columns(4)
-    k1.metric("🩺 Total Healings", metrics.get("healings", 0))
-    k2.metric("⚡ Avg Recovery %", f"{metrics.get('avg_recovery_pct', 0):.2f}")
-    k3.metric("🎯 Avg Reward", f"{metrics.get('avg_reward', 0):.2f}")
-    k4.metric("📈 Revenue ($)", f"{revenue_data.get('total_revenue', 0.0):.2f}")
+    # ---- Unified Values ----
+    total_heals = float(metrics.get("healings", 0))
+    avg_recovery = float(metrics.get("avg_recovery_pct", 0))
+    avg_reward = float(metrics.get("avg_reward", 0))
+    total_revenue = float(revenue_data.get("total_revenue", 0.0))
+    total_heal_logs = float(revenue_data.get("total_heals", 0.0))
+    avg_cost = total_revenue / max(total_heal_logs, 1)
 
-    st.divider()
-    st.markdown("### 💰 Prototype → Profit (Paywalls.ai Monetization)")
+    # ---- Unified Table ----
+    st.markdown("### ⚡ Unified Healing Performance & Monetization Summary")
+    df_summary = pd.DataFrame({
+        "Metric": [
+            "🩺 Total Healings",
+            "⚙️ Avg Recovery %",
+            "🎯 Avg Reward",
+            "💸 Avg $/Heal",
+            "📈 Total Revenue ($)"
+        ],
+        "Value": [
+            f"{total_heals:.0f}",
+            f"{avg_recovery:.2f}%",
+            f"{avg_reward:.2f}",
+            f"${avg_cost:.2f}",
+            f"${total_revenue:.2f}"
+        ]
+    })
+    st.table(df_summary)
 
+    # ---- Revenue Chart ----
     parsed = revenue_data.get("logs", [])
     if parsed:
         df_rev = pd.DataFrame(parsed)
         df_rev["Timestamp"] = pd.to_datetime(df_rev["Timestamp"], errors="coerce")
         df_rev["Cumulative Revenue ($)"] = df_rev["Cost ($)"].cumsum()
 
-        c1, c2, c3 = st.columns(3)
-        c1.metric("💸 Total Revenue", f"${revenue_data.get('total_revenue', 0.0):.2f}")
-        c2.metric("🩹 Total Heals", revenue_data.get("total_heals", 0))
-        avg_per_heal = revenue_data.get("total_revenue", 0.0) / max(1, revenue_data.get("total_heals", 1))
-        c3.metric("📊 Avg $/Heal", f"${avg_per_heal:.2f}")
-
         chart = alt.Chart(df_rev).mark_area(
             line={"color": "#34d399"},
             color=alt.Gradient(
                 gradient="linear",
-                stops=[alt.GradientStop(color="#34d399", offset=0),
-                       alt.GradientStop(color="#0f172a", offset=1)],
+                stops=[
+                    alt.GradientStop(color="#34d399", offset=0),
+                    alt.GradientStop(color="#0f172a", offset=1)
+                ],
                 x1=1, x2=1, y1=1, y2=0
             )
         ).encode(
@@ -183,25 +190,21 @@ try:
             y=alt.Y("Cumulative Revenue ($):Q", title="Cumulative Revenue ($)"),
             tooltip=["Timestamp", "Workflow", "Anomaly", "Cost ($)", "Cumulative Revenue ($)"]
         ).properties(height=250)
-
         st.altair_chart(chart, use_container_width=True)
         st.dataframe(df_rev.sort_values(by="Timestamp", ascending=False), use_container_width=True)
     else:
-        st.warning("📭 No revenue logs found — start simulation or trigger healing.")
+        st.info("📭 No revenue logs found — start simulation or trigger healing.")
 
     st.divider()
-    st.markdown("### 🩹 Real-Time Healing Queue")
+    st.markdown("### 🩹 Real-Time Healing Logs")
 
     if logs:
         for line in logs[:40]:
-            if "⚠️" in line:
-                st.markdown(f"<div class='metric warning'>🟡 {line}</div>", unsafe_allow_html=True)
-            elif "✅" in line:
-                st.markdown(f"<div class='metric success'>🟢 {line}</div>", unsafe_allow_html=True)
-            elif "❌" in line:
-                st.markdown(f"<div class='metric error'>🔴 {line}</div>", unsafe_allow_html=True)
-            else:
-                st.markdown(f"<div class='metric info'>💡 {line}</div>", unsafe_allow_html=True)
+            style = "info"; icon = "💡"
+            if "⚠️" in line: style, icon = "warning", "🟡"
+            elif "✅" in line: style, icon = "success", "🟢"
+            elif "❌" in line: style, icon = "error", "🔴"
+            st.markdown(f"<div class='metric {style}'>{icon} {line}</div>", unsafe_allow_html=True)
     else:
         st.info("📭 No healing logs yet — run the simulator to view events.")
 
