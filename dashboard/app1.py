@@ -2,7 +2,6 @@ import os
 import requests
 import pandas as pd
 import streamlit as st
-import altair as alt
 from datetime import datetime
 from streamlit_autorefresh import st_autorefresh
 
@@ -109,29 +108,13 @@ with st.sidebar:
         except Exception as e:
             st.error(f"❌ Failed to trigger: {e}")
 
-    st.divider()
-    st.markdown("### 🔁 FlowXO Integration")
-
-    wf = st.selectbox("Workflow:", ["invoice_processing", "order_processing", "customer_support"])
-    anomaly = st.selectbox("Anomaly:", ["workflow_delay", "queue_pressure", "data_error", "api_failure"])
-
-    if st.button("🚨 Send FlowXO Webhook"):
-        try:
-            payload = {"workflow_id": wf, "anomaly": anomaly, "user_id": "demo_client"}
-            res = requests.post(f"{BACKEND}/integrations/flowxo/webhook", json=payload, timeout=10)
-            st.success("✅ FlowXO event processed!" if res.status_code == 200 else f"⚠️ Webhook failed ({res.status_code})")
-            if res.status_code == 200:
-                st.json(res.json())
-        except Exception as e:
-            st.error(f"❌ FlowXO webhook error: {e}")
-
 # ============================================================
 # 🔁 Auto Refresh
 # ============================================================
 st_autorefresh(interval=6000, key="refresh")
 
 # ============================================================
-# 📊 Unified Metrics & Monetization Dashboard
+# 📊 Unified Metrics & Logs (No Graph/Table)
 # ============================================================
 try:
     metrics = requests.get(f"{BACKEND}/metrics/summary", timeout=7).json()
@@ -144,21 +127,14 @@ try:
     avg_recovery = float(metrics.get("avg_recovery_pct", 0))
     avg_reward = float(metrics.get("avg_reward", 0))
     total_revenue = float(revenue_data.get("total_revenue", 0.0))
-    avg_cost = total_revenue / max(total_heals, 1)
 
-    # ---- Unified KPI Grid ----
-    st.markdown("### ⚡ Unified Healing & Monetization KPIs")
+    # ---- KPI Metrics ----
+    st.markdown("### ⚡ Healing & Monetization KPIs")
     c1, c2, c3, c4 = st.columns(4)
     c1.metric("🩺 Total Healings", f"{total_heals:.0f}")
     c2.metric("⚙️ Avg Recovery %", f"{avg_recovery:.2f}")
     c3.metric("🎯 Avg Reward", f"{avg_reward:.2f}")
     c4.metric("💰 Total Revenue ($)", f"{total_revenue:.2f}")
-
-    # ---- Revenue Trend ----
-  
-  
-  
-        st.info("📭 No revenue logs found — start simulation or trigger healing.")
 
     # ---- Logs ----
     st.divider()
