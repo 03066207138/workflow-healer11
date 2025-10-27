@@ -125,20 +125,14 @@ def simulate(event: str = "workflow_delay"):
     anomaly = event if event in policies.POLICY_MAP else random.choice(list(policies.POLICY_MAP.keys()))
     result = executor.heal(workflow, anomaly)
 
-    # 💰 Monetization: charge per healing
+    # 💰 Monetization: charge per healing (single billing call only)
     billing_info = bill_healing_event(
         user_id="demo_client",
         heal_type=anomaly,
         cost=0.05,  # micro-billing per healing
     )
 
-    # Local monetization log
-    try:
-        recovery_pct = result.get("recovery_pct", 0.0)
-        success = result.get("status", "") == "success"
-        log_revenue(workflow, anomaly, recovery_pct, success)
-    except Exception as e:
-        print(f"[Simulate] ⚠️ Local log skipped: {e}")
+    # ✅ Removed extra local log_revenue() call — avoids triple logging
 
     return {
         "workflow": workflow,
@@ -253,43 +247,17 @@ def startup_event():
     print(f"   ▪ Loaded Policies: {list(policies.POLICY_MAP.keys())}\n")
 
 # ============================================================
-# 💰 Local Monetization Log (Backup)
+# 💹 Unified Revenue Data Endpoint for Streamlit Dashboard
 # ============================================================
 PAYWALL_LOG = "data/healing_revenue.log"
 os.makedirs("data", exist_ok=True)
 
-def log_revenue(workflow: str, anomaly: str, recovery_pct: float, success: bool):
-    """Backup: simulate local monetization for each healing event."""
-    try:
-        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        base_price = 0.05
-        multiplier = 1 + (recovery_pct / 100)
-        cost = round(base_price * multiplier, 4)
-        status = "success" if success else "partial"
-        log_line = f"{timestamp} | {workflow} | {anomaly} | ${cost:.4f} | {status}\n"
-
-        with open(PAYWALL_LOG, "a", encoding="utf-8") as f:
-            f.write(log_line)
-            f.flush()
-
-        print(f"[Paywalls.ai] 💰 Logged ${cost:.4f} for {workflow}:{anomaly}")
-    except Exception as e:
-        print(f"[Paywalls.ai] ⚠️ Monetization log failed: {e}")
-
-# ============================================================
-# 💹 Unified Revenue Data Endpoint for Streamlit Dashboard
-# ============================================================
 @app.get("/metrics/revenue")
 def get_revenue_data():
-    """
-    Provides monetization data for Streamlit dashboard,
-    synchronized with current healing session.
-    """
+    """Provides monetization data for Streamlit dashboard."""
     data = []
     total_revenue = 0.0
     total_heals = 0
-
-    # Get the timestamp of the last backend restart
     restart_marker = datetime.now().strftime("%Y-%m-%d")
 
     if os.path.exists(PAYWALL_LOG):
