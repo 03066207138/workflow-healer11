@@ -155,32 +155,9 @@ try:
     c4.metric("💰 Total Revenue ($)", f"{total_revenue:.2f}")
 
     # ---- Revenue Trend ----
-    st.divider()
-    st.markdown("### 💹 Revenue Growth (Paywalls.ai)")
-    parsed = revenue_data.get("logs", [])
-    if parsed:
-        df_rev = pd.DataFrame(parsed)
-        df_rev["Timestamp"] = pd.to_datetime(df_rev["Timestamp"], errors="coerce")
-        df_rev["Cumulative Revenue ($)"] = df_rev["Cost ($)"].cumsum()
-
-        chart = alt.Chart(df_rev).mark_area(
-            line={"color": "#34d399"},
-            color=alt.Gradient(
-                gradient="linear",
-                stops=[
-                    alt.GradientStop(color="#34d399", offset=0),
-                    alt.GradientStop(color="#0f172a", offset=1)
-                ],
-                x1=1, x2=1, y1=1, y2=0
-            )
-        ).encode(
-            x=alt.X("Timestamp:T", title=None),
-            y=alt.Y("Cumulative Revenue ($):Q", title="Cumulative Revenue ($)"),
-            tooltip=["Timestamp", "Workflow", "Anomaly", "Cost ($)", "Cumulative Revenue ($)"]
-        ).properties(height=260)
-        st.altair_chart(chart, use_container_width=True)
-        st.dataframe(df_rev.sort_values(by="Timestamp", ascending=False), use_container_width=True)
-    else:
+  
+  
+  
         st.info("📭 No revenue logs found — start simulation or trigger healing.")
 
     # ---- Logs ----
