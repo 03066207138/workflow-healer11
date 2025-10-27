@@ -44,6 +44,22 @@ h1,h2,h3,h4 { color: var(--accent) !important; text-align:center; }
 .error { background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.3); }
 [data-testid="stMetricValue"] { color: var(--accent); font-weight: 700; }
 section.main { padding: 1.2rem 2rem !important; }
+
+/* download button polish */
+.stDownloadButton button {
+  background: linear-gradient(90deg, #2563eb, #1e3a8a);
+  color: #ffffff !important;
+  border-radius: 10px;
+  border: none;
+  padding: 0.6rem 1rem;
+  font-weight: 700;
+  box-shadow: 0 3px 10px rgba(37,99,235,0.35);
+  transition: all .15s ease-in-out;
+}
+.stDownloadButton button:hover {
+  background: linear-gradient(90deg, #1e3a8a, #2563eb);
+  transform: translateY(-1px);
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -185,6 +201,75 @@ try:
     c2.metric("⚙️ Avg Recovery %", f"{avg_recovery:.2f}")
     c3.metric("🎯 Avg Reward", f"{avg_reward:.2f}")
     c4.metric("💰 Total Revenue ($)", f"{total_revenue:.2f}")
+
+    # ========================================================
+    # 📥 Downloads: Slips & Logs
+    # ========================================================
+    st.divider()
+    st.markdown("### 📥 Downloads")
+
+    # 1) Healing Slip per revenue entry
+    try:
+        rev_logs = revenue_data.get("logs", [])
+        if rev_logs:
+            df_rev = pd.DataFrame(rev_logs)
+            st.caption(f"🧾 Generate a slip for any healing entry (1–{len(df_rev)})")
+            idx = st.number_input(
+                "Pick entry #",
+                min_value=1,
+                max_value=len(df_rev),
+                value=1,
+                step=1
+            )
+            if st.button("📄 Build Healing Slip"):
+                entry = df_rev.iloc[idx - 1]
+                slip_text = f"""===============================
+💰 AI Healing Slip
+===============================
+Timestamp: {entry['Timestamp']}
+Workflow: {entry['Workflow']}
+Anomaly: {entry['Anomaly']}
+Cost: ${entry['Cost ($)']}
+===============================
+Generated via Paywalls.ai × FlowXO
+"""
+                st.download_button(
+                    label=f"⬇️ Download Healing Slip #{idx}",
+                    data=slip_text.encode("utf-8"),
+                    file_name=f"healing_slip_{idx}.txt",
+                    mime="text/plain"
+                )
+        else:
+            st.info("📭 No revenue entries yet to generate slips.")
+    except Exception as e:
+        st.error(f"⚠️ Could not generate healing slip: {e}")
+
+    # 2) Full Healing Log (from /healing/logs)
+    try:
+        logs_text = "\n".join(logs) if logs else "No logs yet."
+        st.download_button(
+            label="⬇️ Download Full Healing Log (text)",
+            data=logs_text.encode("utf-8"),
+            file_name="healing_log_full.txt",
+            mime="text/plain"
+        )
+    except Exception as e:
+        st.error(f"⚠️ Could not prepare log file: {e}")
+
+    # 3) Metrics CSV (from backend /metrics/download)
+    try:
+        csv_resp = requests.get(f"{BACKEND}/metrics/download", timeout=7)
+        if csv_resp.status_code == 200 and csv_resp.content:
+            st.download_button(
+                label="⬇️ Download Metrics CSV",
+                data=csv_resp.content,
+                file_name="metrics_log.csv",
+                mime="text/csv"
+            )
+        else:
+            st.info("ℹ️ Metrics CSV not available yet.")
+    except Exception as e:
+        st.error(f"⚠️ Could not fetch metrics CSV: {e}")
 
     # ---- Logs ----
     st.divider()
