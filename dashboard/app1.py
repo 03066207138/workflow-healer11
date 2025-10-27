@@ -45,7 +45,6 @@ h1,h2,h3,h4 { color: var(--accent) !important; text-align:center; }
 [data-testid="stMetricValue"] { color: var(--accent); font-weight: 700; }
 section.main { padding: 1.2rem 2rem !important; }
 
-/* download button polish */
 .stDownloadButton button {
   background: linear-gradient(90deg, #2563eb, #1e3a8a);
   color: #ffffff !important;
@@ -87,13 +86,13 @@ with st.sidebar:
             st.error(f"❌ Error contacting backend: {e}")
             return None
 
-    # ---- Health Check ----
+    # Health Check
     if st.button("🔎 Test Backend"):
         health = safe_json_get(f"{BACKEND}/health")
         if health:
             st.success(f"✅ Backend OK — Mode: {health.get('mode')} | Paywalls: {health.get('paywalls_ready')}")
 
-    # ---- Simulation ----
+    # Simulation Controls
     st.divider()
     st.markdown("### 🔁 Simulation Controls")
 
@@ -111,7 +110,7 @@ with st.sidebar:
         except Exception as e:
             st.error(f"❌ Error stopping: {e}")
 
-    # ---- Manual Healing ----
+    # Manual Healing
     st.divider()
     st.markdown("### ⚡ Trigger Manual Healing")
     selected_event = st.selectbox("Select anomaly:", ["workflow_delay", "queue_pressure", "data_error", "api_failure"])
@@ -126,11 +125,10 @@ with st.sidebar:
         except Exception as e:
             st.error(f"❌ Failed to trigger: {e}")
 
-    # ---- FlowXO Webhook ----
+    # FlowXO Webhook
     st.divider()
     st.markdown("### 🌐 FlowXO Webhook (Manual or JSON)")
 
-    # Option 1: Quick dropdown
     wf = st.selectbox("Workflow", ["invoice_processing", "order_processing", "customer_support"])
     anomaly = st.selectbox("Anomaly Type", ["workflow_delay", "queue_pressure", "data_error", "api_failure"])
 
@@ -146,19 +144,9 @@ with st.sidebar:
         except Exception as e:
             st.error(f"❌ FlowXO webhook error: {e}")
 
-    # Option 2: Custom JSON payload
     st.markdown("#### 🧩 Custom JSON Payload")
-    example_json = {
-        "workflow_id": "invoice_processing",
-        "anomaly": "queue_pressure",
-        "user_id": "demo_client"
-    }
-
-    json_input = st.text_area(
-        "Edit or paste your JSON payload:",
-        value=json.dumps(example_json, indent=4),
-        height=160
-    )
+    example_json = {"workflow_id": "invoice_processing", "anomaly": "queue_pressure", "user_id": "demo_client"}
+    json_input = st.text_area("Edit or paste your JSON payload:", value=json.dumps(example_json, indent=4), height=160)
 
     if st.button("📤 Send JSON Webhook"):
         try:
@@ -189,12 +177,14 @@ try:
     logs_resp = requests.get(f"{BACKEND}/healing/logs?n=60", timeout=7)
     logs = logs_resp.json().get("logs", []) if logs_resp.status_code == 200 else []
 
-    total_heals = float(metrics.get("healings", 0))
+    # ✅ FIX: unify healings count with revenue entries
+    rev_logs = revenue_data.get("logs", [])
+    total_heals = len(rev_logs)
     avg_recovery = float(metrics.get("avg_recovery_pct", 0))
     avg_reward = float(metrics.get("avg_reward", 0))
     total_revenue = float(revenue_data.get("total_revenue", 0.0))
 
-    # ---- KPI Metrics ----
+    # KPI Metrics
     st.markdown("### ⚡ Healing & Monetization KPIs")
     c1, c2, c3, c4 = st.columns(4)
     c1.metric("🩺 Total Healings", f"{total_heals:.0f}")
@@ -208,22 +198,13 @@ try:
     st.divider()
     st.markdown("### 📥 Downloads")
 
-    # 1) Healing Slip per revenue entry
-    try:
-        rev_logs = revenue_data.get("logs", [])
-        if rev_logs:
-            df_rev = pd.DataFrame(rev_logs)
-            st.caption(f"🧾 Generate a slip for any healing entry (1–{len(df_rev)})")
-            idx = st.number_input(
-                "Pick entry #",
-                min_value=1,
-                max_value=len(df_rev),
-                value=1,
-                step=1
-            )
-            if st.button("📄 Build Healing Slip"):
-                entry = df_rev.iloc[idx - 1]
-                slip_text = f"""===============================
+    if rev_logs:
+        df_rev = pd.DataFrame(rev_logs)
+        st.caption(f"🧾 Generate a slip for any healing entry (1–{len(df_rev)})")
+        idx = st.number_input("Pick entry #", min_value=1, max_value=len(df_rev), value=1, step=1)
+        if st.button("📄 Build Healing Slip"):
+            entry = df_rev.iloc[idx - 1]
+            slip_text = f"""===============================
 💰 AI Healing Slip
 ===============================
 Timestamp: {entry['Timestamp']}
@@ -233,50 +214,40 @@ Cost: ${entry['Cost ($)']}
 ===============================
 Generated via Paywalls.ai × FlowXO
 """
-                st.download_button(
-                    label=f"⬇️ Download Healing Slip #{idx}",
-                    data=slip_text.encode("utf-8"),
-                    file_name=f"healing_slip_{idx}.txt",
-                    mime="text/plain"
-                )
-        else:
-            st.info("📭 No revenue entries yet to generate slips.")
-    except Exception as e:
-        st.error(f"⚠️ Could not generate healing slip: {e}")
-
-    # 2) Full Healing Log (from /healing/logs)
-    try:
-        logs_text = "\n".join(logs) if logs else "No logs yet."
-        st.download_button(
-            label="⬇️ Download Full Healing Log (text)",
-            data=logs_text.encode("utf-8"),
-            file_name="healing_log_full.txt",
-            mime="text/plain"
-        )
-    except Exception as e:
-        st.error(f"⚠️ Could not prepare log file: {e}")
-
-    # 3) Metrics CSV (from backend /metrics/download)
-    try:
-        csv_resp = requests.get(f"{BACKEND}/metrics/download", timeout=7)
-        if csv_resp.status_code == 200 and csv_resp.content:
             st.download_button(
-                label="⬇️ Download Metrics CSV",
-                data=csv_resp.content,
-                file_name="metrics_log.csv",
-                mime="text/csv"
+                label=f"⬇️ Download Healing Slip #{idx}",
+                data=slip_text.encode("utf-8"),
+                file_name=f"healing_slip_{idx}.txt",
+                mime="text/plain"
             )
-        else:
-            st.info("ℹ️ Metrics CSV not available yet.")
-    except Exception as e:
-        st.error(f"⚠️ Could not fetch metrics CSV: {e}")
+    else:
+        st.info("📭 No revenue entries yet to generate slips.")
 
-    # ---- Logs ----
+    logs_text = "\n".join(logs) if logs else "No logs yet."
+    st.download_button(
+        label="⬇️ Download Full Healing Log (text)",
+        data=logs_text.encode("utf-8"),
+        file_name="healing_log_full.txt",
+        mime="text/plain"
+    )
+
+    csv_resp = requests.get(f"{BACKEND}/metrics/download", timeout=7)
+    if csv_resp.status_code == 200 and csv_resp.content:
+        st.download_button(
+            label="⬇️ Download Metrics CSV",
+            data=csv_resp.content,
+            file_name="metrics_log.csv",
+            mime="text/csv"
+        )
+    else:
+        st.info("ℹ️ Metrics CSV not available yet.")
+
+    # Real-Time Logs
     st.divider()
     st.markdown("### 🩹 Real-Time Healing Logs")
     if logs:
         for line in logs[:40]:
-            style = "info"; icon = "💡"
+            style, icon = "info", "💡"
             if "⚠️" in line: style, icon = "warning", "🟡"
             elif "✅" in line: style, icon = "success", "🟢"
             elif "❌" in line: style, icon = "error", "🔴"
