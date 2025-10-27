@@ -35,3 +35,2457 @@
 2025-10-26 14:57:10 | demo_client | workflow_delay | $0.0500 | success
 2025-10-26 14:57:10 | order_processing | workflow_delay | $0.0974 | success
 2025-10-26T09:57:10.181220 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-26 23:20:21 | demo_client | queue_pressure | $0.0500 | success
+2025-10-26 23:21:34 | demo_client | queue_pressure | $0.0500 | success
+2025-10-26 23:21:42 | demo_client | api_failure | $0.0500 | success
+2025-10-26 23:21:42 | customer_support | api_failure | $0.0879 | success
+2025-10-26T18:21:42.272900 | customer_support | api_failure | $0.05 | simulated
+2025-10-26 23:21:49 | demo_client | api_failure | $0.0500 | success
+2025-10-26 23:21:49 | customer_support | api_failure | $0.0988 | success
+2025-10-26T18:21:49.351625 | customer_support | api_failure | $0.05 | simulated
+2025-10-26 23:21:54 | demo_client | workflow_delay | $0.0500 | success
+2025-10-26 23:21:54 | order_processing | workflow_delay | $0.0904 | success
+2025-10-26T18:21:54.424092 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-26 23:22:02 | demo_client | queue_pressure | $0.0500 | success
+2025-10-26 23:22:02 | invoice_processing | queue_pressure | $0.0932 | success
+2025-10-26T18:22:02.508466 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-26 23:22:10 | demo_client | api_failure | $0.0500 | success
+2025-10-26 23:22:10 | customer_support | api_failure | $0.0923 | success
+2025-10-26T18:22:10.535885 | customer_support | api_failure | $0.05 | simulated
+2025-10-26 23:22:20 | demo_client | queue_pressure | $0.0500 | success
+2025-10-26 23:22:20 | invoice_processing | queue_pressure | $0.0909 | success
+2025-10-26T18:22:20.567306 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-26 23:22:26 | demo_client | data_error | $0.0500 | success
+2025-10-26 23:22:26 | invoice_processing | data_error | $0.0902 | success
+2025-10-26T18:22:26.619055 | invoice_processing | data_error | $0.05 | simulated
+2025-10-26 23:22:33 | demo_client | api_failure | $0.0500 | success
+2025-10-26 23:22:33 | customer_support | api_failure | $0.0939 | success
+2025-10-26T18:22:33.721210 | customer_support | api_failure | $0.05 | simulated
+2025-10-26 23:22:47 | demo_client | queue_pressure | $0.0500 | success
+2025-10-26 23:23:56 | demo_client | data_error | $0.0500 | success
+2025-10-26 23:23:56 | customer_support | data_error | $0.0980 | success
+2025-10-26T18:23:56.790358 | customer_support | data_error | $0.05 | simulated
+2025-10-26 23:24:03 | demo_client | data_error | $0.0500 | success
+2025-10-26 23:24:03 | invoice_processing | data_error | $0.0875 | success
+2025-10-26T18:24:03.849161 | invoice_processing | data_error | $0.05 | simulated
+2025-10-26 23:24:10 | demo_client | workflow_delay | $0.0500 | success
+2025-10-26 23:24:10 | customer_support | workflow_delay | $0.0930 | success
+2025-10-26T18:24:10.926020 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-26 23:24:11 | demo_client | queue_pressure | $0.0500 | success
+2025-10-26 23:24:18 | demo_client | data_error | $0.0500 | success
+2025-10-26 23:24:18 | customer_support | data_error | $0.0919 | success
+2025-10-26T18:24:18.958016 | customer_support | data_error | $0.05 | simulated
+2025-10-26 23:24:24 | demo_client | queue_pressure | $0.0500 | success
+2025-10-26 23:24:24 | customer_support | queue_pressure | $0.0896 | success
+2025-10-26T18:24:24.035459 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-26 23:24:29 | demo_client | workflow_delay | $0.0500 | success
+2025-10-26 23:24:29 | customer_support | workflow_delay | $0.0927 | success
+2025-10-26T18:24:29.117662 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-26 23:24:37 | demo_client | workflow_delay | $0.0500 | success
+2025-10-26 23:24:37 | order_processing | workflow_delay | $0.0890 | success
+2025-10-26T18:24:37.208220 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-26 23:24:42 | demo_client | queue_pressure | $0.0500 | success
+2025-10-26 23:24:42 | customer_support | queue_pressure | $0.0974 | success
+2025-10-26T18:24:42.288208 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-26 23:24:47 | demo_client | data_error | $0.0500 | success
+2025-10-26 23:24:47 | customer_support | data_error | $0.0974 | success
+2025-10-26T18:24:47.358667 | customer_support | data_error | $0.05 | simulated
+2025-10-27 07:18:47 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 07:18:47 | invoice_processing | workflow_delay | $0.0967 | success
+2025-10-27T02:18:47.206301 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 07:18:57 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:18:57 | order_processing | queue_pressure | $0.0939 | success
+2025-10-27T02:18:57.280007 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 07:19:03 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 07:19:03 | invoice_processing | workflow_delay | $0.0981 | success
+2025-10-27T02:19:03.321275 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 07:19:05 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:19:12 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:19:12 | order_processing | queue_pressure | $0.0965 | success
+2025-10-27T02:19:12.349419 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 07:19:17 | demo_client | data_error | $0.0500 | success
+2025-10-27 07:19:17 | order_processing | data_error | $0.0928 | success
+2025-10-27T02:19:17.439266 | order_processing | data_error | $0.05 | simulated
+2025-10-27 07:19:24 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:19:25 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:19:25 | invoice_processing | queue_pressure | $0.0932 | success
+2025-10-27T02:19:25.468897 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 07:19:34 | demo_client | data_error | $0.0500 | success
+2025-10-27 07:19:34 | customer_support | data_error | $0.0925 | success
+2025-10-27T02:19:34.546365 | customer_support | data_error | $0.05 | simulated
+2025-10-27 07:19:39 | demo_client | api_failure | $0.0500 | success
+2025-10-27 07:19:39 | invoice_processing | api_failure | $0.0981 | success
+2025-10-27T02:19:39.580804 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 07:19:42 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:19:44 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:19:44 | invoice_processing | queue_pressure | $0.0959 | success
+2025-10-27T02:19:44.615579 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 07:19:53 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 07:19:53 | invoice_processing | workflow_delay | $0.0942 | success
+2025-10-27T02:19:53.690239 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 07:20:03 | demo_client | data_error | $0.0500 | success
+2025-10-27 07:20:03 | order_processing | data_error | $0.0938 | success
+2025-10-27T02:20:03.761203 | order_processing | data_error | $0.05 | simulated
+2025-10-27 07:20:09 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 07:20:09 | invoice_processing | workflow_delay | $0.0976 | success
+2025-10-27T02:20:09.834856 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 07:20:15 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:20:15 | invoice_processing | queue_pressure | $0.0891 | success
+2025-10-27T02:20:15.914793 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 07:20:21 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 07:20:21 | customer_support | workflow_delay | $0.0966 | success
+2025-10-27T02:20:21.983154 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 07:20:29 | demo_client | api_failure | $0.0500 | success
+2025-10-27 07:20:29 | invoice_processing | api_failure | $0.0967 | success
+2025-10-27T02:20:29.050413 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 07:20:35 | demo_client | data_error | $0.0500 | success
+2025-10-27 07:20:35 | customer_support | data_error | $0.0909 | success
+2025-10-27T02:20:35.126808 | customer_support | data_error | $0.05 | simulated
+2025-10-27 07:20:43 | demo_client | api_failure | $0.0500 | success
+2025-10-27 07:20:43 | customer_support | api_failure | $0.0972 | success
+2025-10-27T02:20:43.189851 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 07:20:50 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:20:50 | order_processing | queue_pressure | $0.0942 | success
+2025-10-27T02:20:50.234510 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 07:20:57 | demo_client | data_error | $0.0500 | success
+2025-10-27 07:20:57 | customer_support | data_error | $0.0880 | success
+2025-10-27T02:20:57.311500 | customer_support | data_error | $0.05 | simulated
+2025-10-27 07:21:04 | demo_client | data_error | $0.0500 | success
+2025-10-27 07:21:04 | order_processing | data_error | $0.0956 | success
+2025-10-27T02:21:04.381357 | order_processing | data_error | $0.05 | simulated
+2025-10-27 07:21:12 | demo_client | data_error | $0.0500 | success
+2025-10-27 07:21:12 | order_processing | data_error | $0.0877 | success
+2025-10-27T02:21:12.419055 | order_processing | data_error | $0.05 | simulated
+2025-10-27 07:21:20 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:21:20 | invoice_processing | queue_pressure | $0.0909 | success
+2025-10-27T02:21:20.465979 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 07:21:25 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:21:25 | invoice_processing | queue_pressure | $0.0987 | success
+2025-10-27T02:21:25.538135 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 07:21:33 | demo_client | data_error | $0.0500 | success
+2025-10-27 07:21:33 | invoice_processing | data_error | $0.0893 | success
+2025-10-27T02:21:33.568362 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 07:21:40 | demo_client | data_error | $0.0500 | success
+2025-10-27 07:21:40 | invoice_processing | data_error | $0.0940 | success
+2025-10-27T02:21:40.596679 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 07:21:47 | demo_client | api_failure | $0.0500 | success
+2025-10-27 07:21:47 | order_processing | api_failure | $0.0909 | success
+2025-10-27T02:21:47.663206 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 07:21:56 | demo_client | data_error | $0.0500 | success
+2025-10-27 07:21:56 | customer_support | data_error | $0.0928 | success
+2025-10-27T02:21:56.728285 | customer_support | data_error | $0.05 | simulated
+2025-10-27 07:22:05 | demo_client | data_error | $0.0500 | success
+2025-10-27 07:22:05 | invoice_processing | data_error | $0.0956 | success
+2025-10-27T02:22:05.774227 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 07:22:10 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 07:22:10 | invoice_processing | workflow_delay | $0.0908 | success
+2025-10-27T02:22:10.814587 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 07:22:17 | demo_client | api_failure | $0.0500 | success
+2025-10-27 07:22:17 | order_processing | api_failure | $0.0938 | success
+2025-10-27T02:22:17.841876 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 07:22:25 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 07:22:25 | invoice_processing | workflow_delay | $0.0917 | success
+2025-10-27T02:22:25.896475 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 07:22:34 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 07:22:34 | order_processing | workflow_delay | $0.0955 | success
+2025-10-27T02:22:34.945901 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 07:22:40 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:22:40 | invoice_processing | queue_pressure | $0.0989 | success
+2025-10-27T02:22:40.008494 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 07:22:46 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:22:46 | invoice_processing | queue_pressure | $0.0910 | success
+2025-10-27T02:22:46.056846 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 07:22:56 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 07:22:56 | customer_support | workflow_delay | $0.0951 | success
+2025-10-27T02:22:56.133422 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 07:23:03 | demo_client | data_error | $0.0500 | success
+2025-10-27 07:23:03 | invoice_processing | data_error | $0.0903 | success
+2025-10-27T02:23:03.188999 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 07:23:13 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 07:23:13 | order_processing | workflow_delay | $0.0977 | success
+2025-10-27T02:23:13.243088 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 07:23:21 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 07:23:21 | customer_support | workflow_delay | $0.0936 | success
+2025-10-27T02:23:21.290659 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 07:23:27 | demo_client | data_error | $0.0500 | success
+2025-10-27 07:23:27 | invoice_processing | data_error | $0.0920 | success
+2025-10-27T02:23:27.386792 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 07:23:36 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 07:23:36 | order_processing | workflow_delay | $0.0955 | success
+2025-10-27T02:23:36.447920 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 07:23:42 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:23:42 | invoice_processing | queue_pressure | $0.0986 | success
+2025-10-27T02:23:42.479853 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 07:23:43 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:23:48 | demo_client | api_failure | $0.0500 | success
+2025-10-27 07:23:48 | order_processing | api_failure | $0.0956 | success
+2025-10-27T02:23:48.888410 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 07:23:51 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:23:51 | order_processing | queue_pressure | $0.0887 | success
+2025-10-27T02:23:51.557337 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 07:23:56 | demo_client | api_failure | $0.0500 | success
+2025-10-27 07:23:56 | order_processing | api_failure | $0.0979 | success
+2025-10-27T02:23:56.981332 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 07:23:57 | demo_client | api_failure | $0.0500 | success
+2025-10-27 07:23:57 | invoice_processing | api_failure | $0.0980 | success
+2025-10-27T02:23:57.646882 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 07:23:59 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:24:03 | demo_client | api_failure | $0.0500 | success
+2025-10-27 07:24:03 | order_processing | api_failure | $0.0900 | success
+2025-10-27T02:24:03.676942 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 07:24:05 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:24:05 | order_processing | queue_pressure | $0.0900 | success
+2025-10-27T02:24:05.030233 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 07:24:08 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:24:08 | customer_support | queue_pressure | $0.0885 | success
+2025-10-27T02:24:08.762414 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 07:24:11 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:24:13 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:24:13 | order_processing | queue_pressure | $0.0918 | success
+2025-10-27T02:24:13.792617 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 07:24:14 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:24:14 | customer_support | queue_pressure | $0.0932 | success
+2025-10-27T02:24:14.107800 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 07:24:18 | demo_client | data_error | $0.0500 | success
+2025-10-27 07:24:18 | customer_support | data_error | $0.0962 | success
+2025-10-27T02:24:18.868181 | customer_support | data_error | $0.05 | simulated
+2025-10-27 07:24:22 | demo_client | api_failure | $0.0500 | success
+2025-10-27 07:24:22 | customer_support | api_failure | $0.0934 | success
+2025-10-27T02:24:22.176630 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 07:24:25 | demo_client | data_error | $0.0500 | success
+2025-10-27 07:24:25 | customer_support | data_error | $0.0936 | success
+2025-10-27T02:24:25.950759 | customer_support | data_error | $0.05 | simulated
+2025-10-27 07:24:29 | demo_client | api_failure | $0.0500 | success
+2025-10-27 07:24:29 | invoice_processing | api_failure | $0.0914 | success
+2025-10-27T02:24:29.250279 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 07:24:31 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:24:31 | order_processing | queue_pressure | $0.0905 | success
+2025-10-27T02:24:31.982846 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 07:24:38 | demo_client | api_failure | $0.0500 | success
+2025-10-27 07:24:38 | customer_support | api_failure | $0.0963 | success
+2025-10-27T02:24:38.047427 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 07:24:39 | demo_client | api_failure | $0.0500 | success
+2025-10-27 07:24:39 | order_processing | api_failure | $0.0875 | success
+2025-10-27T02:24:39.316696 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 07:24:47 | demo_client | api_failure | $0.0500 | success
+2025-10-27 07:24:47 | order_processing | api_failure | $0.0942 | success
+2025-10-27T02:24:47.111797 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 07:24:48 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:24:48 | order_processing | queue_pressure | $0.0954 | success
+2025-10-27T02:24:48.339907 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 07:24:52 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 07:24:52 | order_processing | workflow_delay | $0.0923 | success
+2025-10-27T02:24:52.149342 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 07:24:54 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:24:54 | invoice_processing | queue_pressure | $0.0957 | success
+2025-10-27T02:24:54.385816 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 07:24:59 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 07:24:59 | order_processing | workflow_delay | $0.0878 | success
+2025-10-27T02:24:59.449336 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 07:25:00 | demo_client | api_failure | $0.0500 | success
+2025-10-27 07:25:00 | customer_support | api_failure | $0.0953 | success
+2025-10-27T02:25:00.182758 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 07:25:06 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 07:25:06 | customer_support | workflow_delay | $0.0897 | success
+2025-10-27T02:25:06.213853 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 07:25:06 | demo_client | data_error | $0.0500 | success
+2025-10-27 07:25:06 | customer_support | data_error | $0.0980 | success
+2025-10-27T02:25:06.475787 | customer_support | data_error | $0.05 | simulated
+2025-10-27 07:25:12 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:25:12 | customer_support | queue_pressure | $0.0948 | success
+2025-10-27T02:25:12.501172 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 07:25:13 | demo_client | data_error | $0.0500 | success
+2025-10-27 07:25:13 | customer_support | data_error | $0.0942 | success
+2025-10-27T02:25:13.256073 | customer_support | data_error | $0.05 | simulated
+2025-10-27 07:25:20 | demo_client | api_failure | $0.0500 | success
+2025-10-27 07:25:20 | customer_support | api_failure | $0.0974 | success
+2025-10-27T02:25:20.309821 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 07:25:21 | demo_client | api_failure | $0.0500 | success
+2025-10-27 07:25:21 | customer_support | api_failure | $0.0894 | success
+2025-10-27T02:25:21.569255 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 07:25:28 | demo_client | data_error | $0.0500 | success
+2025-10-27 07:25:28 | customer_support | data_error | $0.0883 | success
+2025-10-27T02:25:28.373578 | customer_support | data_error | $0.05 | simulated
+2025-10-27 07:25:28 | demo_client | api_failure | $0.0500 | success
+2025-10-27 07:25:28 | customer_support | api_failure | $0.0983 | success
+2025-10-27T02:25:28.628211 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 07:25:33 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 07:25:33 | customer_support | workflow_delay | $0.0931 | success
+2025-10-27T02:25:33.704009 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 07:25:35 | demo_client | data_error | $0.0500 | success
+2025-10-27 07:25:35 | invoice_processing | data_error | $0.0977 | success
+2025-10-27T02:25:35.453719 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 07:25:43 | demo_client | api_failure | $0.0500 | success
+2025-10-27 07:25:43 | invoice_processing | api_failure | $0.0944 | success
+2025-10-27T02:25:43.727848 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 07:25:45 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:25:45 | invoice_processing | queue_pressure | $0.0958 | success
+2025-10-27T02:25:45.541953 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 07:25:48 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:25:51 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:25:51 | order_processing | queue_pressure | $0.0955 | success
+2025-10-27T02:25:51.570393 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 07:25:53 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:25:53 | demo_client | data_error | $0.0500 | success
+2025-10-27 07:25:53 | order_processing | data_error | $0.0883 | success
+2025-10-27T02:25:53.744826 | order_processing | data_error | $0.05 | simulated
+2025-10-27 07:25:57 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 07:25:57 | invoice_processing | queue_pressure | $0.0920 | success
+2025-10-27T02:25:57.634264 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 07:25:59 | demo_client | data_error | $0.0500 | success
+2025-10-27 07:25:59 | order_processing | data_error | $0.0955 | success
+2025-10-27T02:25:59.810903 | order_processing | data_error | $0.05 | simulated
+2025-10-27 07:26:02 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 07:26:02 | invoice_processing | workflow_delay | $0.0897 | success
+2025-10-27T02:26:02.704272 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 10:26:08 | demo_client | api_failure | $0.0500 | success
+2025-10-27 10:26:08 | invoice_processing | api_failure | $0.0881 | success
+2025-10-27T05:26:08.435865 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 10:26:09 | demo_client | data_error | $0.0500 | success
+2025-10-27 10:26:09 | invoice_processing | data_error | $0.0984 | success
+2025-10-27T05:26:09.349606 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 10:26:15 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 10:26:15 | customer_support | workflow_delay | $0.0888 | success
+2025-10-27T05:26:15.474772 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 10:26:16 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 10:26:16 | invoice_processing | workflow_delay | $0.0887 | success
+2025-10-27T05:26:16.382835 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 13:28:00 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:28:00 | order_processing | workflow_delay | $0.0978 | success
+2025-10-27T08:28:00.381470 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 13:28:00 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:28:00 | customer_support | queue_pressure | $0.0964 | success
+2025-10-27T08:28:00.596462 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 13:28:05 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:28:05 | order_processing | queue_pressure | $0.0929 | success
+2025-10-27T08:28:05.961326 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:28:08 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:28:08 | order_processing | data_error | $0.0955 | success
+2025-10-27T08:28:08.465895 | order_processing | data_error | $0.05 | simulated
+2025-10-27 13:28:12 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:28:12 | customer_support | api_failure | $0.0967 | success
+2025-10-27T08:28:12.017473 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 13:28:14 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:28:14 | invoice_processing | data_error | $0.0956 | success
+2025-10-27T08:28:14.508849 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 13:28:18 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:28:18 | order_processing | queue_pressure | $0.0880 | success
+2025-10-27T08:28:18.061901 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:28:22 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:28:22 | order_processing | data_error | $0.0911 | success
+2025-10-27T08:28:22.553617 | order_processing | data_error | $0.05 | simulated
+2025-10-27 13:28:27 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:28:27 | invoice_processing | workflow_delay | $0.0979 | success
+2025-10-27T08:28:27.102032 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 13:28:28 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:28:28 | customer_support | api_failure | $0.0934 | success
+2025-10-27T08:28:28.602385 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 13:28:35 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:28:35 | order_processing | queue_pressure | $0.0946 | success
+2025-10-27T08:28:35.663329 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:28:36 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:28:36 | customer_support | api_failure | $0.0899 | success
+2025-10-27T08:28:36.172509 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 13:28:41 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:28:41 | order_processing | api_failure | $0.0948 | success
+2025-10-27T08:28:41.211373 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 13:28:43 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:28:43 | order_processing | api_failure | $0.0880 | success
+2025-10-27T08:28:43.719914 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 13:28:48 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:28:48 | order_processing | queue_pressure | $0.0929 | success
+2025-10-27T08:28:48.340237 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:28:50 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:28:50 | order_processing | workflow_delay | $0.0918 | success
+2025-10-27T08:28:50.756441 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 13:28:56 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:28:56 | customer_support | api_failure | $0.0957 | success
+2025-10-27T08:28:56.811996 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 13:28:57 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:28:57 | invoice_processing | data_error | $0.0987 | success
+2025-10-27T08:28:57.367263 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 13:29:02 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:29:02 | invoice_processing | api_failure | $0.0880 | success
+2025-10-27T08:29:02.864349 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 13:29:03 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:29:03 | invoice_processing | api_failure | $0.0883 | success
+2025-10-27T08:29:03.413101 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 13:29:09 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:29:09 | order_processing | api_failure | $0.0883 | success
+2025-10-27T08:29:09.900654 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 13:29:12 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:29:12 | customer_support | queue_pressure | $0.0937 | success
+2025-10-27T08:29:12.439943 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 13:29:18 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:29:18 | customer_support | queue_pressure | $0.0964 | success
+2025-10-27T08:29:18.925816 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 13:29:21 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:29:21 | order_processing | workflow_delay | $0.0945 | success
+2025-10-27T08:29:21.487342 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 13:29:27 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:29:27 | order_processing | api_failure | $0.0952 | success
+2025-10-27T08:29:27.512258 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 13:29:27 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:29:27 | invoice_processing | data_error | $0.0894 | success
+2025-10-27T08:29:27.959168 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 13:29:36 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:29:36 | invoice_processing | data_error | $0.0978 | success
+2025-10-27T08:29:36.032243 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 13:29:37 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:29:37 | customer_support | workflow_delay | $0.0976 | success
+2025-10-27T08:29:37.579435 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 13:29:45 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:29:45 | order_processing | api_failure | $0.0940 | success
+2025-10-27T08:29:45.112438 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 13:29:45 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:29:45 | customer_support | workflow_delay | $0.0949 | success
+2025-10-27T08:29:45.663104 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 13:29:50 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:29:50 | order_processing | queue_pressure | $0.0933 | success
+2025-10-27T08:29:50.179879 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:29:52 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:29:52 | customer_support | workflow_delay | $0.0917 | success
+2025-10-27T08:29:52.741562 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 13:29:58 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:29:58 | customer_support | queue_pressure | $0.0948 | success
+2025-10-27T08:29:58.850007 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 13:30:00 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:30:00 | customer_support | workflow_delay | $0.0963 | success
+2025-10-27T08:30:00.229018 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 13:30:07 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:30:07 | invoice_processing | api_failure | $0.0888 | success
+2025-10-27T08:30:07.920690 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 13:30:09 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:30:09 | customer_support | queue_pressure | $0.0961 | success
+2025-10-27T08:30:09.291883 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 13:30:12 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:30:12 | invoice_processing | queue_pressure | $0.0876 | success
+2025-10-27T08:30:12.967223 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:30:18 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:30:18 | invoice_processing | queue_pressure | $0.0988 | success
+2025-10-27T08:30:18.335679 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:30:23 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:30:23 | invoice_processing | api_failure | $0.0886 | success
+2025-10-27T08:30:23.010487 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 13:30:24 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:30:24 | invoice_processing | queue_pressure | $0.0907 | success
+2025-10-27T08:30:24.378722 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:30:29 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:30:29 | order_processing | workflow_delay | $0.0932 | success
+2025-10-27T08:30:29.056174 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 13:30:33 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:30:33 | order_processing | queue_pressure | $0.0955 | success
+2025-10-27T08:30:33.439375 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:30:36 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:30:36 | customer_support | workflow_delay | $0.0906 | success
+2025-10-27T08:30:36.100512 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 13:30:39 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:30:39 | customer_support | api_failure | $0.0943 | success
+2025-10-27T08:30:39.482186 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 13:30:46 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:30:46 | invoice_processing | data_error | $0.0926 | success
+2025-10-27T08:30:46.141995 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 13:30:46 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:30:46 | order_processing | data_error | $0.0968 | success
+2025-10-27T08:30:46.535465 | order_processing | data_error | $0.05 | simulated
+2025-10-27 13:30:51 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:30:51 | customer_support | api_failure | $0.0927 | success
+2025-10-27T08:30:51.622599 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 13:30:52 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:30:52 | order_processing | queue_pressure | $0.0936 | success
+2025-10-27T08:30:52.221611 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:30:57 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:30:57 | invoice_processing | api_failure | $0.0895 | success
+2025-10-27T08:30:57.266553 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 13:30:57 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:30:57 | customer_support | api_failure | $0.0964 | success
+2025-10-27T08:30:57.669037 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 13:31:03 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:31:03 | invoice_processing | queue_pressure | $0.0930 | success
+2025-10-27T08:31:03.333155 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:31:05 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:31:05 | order_processing | workflow_delay | $0.0938 | success
+2025-10-27T08:31:05.733461 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 13:31:10 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:31:10 | invoice_processing | queue_pressure | $0.0922 | success
+2025-10-27T08:31:10.411888 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:31:13 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:31:13 | order_processing | api_failure | $0.0981 | success
+2025-10-27T08:31:13.812484 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 13:31:15 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:31:15 | order_processing | queue_pressure | $0.0973 | success
+2025-10-27T08:31:15.491218 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:31:20 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:31:20 | invoice_processing | workflow_delay | $0.0939 | success
+2025-10-27T08:31:20.860596 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 13:31:23 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:31:23 | invoice_processing | workflow_delay | $0.0948 | success
+2025-10-27T08:31:23.517774 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 13:31:28 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:31:28 | order_processing | workflow_delay | $0.0888 | success
+2025-10-27T08:31:28.937416 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 13:31:31 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:31:31 | invoice_processing | queue_pressure | $0.0898 | success
+2025-10-27T08:31:31.587016 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:31:36 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:31:36 | invoice_processing | api_failure | $0.0947 | success
+2025-10-27T08:31:36.667263 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 13:31:39 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:31:39 | order_processing | data_error | $0.0893 | success
+2025-10-27T08:31:39.012855 | order_processing | data_error | $0.05 | simulated
+2025-10-27 13:31:44 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:31:44 | customer_support | queue_pressure | $0.0965 | success
+2025-10-27T08:31:44.114611 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 13:31:44 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:31:44 | invoice_processing | data_error | $0.0926 | success
+2025-10-27T08:31:44.746857 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 13:31:51 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:31:51 | customer_support | api_failure | $0.0968 | success
+2025-10-27T08:31:51.160576 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 13:31:51 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:31:51 | invoice_processing | queue_pressure | $0.0955 | success
+2025-10-27T08:31:51.790877 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:31:59 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:31:59 | invoice_processing | api_failure | $0.0882 | success
+2025-10-27T08:31:59.850610 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 13:32:00 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:32:00 | customer_support | queue_pressure | $0.0903 | success
+2025-10-27T08:32:00.221538 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 13:32:08 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:32:08 | customer_support | workflow_delay | $0.0957 | success
+2025-10-27T08:32:08.922177 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 13:32:10 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:32:10 | order_processing | api_failure | $0.0911 | success
+2025-10-27T08:32:10.261790 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 13:32:18 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:32:18 | order_processing | workflow_delay | $0.0986 | success
+2025-10-27T08:32:18.328540 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 13:32:18 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:32:18 | order_processing | queue_pressure | $0.0923 | success
+2025-10-27T08:32:18.986857 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:32:25 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:32:25 | customer_support | workflow_delay | $0.0958 | success
+2025-10-27T08:32:25.049815 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 13:32:27 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:32:27 | customer_support | api_failure | $0.0933 | success
+2025-10-27T08:32:27.408646 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 13:32:30 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:32:30 | customer_support | data_error | $0.0951 | success
+2025-10-27T08:32:30.112257 | customer_support | data_error | $0.05 | simulated
+2025-10-27 13:32:37 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:32:37 | customer_support | api_failure | $0.0927 | success
+2025-10-27T08:32:37.471807 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 13:32:38 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:32:38 | invoice_processing | queue_pressure | $0.0971 | success
+2025-10-27T08:32:38.172725 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:32:42 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:32:42 | invoice_processing | api_failure | $0.0891 | success
+2025-10-27T08:32:42.536289 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 13:32:46 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:32:46 | order_processing | api_failure | $0.0895 | success
+2025-10-27T08:32:46.250687 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 13:32:48 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:32:48 | order_processing | queue_pressure | $0.0907 | success
+2025-10-27T08:32:48.601921 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:32:52 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:32:52 | invoice_processing | api_failure | $0.0961 | success
+2025-10-27T08:32:52.312495 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 13:32:57 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:32:57 | customer_support | workflow_delay | $0.0950 | success
+2025-10-27T08:32:57.665742 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 13:33:00 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:33:00 | customer_support | data_error | $0.0925 | success
+2025-10-27T08:33:00.352460 | customer_support | data_error | $0.05 | simulated
+2025-10-27 13:33:05 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:33:05 | customer_support | data_error | $0.0989 | success
+2025-10-27T08:33:05.728782 | customer_support | data_error | $0.05 | simulated
+2025-10-27 13:33:10 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:33:10 | customer_support | queue_pressure | $0.0986 | success
+2025-10-27T08:33:10.415371 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 13:33:13 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:33:13 | customer_support | api_failure | $0.0902 | success
+2025-10-27T08:33:13.792125 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 13:33:17 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:33:17 | order_processing | workflow_delay | $0.0978 | success
+2025-10-27T08:33:17.481192 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 13:33:20 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:33:20 | order_processing | workflow_delay | $0.0888 | success
+2025-10-27T08:33:20.860183 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 13:33:24 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:33:24 | customer_support | api_failure | $0.0876 | success
+2025-10-27T08:33:24.545925 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 13:33:27 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:33:27 | order_processing | data_error | $0.0930 | success
+2025-10-27T08:33:27.914351 | order_processing | data_error | $0.05 | simulated
+2025-10-27 13:33:31 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:33:31 | invoice_processing | api_failure | $0.0986 | success
+2025-10-27T08:33:31.616113 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 13:33:32 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:33:32 | order_processing | data_error | $0.0936 | success
+2025-10-27T08:33:32.960428 | order_processing | data_error | $0.05 | simulated
+2025-10-27 13:33:36 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:33:36 | customer_support | api_failure | $0.0884 | success
+2025-10-27T08:33:36.687034 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 13:33:39 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:33:39 | invoice_processing | api_failure | $0.0927 | success
+2025-10-27T08:33:39.031939 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 13:33:43 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:33:43 | customer_support | api_failure | $0.0984 | success
+2025-10-27T08:33:43.754259 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 13:33:49 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:33:49 | invoice_processing | data_error | $0.0943 | success
+2025-10-27T08:33:49.106777 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 13:33:53 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:33:53 | customer_support | api_failure | $0.0881 | success
+2025-10-27T08:33:53.822558 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 13:33:56 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:33:56 | customer_support | queue_pressure | $0.0934 | success
+2025-10-27T08:33:56.153510 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 13:33:58 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:33:58 | customer_support | data_error | $0.0976 | success
+2025-10-27T08:33:58.866864 | customer_support | data_error | $0.05 | simulated
+2025-10-27 13:34:01 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:34:01 | order_processing | api_failure | $0.0942 | success
+2025-10-27T08:34:01.203667 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 13:34:05 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:34:05 | invoice_processing | api_failure | $0.0954 | success
+2025-10-27T08:34:05.928887 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 13:34:10 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:34:10 | invoice_processing | queue_pressure | $0.0876 | success
+2025-10-27T08:34:10.268618 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:34:10 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:34:10 | invoice_processing | data_error | $0.0911 | success
+2025-10-27T08:34:10.998606 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 13:34:17 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:34:17 | order_processing | workflow_delay | $0.0948 | success
+2025-10-27T08:34:17.061453 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 13:34:19 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:34:19 | order_processing | workflow_delay | $0.0978 | success
+2025-10-27T08:34:19.332885 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 13:34:24 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:34:24 | invoice_processing | queue_pressure | $0.0958 | success
+2025-10-27T08:34:24.128503 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:34:25 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:34:25 | customer_support | queue_pressure | $0.0884 | success
+2025-10-27T08:34:25.375784 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 13:34:32 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:34:32 | invoice_processing | workflow_delay | $0.0919 | success
+2025-10-27T08:34:32.195229 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 13:34:34 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:34:34 | customer_support | api_failure | $0.0888 | success
+2025-10-27T08:34:34.439458 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 13:34:41 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:34:41 | order_processing | data_error | $0.0934 | success
+2025-10-27T08:34:41.257142 | order_processing | data_error | $0.05 | simulated
+2025-10-27 13:34:41 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:34:41 | order_processing | queue_pressure | $0.0924 | success
+2025-10-27T08:34:41.514704 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:34:46 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:34:46 | customer_support | queue_pressure | $0.0972 | success
+2025-10-27T08:34:46.321220 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 13:34:47 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:34:47 | customer_support | api_failure | $0.0939 | success
+2025-10-27T08:34:47.572359 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 13:34:52 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:34:52 | customer_support | workflow_delay | $0.0974 | success
+2025-10-27T08:34:52.384207 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 13:34:56 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:34:56 | customer_support | workflow_delay | $0.0905 | success
+2025-10-27T08:34:56.636189 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 13:35:01 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:35:01 | order_processing | workflow_delay | $0.0972 | success
+2025-10-27T08:35:01.462097 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 13:35:02 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:35:02 | order_processing | api_failure | $0.0900 | success
+2025-10-27T08:35:02.675217 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 13:35:07 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:35:07 | order_processing | queue_pressure | $0.0904 | success
+2025-10-27T08:35:07.743970 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:35:08 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:35:08 | invoice_processing | data_error | $0.0973 | success
+2025-10-27T08:35:08.526614 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 13:35:13 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:35:13 | order_processing | queue_pressure | $0.0901 | success
+2025-10-27T08:35:13.808059 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:35:18 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:35:18 | customer_support | api_failure | $0.0949 | success
+2025-10-27T08:35:18.591377 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 13:35:21 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:35:21 | customer_support | data_error | $0.0961 | success
+2025-10-27T08:35:21.878956 | customer_support | data_error | $0.05 | simulated
+2025-10-27 13:35:24 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:35:24 | order_processing | data_error | $0.0899 | success
+2025-10-27T08:35:24.666247 | order_processing | data_error | $0.05 | simulated
+2025-10-27 13:35:27 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:35:27 | customer_support | data_error | $0.0983 | success
+2025-10-27T08:35:27.944545 | customer_support | data_error | $0.05 | simulated
+2025-10-27 13:35:29 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:35:29 | invoice_processing | api_failure | $0.0930 | success
+2025-10-27T08:35:29.741252 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 13:35:34 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:35:34 | order_processing | workflow_delay | $0.0889 | success
+2025-10-27T08:35:34.813343 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 13:35:35 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:35:35 | order_processing | workflow_delay | $0.0895 | success
+2025-10-27T08:35:35.008132 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 13:35:39 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:35:39 | order_processing | api_failure | $0.0982 | success
+2025-10-27T08:35:39.881103 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 13:35:44 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:35:44 | order_processing | workflow_delay | $0.0930 | success
+2025-10-27T08:35:44.071807 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 13:35:44 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:35:44 | invoice_processing | workflow_delay | $0.0905 | success
+2025-10-27T08:35:44.955231 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 13:35:52 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:35:52 | customer_support | queue_pressure | $0.0903 | success
+2025-10-27T08:35:52.144763 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 13:35:55 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:35:55 | customer_support | data_error | $0.0955 | success
+2025-10-27T08:35:55.029319 | customer_support | data_error | $0.05 | simulated
+2025-10-27 13:36:00 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:36:00 | invoice_processing | queue_pressure | $0.0981 | success
+2025-10-27T08:36:00.211427 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:36:01 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:36:01 | invoice_processing | data_error | $0.0945 | success
+2025-10-27T08:36:01.094232 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 13:36:08 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:36:08 | order_processing | workflow_delay | $0.0899 | success
+2025-10-27T08:36:08.160344 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 13:36:10 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:36:10 | order_processing | api_failure | $0.0895 | success
+2025-10-27T08:36:10.276151 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 13:36:13 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:36:13 | order_processing | api_failure | $0.0886 | success
+2025-10-27T08:36:13.229535 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 13:36:16 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:36:16 | order_processing | queue_pressure | $0.0909 | success
+2025-10-27T08:36:16.344948 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:36:22 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:36:22 | order_processing | workflow_delay | $0.0949 | success
+2025-10-27T08:36:22.421266 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 13:36:23 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:36:23 | customer_support | data_error | $0.0958 | success
+2025-10-27T08:36:23.304417 | customer_support | data_error | $0.05 | simulated
+2025-10-27 13:36:29 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:36:29 | customer_support | api_failure | $0.0879 | success
+2025-10-27T08:36:29.486942 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 13:36:30 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:36:30 | invoice_processing | api_failure | $0.0908 | success
+2025-10-27T08:36:30.376668 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 13:36:35 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:36:35 | order_processing | workflow_delay | $0.0938 | success
+2025-10-27T08:36:35.557016 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 13:36:39 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:36:39 | order_processing | data_error | $0.0908 | success
+2025-10-27T08:36:39.439211 | order_processing | data_error | $0.05 | simulated
+2025-10-27 13:36:43 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:36:43 | customer_support | data_error | $0.0953 | success
+2025-10-27T08:36:43.619474 | customer_support | data_error | $0.05 | simulated
+2025-10-27 13:36:44 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:36:44 | order_processing | queue_pressure | $0.0903 | success
+2025-10-27T08:36:44.512159 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:36:49 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:36:49 | customer_support | api_failure | $0.0961 | success
+2025-10-27T08:36:49.698923 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 13:36:54 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:36:54 | customer_support | api_failure | $0.0973 | success
+2025-10-27T08:36:54.574762 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 13:36:57 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:36:57 | invoice_processing | api_failure | $0.0910 | success
+2025-10-27T08:36:57.773000 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 13:37:01 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:37:01 | order_processing | api_failure | $0.0903 | success
+2025-10-27T08:37:01.642913 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 13:37:06 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:37:06 | invoice_processing | queue_pressure | $0.0989 | success
+2025-10-27T08:37:06.718378 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:37:06 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:37:06 | invoice_processing | api_failure | $0.0887 | success
+2025-10-27T08:37:06.833759 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 13:37:12 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:37:12 | customer_support | api_failure | $0.0888 | success
+2025-10-27T08:37:12.793544 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 13:37:16 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:37:16 | order_processing | workflow_delay | $0.0907 | success
+2025-10-27T08:37:16.904071 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 13:37:21 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:37:21 | customer_support | workflow_delay | $0.0953 | success
+2025-10-27T08:37:21.857637 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 13:37:24 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:37:24 | order_processing | queue_pressure | $0.0936 | success
+2025-10-27T08:37:24.978823 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:37:31 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:37:31 | order_processing | data_error | $0.0984 | success
+2025-10-27T08:37:31.049953 | order_processing | data_error | $0.05 | simulated
+2025-10-27 13:37:31 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:37:31 | invoice_processing | queue_pressure | $0.0891 | success
+2025-10-27T08:37:31.937325 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:37:40 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:37:40 | order_processing | workflow_delay | $0.0903 | success
+2025-10-27T08:37:40.119365 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 13:37:42 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:37:42 | order_processing | queue_pressure | $0.0912 | success
+2025-10-27T08:37:42.033129 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:37:50 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:37:50 | invoice_processing | queue_pressure | $0.0885 | success
+2025-10-27T08:37:50.193104 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:37:52 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:37:52 | customer_support | queue_pressure | $0.0877 | success
+2025-10-27T08:37:52.111988 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 13:37:55 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:37:55 | customer_support | workflow_delay | $0.0981 | success
+2025-10-27T08:37:55.259735 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 13:37:59 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:37:59 | order_processing | workflow_delay | $0.0981 | success
+2025-10-27T08:37:59.189384 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 13:38:00 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:38:00 | order_processing | workflow_delay | $0.0936 | success
+2025-10-27T08:38:00.309580 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 13:38:04 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:38:04 | customer_support | queue_pressure | $0.0941 | success
+2025-10-27T08:38:04.257562 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 13:38:10 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:38:10 | invoice_processing | api_failure | $0.0957 | success
+2025-10-27T08:38:10.368466 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 13:38:13 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:38:13 | customer_support | api_failure | $0.0937 | success
+2025-10-27T08:38:13.330562 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 13:38:15 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:38:15 | invoice_processing | queue_pressure | $0.0913 | success
+2025-10-27T08:38:15.429867 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:38:18 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 13:38:18 | customer_support | workflow_delay | $0.0989 | success
+2025-10-27T08:38:18.411392 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 13:38:20 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:38:20 | order_processing | api_failure | $0.0884 | success
+2025-10-27T08:38:20.493439 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 13:38:24 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:38:24 | order_processing | queue_pressure | $0.0974 | success
+2025-10-27T08:38:24.478844 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:38:27 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:38:27 | customer_support | api_failure | $0.0929 | success
+2025-10-27T08:38:27.571392 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 13:38:29 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:38:29 | order_processing | queue_pressure | $0.0920 | success
+2025-10-27T08:38:29.544144 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:38:36 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:38:36 | customer_support | data_error | $0.0884 | success
+2025-10-27T08:38:36.627511 | customer_support | data_error | $0.05 | simulated
+2025-10-27 13:38:37 | demo_client | data_error | $0.0500 | success
+2025-10-27 13:38:37 | customer_support | data_error | $0.0986 | success
+2025-10-27T08:38:37.651522 | customer_support | data_error | $0.05 | simulated
+2025-10-27 13:38:42 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 13:38:42 | invoice_processing | queue_pressure | $0.0917 | success
+2025-10-27T08:38:42.671244 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 13:38:43 | demo_client | api_failure | $0.0500 | success
+2025-10-27 13:38:43 | invoice_processing | api_failure | $0.0932 | success
+2025-10-27T08:38:43.758594 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:27:45 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:27:45 | invoice_processing | data_error | $0.0888 | success
+2025-10-27T10:27:45.338503 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:27:47 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:27:47 | customer_support | api_failure | $0.0979 | success
+2025-10-27T10:27:47.183157 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:27:52 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:27:52 | order_processing | queue_pressure | $0.0877 | success
+2025-10-27T10:27:52.455853 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:27:53 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:27:53 | invoice_processing | queue_pressure | $0.0979 | success
+2025-10-27T10:27:53.224702 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:28:00 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:28:00 | order_processing | workflow_delay | $0.0901 | success
+2025-10-27T10:28:00.264203 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:28:02 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:28:02 | customer_support | data_error | $0.0990 | success
+2025-10-27T10:28:02.492980 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:28:09 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:28:09 | order_processing | workflow_delay | $0.0959 | success
+2025-10-27T10:28:09.284649 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:28:12 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:28:12 | order_processing | queue_pressure | $0.0983 | success
+2025-10-27T10:28:12.516357 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:28:18 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:28:18 | invoice_processing | queue_pressure | $0.0926 | success
+2025-10-27T10:28:18.311194 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:28:19 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:28:19 | invoice_processing | api_failure | $0.0975 | success
+2025-10-27T10:28:19.541026 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:28:24 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:28:24 | invoice_processing | data_error | $0.0973 | success
+2025-10-27T10:28:24.335057 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:28:25 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:28:25 | order_processing | data_error | $0.0942 | success
+2025-10-27T10:28:25.562111 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:28:32 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:28:32 | customer_support | data_error | $0.0894 | success
+2025-10-27T10:28:32.355315 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:28:33 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:28:33 | customer_support | data_error | $0.0921 | success
+2025-10-27T10:28:33.582212 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:28:41 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:28:41 | invoice_processing | workflow_delay | $0.0918 | success
+2025-10-27T10:28:41.378000 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:28:41 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:28:41 | order_processing | api_failure | $0.0894 | success
+2025-10-27T10:28:41.611832 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:28:46 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:28:46 | customer_support | data_error | $0.0958 | success
+2025-10-27T10:28:46.400209 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:28:48 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:28:48 | order_processing | data_error | $0.0898 | success
+2025-10-27T10:28:48.639610 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:28:53 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:28:53 | order_processing | data_error | $0.0885 | success
+2025-10-27T10:28:53.427975 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:28:55 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:28:55 | order_processing | data_error | $0.0897 | success
+2025-10-27T10:28:55.661585 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:28:59 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:28:59 | invoice_processing | api_failure | $0.0987 | success
+2025-10-27T10:28:59.453872 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:29:02 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:29:02 | invoice_processing | queue_pressure | $0.0919 | success
+2025-10-27T10:29:02.694883 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:29:04 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:29:04 | order_processing | data_error | $0.0942 | success
+2025-10-27T10:29:04.479517 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:29:11 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:29:11 | order_processing | data_error | $0.0959 | success
+2025-10-27T10:29:11.719143 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:29:12 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:29:12 | customer_support | api_failure | $0.0964 | success
+2025-10-27T10:29:12.512931 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:29:19 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:29:19 | order_processing | data_error | $0.0938 | success
+2025-10-27T10:29:19.585720 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:29:21 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:29:21 | invoice_processing | workflow_delay | $0.0913 | success
+2025-10-27T10:29:21.773088 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:29:24 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:29:24 | invoice_processing | queue_pressure | $0.0894 | success
+2025-10-27T10:29:24.632138 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:29:27 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:29:27 | customer_support | data_error | $0.0986 | success
+2025-10-27T10:29:27.854635 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:29:32 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:29:32 | customer_support | workflow_delay | $0.0950 | success
+2025-10-27T10:29:32.702878 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:29:33 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:29:33 | invoice_processing | queue_pressure | $0.0964 | success
+2025-10-27T10:29:33.925026 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:29:40 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:29:40 | invoice_processing | api_failure | $0.0989 | success
+2025-10-27T10:29:40.970305 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:29:41 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:29:41 | invoice_processing | queue_pressure | $0.0946 | success
+2025-10-27T10:29:41.754536 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:29:46 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:29:46 | customer_support | api_failure | $0.0949 | success
+2025-10-27T10:29:46.024875 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:29:50 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:29:50 | customer_support | data_error | $0.0934 | success
+2025-10-27T10:29:50.805120 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:29:55 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:29:55 | customer_support | api_failure | $0.0889 | success
+2025-10-27T10:29:55.097815 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:29:58 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:29:58 | invoice_processing | workflow_delay | $0.0983 | success
+2025-10-27T10:29:58.867761 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:30:01 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:30:01 | customer_support | data_error | $0.0946 | success
+2025-10-27T10:30:01.146188 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:30:06 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:30:06 | order_processing | api_failure | $0.0886 | success
+2025-10-27T10:30:06.910079 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:30:11 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:30:11 | invoice_processing | data_error | $0.0949 | success
+2025-10-27T10:30:11.193035 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:30:11 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:30:11 | order_processing | api_failure | $0.0968 | success
+2025-10-27T10:30:11.973092 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:30:16 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:30:16 | order_processing | queue_pressure | $0.0955 | success
+2025-10-27T10:30:16.229682 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:30:21 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:30:21 | order_processing | data_error | $0.0877 | success
+2025-10-27T10:30:21.015587 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:30:24 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:30:24 | customer_support | api_failure | $0.0938 | success
+2025-10-27T10:30:24.292786 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:30:29 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:30:29 | order_processing | data_error | $0.0964 | success
+2025-10-27T10:30:29.366511 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:30:31 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:30:31 | customer_support | data_error | $0.0985 | success
+2025-10-27T10:30:31.052421 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:30:38 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:30:38 | customer_support | api_failure | $0.0945 | success
+2025-10-27T10:30:38.104463 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:30:39 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:30:39 | invoice_processing | data_error | $0.0899 | success
+2025-10-27T10:30:39.416682 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:30:44 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:30:44 | invoice_processing | queue_pressure | $0.0914 | success
+2025-10-27T10:30:44.187863 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:30:46 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:30:46 | customer_support | data_error | $0.0879 | success
+2025-10-27T10:30:46.465960 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:30:50 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:30:50 | customer_support | workflow_delay | $0.0948 | success
+2025-10-27T10:30:50.238646 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:30:54 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:30:54 | order_processing | workflow_delay | $0.0918 | success
+2025-10-27T10:30:54.543042 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:30:58 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:30:58 | order_processing | queue_pressure | $0.0947 | success
+2025-10-27T10:30:58.273429 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:31:02 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:31:02 | order_processing | queue_pressure | $0.0962 | success
+2025-10-27T10:31:02.626454 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:31:05 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:31:05 | customer_support | api_failure | $0.0952 | success
+2025-10-27T10:31:05.360778 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:31:08 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:31:08 | order_processing | queue_pressure | $0.0989 | success
+2025-10-27T10:31:08.701794 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:31:12 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:31:12 | order_processing | data_error | $0.0884 | success
+2025-10-27T10:31:12.410612 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:31:17 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:31:17 | order_processing | queue_pressure | $0.0980 | success
+2025-10-27T10:31:17.754755 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:31:20 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:31:20 | invoice_processing | data_error | $0.0939 | success
+2025-10-27T10:31:20.452523 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:31:27 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:31:27 | order_processing | queue_pressure | $0.0885 | success
+2025-10-27T10:31:27.807272 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:31:30 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:31:30 | order_processing | queue_pressure | $0.0880 | success
+2025-10-27T10:31:30.497049 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:31:36 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:31:36 | customer_support | api_failure | $0.0904 | success
+2025-10-27T10:31:36.833130 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:31:40 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:31:40 | invoice_processing | queue_pressure | $0.0983 | success
+2025-10-27T10:31:40.571278 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:31:44 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:31:44 | customer_support | workflow_delay | $0.0886 | success
+2025-10-27T10:31:44.880143 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:31:47 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:31:47 | order_processing | queue_pressure | $0.0926 | success
+2025-10-27T10:31:47.637887 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:31:49 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:31:49 | order_processing | queue_pressure | $0.0955 | success
+2025-10-27T10:31:49.948676 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:31:52 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:31:52 | customer_support | api_failure | $0.0887 | success
+2025-10-27T10:31:52.709368 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:31:59 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:31:59 | invoice_processing | queue_pressure | $0.0954 | success
+2025-10-27T10:31:59.996251 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:32:01 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:32:01 | customer_support | data_error | $0.0950 | success
+2025-10-27T10:32:01.759166 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:32:06 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:32:06 | invoice_processing | api_failure | $0.0905 | success
+2025-10-27T10:32:06.804625 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:32:10 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:32:10 | order_processing | data_error | $0.0916 | success
+2025-10-27T10:32:10.088760 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:32:12 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:32:12 | order_processing | queue_pressure | $0.0973 | success
+2025-10-27T10:32:12.856784 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:32:16 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:32:16 | order_processing | data_error | $0.0876 | success
+2025-10-27T10:32:16.140130 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:32:22 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:32:22 | order_processing | api_failure | $0.0944 | success
+2025-10-27T10:32:22.935639 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:32:24 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:32:24 | invoice_processing | queue_pressure | $0.0977 | success
+2025-10-27T10:32:24.201958 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:32:30 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:32:30 | invoice_processing | workflow_delay | $0.0966 | success
+2025-10-27T10:32:30.009496 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:32:30 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:32:30 | invoice_processing | queue_pressure | $0.0985 | success
+2025-10-27T10:32:30.240271 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:32:39 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:32:39 | order_processing | api_failure | $0.0952 | success
+2025-10-27T10:32:39.302432 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:32:40 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:32:40 | invoice_processing | queue_pressure | $0.0967 | success
+2025-10-27T10:32:40.078409 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:32:47 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:32:47 | order_processing | data_error | $0.0970 | success
+2025-10-27T10:32:47.124770 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:32:47 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:32:47 | invoice_processing | workflow_delay | $0.0938 | success
+2025-10-27T10:32:47.346887 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:32:54 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:32:54 | invoice_processing | queue_pressure | $0.0930 | success
+2025-10-27T10:32:54.187706 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:32:56 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:32:56 | order_processing | data_error | $0.0956 | success
+2025-10-27T10:32:56.395658 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:33:03 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:33:03 | invoice_processing | queue_pressure | $0.0973 | success
+2025-10-27T10:33:03.237381 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:33:03 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:33:03 | invoice_processing | api_failure | $0.0968 | success
+2025-10-27T10:33:03.456418 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:33:08 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:33:08 | order_processing | workflow_delay | $0.0898 | success
+2025-10-27T10:33:08.507692 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:33:10 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:33:10 | order_processing | workflow_delay | $0.0935 | success
+2025-10-27T10:33:10.288955 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:33:14 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:33:14 | invoice_processing | data_error | $0.0888 | success
+2025-10-27T10:33:14.601671 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:33:18 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:33:18 | invoice_processing | queue_pressure | $0.0927 | success
+2025-10-27T10:33:18.326516 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:33:19 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:33:19 | invoice_processing | workflow_delay | $0.0888 | success
+2025-10-27T10:33:19.673528 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:33:25 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:33:25 | order_processing | workflow_delay | $0.0979 | success
+2025-10-27T10:33:25.734705 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:33:27 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:33:27 | invoice_processing | data_error | $0.0896 | success
+2025-10-27T10:33:27.392473 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:33:33 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:33:33 | invoice_processing | queue_pressure | $0.0895 | success
+2025-10-27T10:33:33.822393 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:33:37 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:33:37 | customer_support | queue_pressure | $0.0891 | success
+2025-10-27T10:33:37.453128 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 15:33:42 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:33:42 | customer_support | data_error | $0.0895 | success
+2025-10-27T10:33:42.515894 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:33:43 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:33:43 | invoice_processing | workflow_delay | $0.0926 | success
+2025-10-27T10:33:43.871284 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:33:49 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:33:49 | customer_support | api_failure | $0.0878 | success
+2025-10-27T10:33:49.594215 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:33:50 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:33:50 | invoice_processing | workflow_delay | $0.0971 | success
+2025-10-27T10:33:50.923380 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:33:56 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:33:56 | order_processing | queue_pressure | $0.0934 | success
+2025-10-27T10:33:56.949434 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:33:58 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:33:58 | order_processing | data_error | $0.0972 | success
+2025-10-27T10:33:58.660215 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:34:02 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:34:02 | invoice_processing | api_failure | $0.0939 | success
+2025-10-27T10:34:02.984242 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:34:03 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:34:03 | order_processing | api_failure | $0.0973 | success
+2025-10-27T10:34:03.725597 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:34:12 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:34:12 | order_processing | data_error | $0.0931 | success
+2025-10-27T10:34:12.045078 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:34:13 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:34:13 | customer_support | api_failure | $0.0947 | success
+2025-10-27T10:34:13.787881 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:34:18 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:34:18 | customer_support | api_failure | $0.0986 | success
+2025-10-27T10:34:18.106428 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:34:23 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:34:23 | customer_support | api_failure | $0.0926 | success
+2025-10-27T10:34:23.168051 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:34:23 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:34:23 | invoice_processing | queue_pressure | $0.0916 | success
+2025-10-27T10:34:23.849441 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:34:30 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:34:30 | invoice_processing | queue_pressure | $0.0937 | success
+2025-10-27T10:34:30.236381 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:34:31 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:34:31 | order_processing | queue_pressure | $0.0924 | success
+2025-10-27T10:34:31.899819 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:34:35 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:34:35 | order_processing | workflow_delay | $0.0901 | success
+2025-10-27T10:34:35.285861 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:34:38 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:34:38 | customer_support | queue_pressure | $0.0908 | success
+2025-10-27T10:34:38.972158 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 15:34:41 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:34:41 | order_processing | workflow_delay | $0.0899 | success
+2025-10-27T10:34:41.349278 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:34:45 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:34:45 | order_processing | workflow_delay | $0.0875 | success
+2025-10-27T10:34:45.042159 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:34:48 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:34:48 | invoice_processing | queue_pressure | $0.0898 | success
+2025-10-27T10:34:48.425778 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:34:50 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:34:50 | invoice_processing | api_failure | $0.0909 | success
+2025-10-27T10:34:50.103113 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:34:56 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:34:56 | order_processing | queue_pressure | $0.0907 | success
+2025-10-27T10:34:56.149774 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:34:57 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:34:57 | customer_support | workflow_delay | $0.0918 | success
+2025-10-27T10:34:57.468477 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:35:04 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:35:04 | customer_support | workflow_delay | $0.0920 | success
+2025-10-27T10:35:04.216837 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:35:06 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:35:06 | customer_support | data_error | $0.0984 | success
+2025-10-27T10:35:06.517050 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:35:11 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:35:11 | customer_support | workflow_delay | $0.0929 | success
+2025-10-27T10:35:11.281990 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:35:16 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:35:16 | order_processing | api_failure | $0.0911 | success
+2025-10-27T10:35:16.580306 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:35:17 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:35:17 | customer_support | data_error | $0.0921 | success
+2025-10-27T10:35:17.373780 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:35:22 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:35:22 | invoice_processing | api_failure | $0.0969 | success
+2025-10-27T10:35:22.648715 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:35:27 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:35:27 | invoice_processing | api_failure | $0.0979 | success
+2025-10-27T10:35:27.440579 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:35:28 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:35:28 | invoice_processing | data_error | $0.0976 | success
+2025-10-27T10:35:28.712264 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:35:34 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:35:34 | order_processing | queue_pressure | $0.0956 | success
+2025-10-27T10:35:34.519255 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:35:36 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:35:36 | customer_support | data_error | $0.0941 | success
+2025-10-27T10:35:36.778389 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:35:41 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:35:41 | customer_support | workflow_delay | $0.0908 | success
+2025-10-27T10:35:41.583052 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:35:41 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:35:41 | invoice_processing | queue_pressure | $0.0889 | success
+2025-10-27T10:35:41.847435 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:35:47 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:35:47 | invoice_processing | queue_pressure | $0.0990 | success
+2025-10-27T10:35:47.917513 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:35:51 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:35:51 | invoice_processing | data_error | $0.0918 | success
+2025-10-27T10:35:51.646382 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:35:54 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:35:54 | order_processing | queue_pressure | $0.0909 | success
+2025-10-27T10:35:54.952254 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:35:57 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:35:57 | customer_support | data_error | $0.0975 | success
+2025-10-27T10:35:57.703706 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:36:00 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:36:00 | customer_support | data_error | $0.0986 | success
+2025-10-27T10:36:00.015663 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:36:04 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:36:04 | customer_support | queue_pressure | $0.0972 | success
+2025-10-27T10:36:04.767173 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 15:36:06 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:36:06 | order_processing | queue_pressure | $0.0879 | success
+2025-10-27T10:36:06.054916 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:36:11 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:36:11 | invoice_processing | queue_pressure | $0.0976 | success
+2025-10-27T10:36:11.807422 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:36:15 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:36:15 | customer_support | api_failure | $0.0893 | success
+2025-10-27T10:36:15.118701 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:36:20 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:36:20 | customer_support | data_error | $0.0915 | success
+2025-10-27T10:36:20.877799 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:36:22 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:36:22 | customer_support | data_error | $0.0985 | success
+2025-10-27T10:36:22.195233 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:36:27 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:36:27 | customer_support | api_failure | $0.0926 | success
+2025-10-27T10:36:27.260104 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:36:29 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:36:29 | invoice_processing | data_error | $0.0983 | success
+2025-10-27T10:36:29.940741 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:36:34 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:36:35 | order_processing | data_error | $0.0935 | success
+2025-10-27T10:36:35.006638 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:36:36 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:36:36 | invoice_processing | workflow_delay | $0.0914 | success
+2025-10-27T10:36:36.325857 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:36:41 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:36:41 | order_processing | api_failure | $0.0922 | success
+2025-10-27T10:36:41.069061 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:36:41 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:36:41 | customer_support | api_failure | $0.0916 | success
+2025-10-27T10:36:41.379486 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:36:48 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:36:48 | invoice_processing | api_failure | $0.0877 | success
+2025-10-27T10:36:48.140989 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:36:51 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:36:51 | order_processing | workflow_delay | $0.0875 | success
+2025-10-27T10:36:51.442971 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:36:57 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:36:57 | invoice_processing | data_error | $0.0928 | success
+2025-10-27T10:36:57.190632 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:36:58 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:36:58 | customer_support | api_failure | $0.0931 | success
+2025-10-27T10:36:58.492118 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:37:04 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:37:04 | order_processing | api_failure | $0.0981 | success
+2025-10-27T10:37:04.516116 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:37:06 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:37:06 | invoice_processing | queue_pressure | $0.0911 | success
+2025-10-27T10:37:06.216356 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:37:13 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:37:13 | customer_support | api_failure | $0.0956 | success
+2025-10-27T10:37:13.238063 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:37:13 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:37:13 | customer_support | queue_pressure | $0.0975 | success
+2025-10-27T10:37:13.534582 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 15:37:21 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:37:21 | order_processing | workflow_delay | $0.0974 | success
+2025-10-27T10:37:21.561000 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:37:23 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:37:23 | customer_support | data_error | $0.0976 | success
+2025-10-27T10:37:23.263296 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:37:27 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:37:27 | invoice_processing | api_failure | $0.0935 | success
+2025-10-27T10:37:27.590449 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:37:32 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:37:32 | customer_support | data_error | $0.0910 | success
+2025-10-27T10:37:32.288925 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:37:36 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:37:36 | customer_support | data_error | $0.0952 | success
+2025-10-27T10:37:36.614439 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:37:39 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:37:39 | invoice_processing | workflow_delay | $0.0924 | success
+2025-10-27T10:37:39.317285 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:37:41 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:37:41 | invoice_processing | queue_pressure | $0.0978 | success
+2025-10-27T10:37:41.656002 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:37:47 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:37:47 | invoice_processing | queue_pressure | $0.0947 | success
+2025-10-27T10:37:47.351484 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:37:48 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:37:48 | customer_support | api_failure | $0.0929 | success
+2025-10-27T10:37:48.697918 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:37:55 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:37:55 | customer_support | api_failure | $0.0937 | success
+2025-10-27T10:37:55.377610 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:37:58 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:37:58 | customer_support | api_failure | $0.0956 | success
+2025-10-27T10:37:58.726170 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:38:01 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:38:01 | invoice_processing | workflow_delay | $0.0912 | success
+2025-10-27T10:38:01.398949 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:38:07 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:38:07 | order_processing | queue_pressure | $0.0919 | success
+2025-10-27T10:38:07.742331 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:38:08 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:38:08 | order_processing | data_error | $0.0980 | success
+2025-10-27T10:38:08.423005 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:38:14 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:38:14 | customer_support | data_error | $0.0976 | success
+2025-10-27T10:38:14.771749 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:38:16 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:38:16 | customer_support | workflow_delay | $0.0877 | success
+2025-10-27T10:38:16.463562 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:38:21 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:38:21 | order_processing | workflow_delay | $0.0928 | success
+2025-10-27T10:38:21.800633 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:38:23 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:38:23 | invoice_processing | queue_pressure | $0.0943 | success
+2025-10-27T10:38:23.488519 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:38:26 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:38:26 | invoice_processing | queue_pressure | $0.0934 | success
+2025-10-27T10:38:26.834716 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:38:31 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:38:31 | customer_support | workflow_delay | $0.0982 | success
+2025-10-27T10:38:31.516253 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:38:33 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:38:33 | order_processing | api_failure | $0.0943 | success
+2025-10-27T10:38:33.862970 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:38:38 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:38:38 | order_processing | api_failure | $0.0981 | success
+2025-10-27T10:38:38.546543 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:38:41 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:38:41 | customer_support | queue_pressure | $0.0931 | success
+2025-10-27T10:38:41.901853 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 15:38:46 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:38:46 | customer_support | queue_pressure | $0.0937 | success
+2025-10-27T10:38:46.575788 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 15:38:47 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:38:47 | customer_support | api_failure | $0.0959 | success
+2025-10-27T10:38:47.923189 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:38:54 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:38:54 | order_processing | data_error | $0.0914 | success
+2025-10-27T10:38:54.596976 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:38:54 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:38:54 | order_processing | data_error | $0.0947 | success
+2025-10-27T10:38:54.952769 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:39:00 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:39:00 | invoice_processing | queue_pressure | $0.0913 | success
+2025-10-27T10:39:00.615900 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:39:00 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:39:00 | invoice_processing | workflow_delay | $0.0984 | success
+2025-10-27T10:39:00.979542 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:39:07 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:39:07 | invoice_processing | data_error | $0.0987 | success
+2025-10-27T10:39:08.000831 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:39:10 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:39:10 | invoice_processing | api_failure | $0.0947 | success
+2025-10-27T10:39:10.634764 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:39:16 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:39:16 | invoice_processing | queue_pressure | $0.0973 | success
+2025-10-27T10:39:16.028458 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:39:17 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:39:17 | order_processing | data_error | $0.0975 | success
+2025-10-27T10:39:17.660827 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:39:22 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:39:22 | invoice_processing | api_failure | $0.0914 | success
+2025-10-27T10:39:22.693154 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:39:26 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:39:26 | customer_support | data_error | $0.0961 | success
+2025-10-27T10:39:26.048288 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:39:28 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:39:28 | invoice_processing | queue_pressure | $0.0895 | success
+2025-10-27T10:39:28.715411 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:39:33 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:39:33 | order_processing | workflow_delay | $0.0980 | success
+2025-10-27T10:39:33.074719 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:39:34 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:39:34 | order_processing | queue_pressure | $0.0931 | success
+2025-10-27T10:39:34.743511 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:39:38 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:39:38 | customer_support | api_failure | $0.0969 | success
+2025-10-27T10:39:38.104489 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:39:41 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:39:41 | order_processing | api_failure | $0.0964 | success
+2025-10-27T10:39:41.772430 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:39:44 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:39:44 | customer_support | data_error | $0.0957 | success
+2025-10-27T10:39:44.132609 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:39:48 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:39:48 | invoice_processing | api_failure | $0.0937 | success
+2025-10-27T10:39:48.804033 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:39:51 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:39:51 | customer_support | data_error | $0.0882 | success
+2025-10-27T10:39:51.154489 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:39:53 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:39:53 | order_processing | api_failure | $0.0880 | success
+2025-10-27T10:39:53.822224 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:39:59 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:39:59 | customer_support | api_failure | $0.0935 | success
+2025-10-27T10:39:59.173985 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:40:02 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:40:02 | order_processing | data_error | $0.0985 | success
+2025-10-27T10:40:02.840642 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:40:06 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:40:06 | invoice_processing | queue_pressure | $0.0988 | success
+2025-10-27T10:40:06.194971 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:40:07 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:40:07 | customer_support | workflow_delay | $0.0989 | success
+2025-10-27T10:40:07.861695 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:40:16 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:40:16 | customer_support | workflow_delay | $0.0901 | success
+2025-10-27T10:40:16.224577 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:40:17 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:40:17 | invoice_processing | api_failure | $0.0924 | success
+2025-10-27T10:40:17.884926 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:40:22 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:40:22 | customer_support | workflow_delay | $0.0888 | success
+2025-10-27T10:40:22.918640 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:40:23 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:40:23 | order_processing | queue_pressure | $0.0964 | success
+2025-10-27T10:40:23.262759 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:40:31 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:40:31 | invoice_processing | api_failure | $0.0974 | success
+2025-10-27T10:40:31.945194 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:40:33 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:40:33 | order_processing | data_error | $0.0935 | success
+2025-10-27T10:40:33.308799 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:40:41 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:40:41 | invoice_processing | queue_pressure | $0.0953 | success
+2025-10-27T10:40:41.337470 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:40:41 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:40:41 | invoice_processing | queue_pressure | $0.0984 | success
+2025-10-27T10:40:41.969420 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:40:49 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:40:49 | customer_support | data_error | $0.0932 | success
+2025-10-27T10:40:49.371834 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:40:49 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:40:49 | invoice_processing | api_failure | $0.0875 | success
+2025-10-27T10:40:49.996580 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:40:54 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:40:54 | order_processing | queue_pressure | $0.0958 | success
+2025-10-27T10:40:54.389410 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:40:58 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:40:58 | customer_support | queue_pressure | $0.0911 | success
+2025-10-27T10:40:58.013836 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 15:41:01 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:41:01 | customer_support | workflow_delay | $0.0914 | success
+2025-10-27T10:41:01.411646 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:41:06 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:41:06 | invoice_processing | api_failure | $0.0971 | success
+2025-10-27T10:41:06.442936 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:41:07 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:41:07 | customer_support | data_error | $0.0976 | success
+2025-10-27T10:41:07.044211 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:41:13 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:41:13 | invoice_processing | data_error | $0.0917 | success
+2025-10-27T10:41:13.474211 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:41:14 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:41:14 | order_processing | queue_pressure | $0.0931 | success
+2025-10-27T10:41:14.083926 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:41:20 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:41:20 | order_processing | workflow_delay | $0.0897 | success
+2025-10-27T10:41:20.103913 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:41:23 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:41:23 | invoice_processing | workflow_delay | $0.0959 | success
+2025-10-27T10:41:23.493195 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:41:27 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:41:27 | order_processing | workflow_delay | $0.0971 | success
+2025-10-27T10:41:27.120191 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:41:30 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:41:30 | customer_support | data_error | $0.0900 | success
+2025-10-27T10:41:30.514713 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:41:32 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:41:32 | invoice_processing | workflow_delay | $0.0876 | success
+2025-10-27T10:41:32.146590 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:41:35 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:41:35 | invoice_processing | queue_pressure | $0.0896 | success
+2025-10-27T10:41:35.538130 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:41:37 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:41:37 | invoice_processing | data_error | $0.0937 | success
+2025-10-27T10:41:37.167004 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:41:43 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:41:43 | order_processing | queue_pressure | $0.0880 | success
+2025-10-27T10:41:43.187322 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:41:45 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:41:45 | invoice_processing | data_error | $0.0950 | success
+2025-10-27T10:41:45.562822 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:41:52 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:41:52 | invoice_processing | api_failure | $0.0886 | success
+2025-10-27T10:41:52.214535 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:41:55 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:41:55 | invoice_processing | queue_pressure | $0.0980 | success
+2025-10-27T10:41:55.581009 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:42:00 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:42:00 | invoice_processing | queue_pressure | $0.0984 | success
+2025-10-27T10:42:00.247770 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:42:02 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:42:02 | order_processing | api_failure | $0.0963 | success
+2025-10-27T10:42:02.611837 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:42:09 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:42:09 | customer_support | queue_pressure | $0.0982 | success
+2025-10-27T10:42:09.268706 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 15:42:10 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:42:10 | customer_support | data_error | $0.0964 | success
+2025-10-27T10:42:10.638160 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:42:18 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:42:18 | invoice_processing | workflow_delay | $0.0963 | success
+2025-10-27T10:42:18.289734 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:42:18 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:42:18 | order_processing | data_error | $0.0937 | success
+2025-10-27T10:42:18.670623 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:42:24 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:42:24 | order_processing | queue_pressure | $0.0960 | success
+2025-10-27T10:42:24.309226 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:42:26 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:42:26 | order_processing | api_failure | $0.0984 | success
+2025-10-27T10:42:26.690834 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:42:30 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:42:30 | customer_support | data_error | $0.0917 | success
+2025-10-27T10:42:30.341789 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:42:35 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:42:35 | order_processing | queue_pressure | $0.0987 | success
+2025-10-27T10:42:35.710074 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:42:38 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:42:38 | order_processing | data_error | $0.0882 | success
+2025-10-27T10:42:38.360123 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:42:43 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:42:43 | order_processing | workflow_delay | $0.0959 | success
+2025-10-27T10:42:43.728202 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:42:46 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:42:46 | customer_support | api_failure | $0.0901 | success
+2025-10-27T10:42:46.392296 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:42:50 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:42:50 | order_processing | queue_pressure | $0.0906 | success
+2025-10-27T10:42:50.746446 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:42:55 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:42:55 | invoice_processing | api_failure | $0.0932 | success
+2025-10-27T10:42:55.772486 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:42:56 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:42:56 | order_processing | api_failure | $0.0899 | success
+2025-10-27T10:42:56.416776 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:43:00 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:43:00 | order_processing | queue_pressure | $0.0911 | success
+2025-10-27T10:43:00.792454 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:43:04 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:43:04 | order_processing | data_error | $0.0970 | success
+2025-10-27T10:43:04.433538 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:43:08 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:43:08 | order_processing | api_failure | $0.0900 | success
+2025-10-27T10:43:08.833670 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:43:09 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:43:09 | order_processing | workflow_delay | $0.0884 | success
+2025-10-27T10:43:09.452615 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:43:17 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:43:17 | customer_support | queue_pressure | $0.0978 | success
+2025-10-27T10:43:17.851535 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 15:43:19 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:43:19 | customer_support | queue_pressure | $0.0924 | success
+2025-10-27T10:43:19.471061 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 15:43:24 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:43:24 | customer_support | api_failure | $0.0980 | success
+2025-10-27T10:43:24.490208 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:43:27 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:43:27 | invoice_processing | data_error | $0.0974 | success
+2025-10-27T10:43:27.876269 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:43:34 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:43:34 | invoice_processing | queue_pressure | $0.0896 | success
+2025-10-27T10:43:34.535176 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:43:37 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:43:37 | invoice_processing | queue_pressure | $0.0982 | success
+2025-10-27T10:43:37.900795 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:43:41 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:43:41 | invoice_processing | workflow_delay | $0.0935 | success
+2025-10-27T10:43:41.556554 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:43:42 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:43:42 | invoice_processing | queue_pressure | $0.0906 | success
+2025-10-27T10:43:42.926145 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:43:47 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:43:47 | order_processing | queue_pressure | $0.0902 | success
+2025-10-27T10:43:47.956648 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:43:50 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:43:50 | customer_support | queue_pressure | $0.0889 | success
+2025-10-27T10:43:50.580402 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 15:43:54 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:43:54 | invoice_processing | api_failure | $0.0929 | success
+2025-10-27T10:43:54.983521 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:43:59 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:43:59 | order_processing | api_failure | $0.0983 | success
+2025-10-27T10:43:59.598606 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:44:04 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:44:04 | invoice_processing | workflow_delay | $0.0921 | success
+2025-10-27T10:44:04.004286 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:44:05 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:44:05 | customer_support | workflow_delay | $0.0989 | success
+2025-10-27T10:44:05.617010 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:44:11 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:44:11 | invoice_processing | workflow_delay | $0.0933 | success
+2025-10-27T10:44:11.021386 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:44:12 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:44:12 | invoice_processing | queue_pressure | $0.0981 | success
+2025-10-27T10:44:12.632985 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:44:19 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:44:19 | customer_support | workflow_delay | $0.0967 | success
+2025-10-27T10:44:19.039534 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:44:21 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:44:21 | invoice_processing | workflow_delay | $0.0913 | success
+2025-10-27T10:44:21.663609 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:44:26 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:44:26 | order_processing | queue_pressure | $0.0921 | success
+2025-10-27T10:44:26.066925 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:44:28 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:44:28 | customer_support | data_error | $0.0893 | success
+2025-10-27T10:44:28.682188 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:44:36 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:44:36 | order_processing | workflow_delay | $0.0892 | success
+2025-10-27T10:44:36.086181 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:44:38 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:44:38 | invoice_processing | api_failure | $0.0912 | success
+2025-10-27T10:44:38.702589 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:44:46 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:44:46 | customer_support | workflow_delay | $0.0946 | success
+2025-10-27T10:44:46.109622 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:44:48 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:44:48 | invoice_processing | data_error | $0.0982 | success
+2025-10-27T10:44:48.728880 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:44:54 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:44:54 | customer_support | workflow_delay | $0.0911 | success
+2025-10-27T10:44:54.128173 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:44:57 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:44:57 | customer_support | data_error | $0.0963 | success
+2025-10-27T10:44:57.748067 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:45:00 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:45:00 | order_processing | workflow_delay | $0.0880 | success
+2025-10-27T10:45:00.148933 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:45:05 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:45:05 | customer_support | data_error | $0.0904 | success
+2025-10-27T10:45:05.777656 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:45:10 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:45:10 | order_processing | api_failure | $0.0935 | success
+2025-10-27T10:45:10.174336 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:45:13 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:45:13 | invoice_processing | data_error | $0.0961 | success
+2025-10-27T10:45:13.795797 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:45:15 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:45:15 | order_processing | workflow_delay | $0.0916 | success
+2025-10-27T10:45:15.197453 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:45:18 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:45:18 | order_processing | queue_pressure | $0.0898 | success
+2025-10-27T10:45:18.818761 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:45:22 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:45:22 | order_processing | api_failure | $0.0881 | success
+2025-10-27T10:45:22.215431 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:45:24 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:45:24 | order_processing | queue_pressure | $0.0921 | success
+2025-10-27T10:45:24.838398 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:45:30 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:45:30 | customer_support | data_error | $0.0900 | success
+2025-10-27T10:45:30.244136 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:45:30 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:45:30 | invoice_processing | workflow_delay | $0.0966 | success
+2025-10-27T10:45:30.860265 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:45:37 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:45:37 | customer_support | workflow_delay | $0.0944 | success
+2025-10-27T10:45:37.264365 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:45:39 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:45:39 | customer_support | data_error | $0.0971 | success
+2025-10-27T10:45:39.893581 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:45:45 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:45:45 | invoice_processing | api_failure | $0.0929 | success
+2025-10-27T10:45:45.294559 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:45:47 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:45:47 | customer_support | api_failure | $0.0881 | success
+2025-10-27T10:45:47.919257 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:45:55 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:45:55 | customer_support | queue_pressure | $0.0984 | success
+2025-10-27T10:45:55.312549 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 15:45:55 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:45:55 | invoice_processing | api_failure | $0.0940 | success
+2025-10-27T10:45:55.936058 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:46:02 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:46:02 | invoice_processing | workflow_delay | $0.0914 | success
+2025-10-27T10:46:02.956152 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:46:04 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:46:04 | customer_support | api_failure | $0.0919 | success
+2025-10-27T10:46:04.329544 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:46:07 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:46:07 | customer_support | workflow_delay | $0.0894 | success
+2025-10-27T10:46:07.989572 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:46:14 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:46:14 | order_processing | workflow_delay | $0.0947 | success
+2025-10-27T10:46:14.016576 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:46:14 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:46:14 | customer_support | queue_pressure | $0.0945 | success
+2025-10-27T10:46:14.384461 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 15:46:21 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:46:21 | customer_support | data_error | $0.0919 | success
+2025-10-27T10:46:21.038012 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:46:22 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:46:22 | invoice_processing | data_error | $0.0879 | success
+2025-10-27T10:46:22.404579 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:46:27 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:46:27 | order_processing | api_failure | $0.0967 | success
+2025-10-27T10:46:27.066568 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:46:28 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:46:28 | order_processing | workflow_delay | $0.0888 | success
+2025-10-27T10:46:28.428236 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:46:33 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:46:33 | customer_support | queue_pressure | $0.0909 | success
+2025-10-27T10:46:33.093774 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 15:46:36 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:46:36 | invoice_processing | workflow_delay | $0.0892 | success
+2025-10-27T10:46:36.459595 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:46:40 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:46:40 | invoice_processing | workflow_delay | $0.0912 | success
+2025-10-27T10:46:40.116967 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:46:46 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:46:46 | customer_support | api_failure | $0.0926 | success
+2025-10-27T10:46:46.494049 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:46:48 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:46:48 | invoice_processing | workflow_delay | $0.0963 | success
+2025-10-27T10:46:48.138393 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:46:55 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:46:55 | invoice_processing | queue_pressure | $0.0887 | success
+2025-10-27T10:46:55.518428 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:46:56 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:46:56 | order_processing | api_failure | $0.0942 | success
+2025-10-27T10:46:56.159734 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:47:03 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:47:03 | order_processing | queue_pressure | $0.0924 | success
+2025-10-27T10:47:03.179207 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:47:05 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:47:05 | invoice_processing | queue_pressure | $0.0903 | success
+2025-10-27T10:47:05.539488 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:47:09 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:47:09 | customer_support | workflow_delay | $0.0987 | success
+2025-10-27T10:47:09.200907 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:47:12 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:47:12 | invoice_processing | api_failure | $0.0974 | success
+2025-10-27T10:47:12.571381 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:47:16 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:47:16 | order_processing | queue_pressure | $0.0989 | success
+2025-10-27T10:47:16.224916 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:47:17 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:47:17 | customer_support | api_failure | $0.0882 | success
+2025-10-27T10:47:17.596265 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:47:22 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:47:22 | customer_support | queue_pressure | $0.0942 | success
+2025-10-27T10:47:22.246396 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 15:47:23 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:47:23 | invoice_processing | api_failure | $0.0965 | success
+2025-10-27T10:47:23.617175 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:47:28 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:47:28 | invoice_processing | api_failure | $0.0914 | success
+2025-10-27T10:47:28.263763 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:47:30 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:47:30 | customer_support | workflow_delay | $0.0899 | success
+2025-10-27T10:47:30.636136 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:47:34 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:47:34 | invoice_processing | api_failure | $0.0899 | success
+2025-10-27T10:47:34.288460 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:47:39 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:47:39 | customer_support | api_failure | $0.0982 | success
+2025-10-27T10:47:39.655592 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:47:44 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:47:44 | customer_support | api_failure | $0.0888 | success
+2025-10-27T10:47:44.307197 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:47:44 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:47:44 | order_processing | queue_pressure | $0.0880 | success
+2025-10-27T10:47:44.676303 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:47:49 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:47:49 | invoice_processing | data_error | $0.0928 | success
+2025-10-27T10:47:49.704229 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:47:51 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:47:51 | order_processing | workflow_delay | $0.0954 | success
+2025-10-27T10:47:51.335468 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:47:57 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:47:57 | customer_support | api_failure | $0.0978 | success
+2025-10-27T10:47:57.358052 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:47:59 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:47:59 | order_processing | data_error | $0.0926 | success
+2025-10-27T10:47:59.721658 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:48:04 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:48:04 | invoice_processing | data_error | $0.0964 | success
+2025-10-27T10:48:04.382569 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:48:09 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:48:09 | invoice_processing | workflow_delay | $0.0962 | success
+2025-10-27T10:48:09.738285 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:48:14 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:48:14 | order_processing | workflow_delay | $0.0911 | success
+2025-10-27T10:48:14.409604 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:48:16 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:48:16 | invoice_processing | data_error | $0.0897 | success
+2025-10-27T10:48:16.766072 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:48:22 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:48:22 | customer_support | data_error | $0.0913 | success
+2025-10-27T10:48:22.430379 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:48:25 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:48:25 | invoice_processing | queue_pressure | $0.0964 | success
+2025-10-27T10:48:25.788128 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:48:32 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:48:32 | customer_support | api_failure | $0.0955 | success
+2025-10-27T10:48:32.457784 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:48:32 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:48:32 | invoice_processing | queue_pressure | $0.0923 | success
+2025-10-27T10:48:32.811959 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:48:37 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:48:37 | invoice_processing | data_error | $0.0890 | success
+2025-10-27T10:48:37.830506 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:48:38 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:48:38 | order_processing | queue_pressure | $0.0931 | success
+2025-10-27T10:48:38.487167 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:48:44 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:48:44 | order_processing | api_failure | $0.0947 | success
+2025-10-27T10:48:44.508586 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:48:47 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:48:47 | customer_support | data_error | $0.0964 | success
+2025-10-27T10:48:47.851418 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:48:54 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:48:54 | customer_support | workflow_delay | $0.0962 | success
+2025-10-27T10:48:54.553685 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:48:55 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:48:55 | customer_support | data_error | $0.0912 | success
+2025-10-27T10:48:55.875810 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:48:59 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:48:59 | invoice_processing | queue_pressure | $0.0941 | success
+2025-10-27T10:48:59.599690 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:49:00 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:49:00 | order_processing | queue_pressure | $0.0923 | success
+2025-10-27T10:49:00.897477 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:49:04 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:49:04 | order_processing | api_failure | $0.0972 | success
+2025-10-27T10:49:04.620339 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:49:09 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:49:09 | order_processing | workflow_delay | $0.0959 | success
+2025-10-27T10:49:09.930096 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:49:11 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:49:11 | customer_support | data_error | $0.0917 | success
+2025-10-27T10:49:11.637804 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:49:14 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:49:14 | invoice_processing | queue_pressure | $0.0963 | success
+2025-10-27T10:49:14.949002 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:49:21 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:49:21 | order_processing | api_failure | $0.0915 | success
+2025-10-27T10:49:21.661543 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:49:21 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:49:21 | customer_support | queue_pressure | $0.0937 | success
+2025-10-27T10:49:21.964027 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 15:49:28 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:49:28 | invoice_processing | data_error | $0.0924 | success
+2025-10-27T10:49:28.980937 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:49:31 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:49:31 | invoice_processing | queue_pressure | $0.0979 | success
+2025-10-27T10:49:31.686193 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:49:34 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:49:34 | invoice_processing | data_error | $0.0885 | success
+2025-10-27T10:49:34.997821 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:49:40 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:49:40 | customer_support | queue_pressure | $0.0946 | success
+2025-10-27T10:49:40.029204 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 15:49:41 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:49:41 | order_processing | workflow_delay | $0.0959 | success
+2025-10-27T10:49:41.724071 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:49:46 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:49:46 | invoice_processing | workflow_delay | $0.0889 | success
+2025-10-27T10:49:46.757699 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:49:50 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:49:50 | order_processing | api_failure | $0.0910 | success
+2025-10-27T10:49:50.050221 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:49:55 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:49:55 | customer_support | data_error | $0.0894 | success
+2025-10-27T10:49:55.773434 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:49:59 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:49:59 | order_processing | api_failure | $0.0890 | success
+2025-10-27T10:49:59.074529 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:50:04 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:50:04 | customer_support | workflow_delay | $0.0966 | success
+2025-10-27T10:50:04.790699 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:50:05 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:50:05 | customer_support | workflow_delay | $0.0920 | success
+2025-10-27T10:50:05.092634 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:50:09 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:50:09 | customer_support | workflow_delay | $0.0925 | success
+2025-10-27T10:50:09.815079 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:50:14 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:50:14 | invoice_processing | data_error | $0.0938 | success
+2025-10-27T10:50:14.111435 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:50:16 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:50:16 | customer_support | queue_pressure | $0.0964 | success
+2025-10-27T10:50:16.832607 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 15:50:23 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:50:23 | order_processing | api_failure | $0.0960 | success
+2025-10-27T10:50:23.128368 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:50:23 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:50:23 | customer_support | api_failure | $0.0906 | success
+2025-10-27T10:50:23.849569 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:50:31 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:50:31 | customer_support | queue_pressure | $0.0948 | success
+2025-10-27T10:50:31.868084 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 15:50:33 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:50:33 | customer_support | api_failure | $0.0899 | success
+2025-10-27T10:50:33.146243 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:50:39 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:50:39 | order_processing | data_error | $0.0943 | success
+2025-10-27T10:50:39.170636 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:50:40 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:50:40 | customer_support | workflow_delay | $0.0936 | success
+2025-10-27T10:50:40.902587 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:50:44 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:50:44 | customer_support | queue_pressure | $0.0968 | success
+2025-10-27T10:50:44.191223 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 15:50:49 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:50:49 | customer_support | data_error | $0.0908 | success
+2025-10-27T10:50:49.207598 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:50:49 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:50:49 | customer_support | workflow_delay | $0.0989 | success
+2025-10-27T10:50:49.921744 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:50:55 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:50:55 | invoice_processing | api_failure | $0.0983 | success
+2025-10-27T10:50:55.231997 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:50:57 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:50:57 | customer_support | data_error | $0.0882 | success
+2025-10-27T10:50:57.941130 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:51:03 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:51:03 | invoice_processing | workflow_delay | $0.0970 | success
+2025-10-27T10:51:03.960361 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:51:04 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:51:04 | invoice_processing | api_failure | $0.0922 | success
+2025-10-27T10:51:04.248006 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:51:08 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:51:08 | invoice_processing | data_error | $0.0952 | success
+2025-10-27T10:51:08.989838 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:51:11 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:51:11 | customer_support | api_failure | $0.0954 | success
+2025-10-27T10:51:11.265013 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:51:14 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:51:14 | invoice_processing | queue_pressure | $0.0917 | success
+2025-10-27T10:51:14.025777 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:51:16 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:51:16 | order_processing | data_error | $0.0963 | success
+2025-10-27T10:51:16.282705 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:51:20 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:51:20 | customer_support | data_error | $0.0945 | success
+2025-10-27T10:51:20.054403 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:51:24 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:51:24 | invoice_processing | queue_pressure | $0.0965 | success
+2025-10-27T10:51:24.317956 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:51:30 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:51:30 | invoice_processing | api_failure | $0.0984 | success
+2025-10-27T10:51:30.074124 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:51:31 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:51:31 | order_processing | api_failure | $0.0891 | success
+2025-10-27T10:51:31.335861 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:51:35 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:51:35 | order_processing | data_error | $0.0971 | success
+2025-10-27T10:51:35.119288 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:51:41 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:51:41 | order_processing | queue_pressure | $0.0955 | success
+2025-10-27T10:51:41.372255 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:51:43 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:51:43 | customer_support | data_error | $0.0980 | success
+2025-10-27T10:51:43.139612 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:51:47 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:51:47 | order_processing | queue_pressure | $0.0940 | success
+2025-10-27T10:51:47.391099 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:51:51 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:51:51 | invoice_processing | data_error | $0.0915 | success
+2025-10-27T10:51:51.175764 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:51:57 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:51:57 | invoice_processing | queue_pressure | $0.0909 | success
+2025-10-27T10:51:57.421061 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:51:58 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:51:58 | order_processing | api_failure | $0.0971 | success
+2025-10-27T10:51:58.199742 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:52:04 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:52:04 | invoice_processing | workflow_delay | $0.0905 | success
+2025-10-27T10:52:04.219554 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:52:06 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:52:06 | invoice_processing | data_error | $0.0964 | success
+2025-10-27T10:52:06.461986 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:52:11 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:52:11 | customer_support | data_error | $0.0893 | success
+2025-10-27T10:52:11.237810 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:52:13 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:52:13 | order_processing | workflow_delay | $0.0947 | success
+2025-10-27T10:52:13.478721 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:52:16 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:52:16 | invoice_processing | workflow_delay | $0.0879 | success
+2025-10-27T10:52:16.254652 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:52:23 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:52:23 | invoice_processing | data_error | $0.0975 | success
+2025-10-27T10:52:23.502812 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:52:26 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:52:26 | customer_support | data_error | $0.0969 | success
+2025-10-27T10:52:26.278901 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:52:28 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:52:28 | invoice_processing | workflow_delay | $0.0989 | success
+2025-10-27T10:52:28.542633 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:52:33 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:52:33 | order_processing | api_failure | $0.0951 | success
+2025-10-27T10:52:33.572239 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:52:35 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:52:35 | invoice_processing | data_error | $0.0911 | success
+2025-10-27T10:52:35.300168 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:52:39 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:52:39 | customer_support | workflow_delay | $0.0963 | success
+2025-10-27T10:52:39.590371 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:52:40 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:52:40 | invoice_processing | queue_pressure | $0.0974 | success
+2025-10-27T10:52:40.315988 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:52:47 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:52:47 | order_processing | workflow_delay | $0.0920 | success
+2025-10-27T10:52:47.334949 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:52:47 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:52:47 | invoice_processing | api_failure | $0.0878 | success
+2025-10-27T10:52:47.605596 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:52:54 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:52:54 | invoice_processing | queue_pressure | $0.0912 | success
+2025-10-27T10:52:54.630452 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:52:55 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:52:55 | invoice_processing | queue_pressure | $0.0954 | success
+2025-10-27T10:52:55.361224 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:52:59 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:52:59 | order_processing | data_error | $0.0960 | success
+2025-10-27T10:52:59.663786 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:53:04 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:53:04 | order_processing | queue_pressure | $0.0934 | success
+2025-10-27T10:53:04.380973 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:53:07 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:53:07 | customer_support | queue_pressure | $0.0956 | success
+2025-10-27T10:53:07.692850 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 15:53:10 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:53:10 | invoice_processing | queue_pressure | $0.0975 | success
+2025-10-27T10:53:10.411618 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:53:16 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:53:16 | invoice_processing | workflow_delay | $0.0922 | success
+2025-10-27T10:53:16.441384 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:53:17 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:53:17 | customer_support | queue_pressure | $0.0944 | success
+2025-10-27T10:53:17.714521 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 15:53:22 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:53:22 | customer_support | data_error | $0.0955 | success
+2025-10-27T10:53:22.460544 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:53:27 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:53:27 | order_processing | data_error | $0.0933 | success
+2025-10-27T10:53:27.741222 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:53:29 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:53:29 | customer_support | api_failure | $0.0920 | success
+2025-10-27T10:53:29.482338 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:53:35 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:53:35 | order_processing | queue_pressure | $0.0986 | success
+2025-10-27T10:53:35.764298 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:53:39 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:53:39 | order_processing | api_failure | $0.0946 | success
+2025-10-27T10:53:39.503822 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:53:40 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:53:40 | invoice_processing | queue_pressure | $0.0905 | success
+2025-10-27T10:53:40.786101 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:53:46 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:53:46 | invoice_processing | api_failure | $0.0961 | success
+2025-10-27T10:53:46.803787 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:53:48 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:53:48 | invoice_processing | queue_pressure | $0.0933 | success
+2025-10-27T10:53:48.535372 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:53:53 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:53:53 | order_processing | workflow_delay | $0.0897 | success
+2025-10-27T10:53:53.821785 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:53:56 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:53:56 | order_processing | workflow_delay | $0.0940 | success
+2025-10-27T10:53:56.552056 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:54:00 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:54:00 | customer_support | api_failure | $0.0951 | success
+2025-10-27T10:54:00.842070 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:54:02 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:54:02 | invoice_processing | data_error | $0.0892 | success
+2025-10-27T10:54:02.580673 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:54:06 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:54:06 | invoice_processing | api_failure | $0.0882 | success
+2025-10-27T10:54:06.859725 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:54:10 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:54:10 | order_processing | queue_pressure | $0.0920 | success
+2025-10-27T10:54:10.607150 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:54:16 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:54:16 | customer_support | workflow_delay | $0.0902 | success
+2025-10-27T10:54:16.890538 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:54:18 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:54:18 | order_processing | api_failure | $0.0988 | success
+2025-10-27T10:54:18.634901 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:54:22 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:54:22 | customer_support | api_failure | $0.0885 | success
+2025-10-27T10:54:22.911308 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:54:28 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:54:28 | customer_support | api_failure | $0.0895 | success
+2025-10-27T10:54:28.659188 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:54:28 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:54:28 | invoice_processing | data_error | $0.0893 | success
+2025-10-27T10:54:28.933077 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:54:37 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:54:37 | customer_support | workflow_delay | $0.0930 | success
+2025-10-27T10:54:37.681295 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:54:37 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:54:37 | invoice_processing | api_failure | $0.0962 | success
+2025-10-27T10:54:37.967485 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:54:43 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:54:43 | customer_support | queue_pressure | $0.0894 | success
+2025-10-27T10:54:43.699888 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 15:54:43 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:54:43 | customer_support | api_failure | $0.0945 | success
+2025-10-27T10:54:43.991790 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:54:49 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:54:49 | order_processing | workflow_delay | $0.0880 | success
+2025-10-27T10:54:49.021702 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:54:53 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:54:53 | customer_support | data_error | $0.0894 | success
+2025-10-27T10:54:53.719376 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:54:57 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:54:57 | order_processing | queue_pressure | $0.0987 | success
+2025-10-27T10:54:57.060741 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:55:01 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:55:01 | customer_support | queue_pressure | $0.0951 | success
+2025-10-27T10:55:01.747237 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 15:55:03 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:55:03 | customer_support | workflow_delay | $0.0881 | success
+2025-10-27T10:55:03.078353 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:55:06 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:55:06 | customer_support | api_failure | $0.0935 | success
+2025-10-27T10:55:06.770555 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:55:11 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:55:11 | order_processing | workflow_delay | $0.0945 | success
+2025-10-27T10:55:11.097909 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:55:15 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:55:15 | order_processing | api_failure | $0.0919 | success
+2025-10-27T10:55:15.799954 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:55:20 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:55:20 | invoice_processing | queue_pressure | $0.0954 | success
+2025-10-27T10:55:20.125058 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:55:22 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:55:22 | customer_support | api_failure | $0.0877 | success
+2025-10-27T10:55:22.821532 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:55:27 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:55:27 | customer_support | workflow_delay | $0.0946 | success
+2025-10-27T10:55:27.149707 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:55:29 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:55:29 | customer_support | workflow_delay | $0.0959 | success
+2025-10-27T10:55:29.873161 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:55:36 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:55:36 | invoice_processing | queue_pressure | $0.0912 | success
+2025-10-27T10:55:36.172175 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:55:39 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:55:39 | invoice_processing | queue_pressure | $0.0901 | success
+2025-10-27T10:55:39.893149 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:55:41 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:55:41 | invoice_processing | workflow_delay | $0.0913 | success
+2025-10-27T10:55:41.198730 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:55:44 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:55:44 | order_processing | queue_pressure | $0.0954 | success
+2025-10-27T10:55:44.933741 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:55:46 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:55:46 | order_processing | api_failure | $0.0878 | success
+2025-10-27T10:55:46.217003 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:55:52 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:55:52 | invoice_processing | queue_pressure | $0.0984 | success
+2025-10-27T10:55:52.958788 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:55:54 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:55:54 | invoice_processing | data_error | $0.0964 | success
+2025-10-27T10:55:54.233699 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:55:57 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:55:57 | order_processing | workflow_delay | $0.0939 | success
+2025-10-27T10:55:57.985552 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:55:59 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:55:59 | order_processing | workflow_delay | $0.0962 | success
+2025-10-27T10:55:59.257215 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:56:04 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:56:04 | customer_support | queue_pressure | $0.0930 | success
+2025-10-27T10:56:04.277683 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 15:56:06 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:56:06 | invoice_processing | api_failure | $0.0892 | success
+2025-10-27T10:56:06.003550 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:56:26 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:56:26 | order_processing | data_error | $0.0881 | success
+2025-10-27T10:56:26.302067 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:56:36 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:56:36 | invoice_processing | workflow_delay | $0.0899 | success
+2025-10-27T10:56:36.318484 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:56:42 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:56:42 | invoice_processing | data_error | $0.0957 | success
+2025-10-27T10:56:42.346583 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:56:51 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:56:51 | invoice_processing | api_failure | $0.0893 | success
+2025-10-27T10:56:51.356404 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:57:00 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:57:00 | order_processing | workflow_delay | $0.0942 | success
+2025-10-27T10:57:00.404524 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:57:05 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:57:05 | customer_support | data_error | $0.0956 | success
+2025-10-27T10:57:05.447666 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:57:12 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:57:12 | customer_support | workflow_delay | $0.0890 | success
+2025-10-27T10:57:12.465134 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:57:18 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:57:18 | customer_support | data_error | $0.0982 | success
+2025-10-27T10:57:18.494833 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:57:27 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:57:27 | customer_support | workflow_delay | $0.0966 | success
+2025-10-27T10:57:27.512079 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:57:35 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:57:35 | customer_support | api_failure | $0.0951 | success
+2025-10-27T10:57:35.538727 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:57:42 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:57:42 | order_processing | api_failure | $0.0945 | success
+2025-10-27T10:57:42.561250 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:57:50 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:57:50 | customer_support | data_error | $0.0902 | success
+2025-10-27T10:57:50.594288 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:57:55 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:57:55 | customer_support | queue_pressure | $0.0942 | success
+2025-10-27T10:57:55.612530 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 15:58:03 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:58:03 | invoice_processing | data_error | $0.0939 | success
+2025-10-27T10:58:03.635863 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:58:09 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:58:09 | customer_support | data_error | $0.0940 | success
+2025-10-27T10:58:09.657207 | customer_support | data_error | $0.05 | simulated
+2025-10-27 15:58:14 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 15:58:14 | order_processing | queue_pressure | $0.0886 | success
+2025-10-27T10:58:14.692245 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 15:58:20 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:58:20 | order_processing | data_error | $0.0899 | success
+2025-10-27T10:58:20.718512 | order_processing | data_error | $0.05 | simulated
+2025-10-27 15:58:29 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:58:29 | invoice_processing | workflow_delay | $0.0925 | success
+2025-10-27T10:58:29.736220 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:58:38 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:58:38 | customer_support | api_failure | $0.0915 | success
+2025-10-27T10:58:38.755209 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:58:44 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:58:44 | customer_support | api_failure | $0.0896 | success
+2025-10-27T10:58:44.789577 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 15:58:52 | demo_client | data_error | $0.0500 | success
+2025-10-27 15:58:52 | invoice_processing | data_error | $0.0944 | success
+2025-10-27T10:58:52.822520 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 15:58:59 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:58:59 | order_processing | api_failure | $0.0980 | success
+2025-10-27T10:58:59.841439 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 15:59:04 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:59:04 | invoice_processing | api_failure | $0.0896 | success
+2025-10-27T10:59:04.860187 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:59:14 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:59:14 | order_processing | workflow_delay | $0.0892 | success
+2025-10-27T10:59:14.886654 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:59:22 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:59:22 | invoice_processing | workflow_delay | $0.0984 | success
+2025-10-27T10:59:22.915062 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:59:30 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:59:30 | customer_support | workflow_delay | $0.0927 | success
+2025-10-27T10:59:30.935756 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 15:59:38 | demo_client | api_failure | $0.0500 | success
+2025-10-27 15:59:38 | invoice_processing | api_failure | $0.0962 | success
+2025-10-27T10:59:38.952446 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 15:59:48 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:59:48 | invoice_processing | workflow_delay | $0.0950 | success
+2025-10-27T10:59:48.972231 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 15:59:53 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 15:59:53 | invoice_processing | workflow_delay | $0.0949 | success
+2025-10-27T10:59:53.992818 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 16:00:04 | demo_client | data_error | $0.0500 | success
+2025-10-27 16:00:04 | invoice_processing | data_error | $0.0978 | success
+2025-10-27T11:00:04.015990 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 16:00:13 | demo_client | data_error | $0.0500 | success
+2025-10-27 16:00:13 | order_processing | data_error | $0.0973 | success
+2025-10-27T11:00:13.037394 | order_processing | data_error | $0.05 | simulated
+2025-10-27 16:00:18 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 16:00:18 | customer_support | workflow_delay | $0.0964 | success
+2025-10-27T11:00:18.059755 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 16:00:27 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 16:00:27 | customer_support | queue_pressure | $0.0878 | success
+2025-10-27T11:00:27.079049 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 16:00:34 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 16:00:34 | invoice_processing | queue_pressure | $0.0903 | success
+2025-10-27T11:00:34.104264 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 16:00:44 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 16:00:44 | customer_support | workflow_delay | $0.0912 | success
+2025-10-27T11:00:44.139637 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 16:00:49 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 16:00:49 | order_processing | workflow_delay | $0.0983 | success
+2025-10-27T11:00:49.160319 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 16:00:55 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 16:00:55 | customer_support | queue_pressure | $0.0966 | success
+2025-10-27T11:00:55.177970 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 16:01:04 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 16:01:04 | order_processing | workflow_delay | $0.0890 | success
+2025-10-27T11:01:04.208038 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 16:01:12 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 16:01:12 | customer_support | workflow_delay | $0.0979 | success
+2025-10-27T11:01:12.227541 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 16:01:20 | demo_client | api_failure | $0.0500 | success
+2025-10-27 16:01:20 | customer_support | api_failure | $0.0914 | success
+2025-10-27T11:01:20.257565 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 16:01:29 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 16:01:29 | customer_support | queue_pressure | $0.0892 | success
+2025-10-27T11:01:29.283595 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 16:01:39 | demo_client | data_error | $0.0500 | success
+2025-10-27 16:01:39 | invoice_processing | data_error | $0.0918 | success
+2025-10-27T11:01:39.308148 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 16:01:45 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 16:01:45 | customer_support | queue_pressure | $0.0899 | success
+2025-10-27T11:01:45.331018 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 16:01:51 | demo_client | data_error | $0.0500 | success
+2025-10-27 16:01:51 | invoice_processing | data_error | $0.0896 | success
+2025-10-27T11:01:51.357271 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 16:01:57 | demo_client | data_error | $0.0500 | success
+2025-10-27 16:01:57 | invoice_processing | data_error | $0.0978 | success
+2025-10-27T11:01:57.373903 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 16:02:03 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 16:02:03 | invoice_processing | queue_pressure | $0.0890 | success
+2025-10-27T11:02:03.391262 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 16:02:11 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 16:02:11 | invoice_processing | workflow_delay | $0.0973 | success
+2025-10-27T11:02:11.410545 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 16:02:17 | demo_client | api_failure | $0.0500 | success
+2025-10-27 16:02:17 | invoice_processing | api_failure | $0.0984 | success
+2025-10-27T11:02:17.434923 | invoice_processing | api_failure | $0.05 | simulated
+2025-10-27 16:02:24 | demo_client | api_failure | $0.0500 | success
+2025-10-27 16:02:24 | order_processing | api_failure | $0.0906 | success
+2025-10-27T11:02:24.462168 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 16:02:31 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 16:02:31 | order_processing | queue_pressure | $0.0988 | success
+2025-10-27T11:02:31.486878 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 16:02:39 | demo_client | api_failure | $0.0500 | success
+2025-10-27 16:02:39 | customer_support | api_failure | $0.0898 | success
+2025-10-27T11:02:39.509992 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 16:02:44 | demo_client | api_failure | $0.0500 | success
+2025-10-27 16:02:44 | customer_support | api_failure | $0.0907 | success
+2025-10-27T11:02:44.531820 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 16:02:52 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 16:02:52 | invoice_processing | queue_pressure | $0.0907 | success
+2025-10-27T11:02:52.555915 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 16:03:02 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 16:03:02 | invoice_processing | workflow_delay | $0.0937 | success
+2025-10-27T11:03:02.579368 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 16:03:09 | demo_client | data_error | $0.0500 | success
+2025-10-27 16:03:09 | customer_support | data_error | $0.0911 | success
+2025-10-27T11:03:09.597977 | customer_support | data_error | $0.05 | simulated
+2025-10-27 16:03:19 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 16:03:19 | invoice_processing | workflow_delay | $0.0984 | success
+2025-10-27T11:03:19.622755 | invoice_processing | workflow_delay | $0.05 | simulated
+2025-10-27 16:03:27 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 16:03:27 | customer_support | queue_pressure | $0.0921 | success
+2025-10-27T11:03:27.646681 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 16:03:37 | demo_client | data_error | $0.0500 | success
+2025-10-27 16:03:37 | customer_support | data_error | $0.0911 | success
+2025-10-27T11:03:37.665828 | customer_support | data_error | $0.05 | simulated
+2025-10-27 16:03:44 | demo_client | api_failure | $0.0500 | success
+2025-10-27 16:03:44 | order_processing | api_failure | $0.0913 | success
+2025-10-27T11:03:44.689995 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 16:03:49 | demo_client | data_error | $0.0500 | success
+2025-10-27 16:03:49 | invoice_processing | data_error | $0.0970 | success
+2025-10-27T11:03:49.712718 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 16:03:57 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 16:03:57 | customer_support | workflow_delay | $0.0909 | success
+2025-10-27T11:03:57.731917 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 16:04:07 | demo_client | api_failure | $0.0500 | success
+2025-10-27 16:04:07 | customer_support | api_failure | $0.0927 | success
+2025-10-27T11:04:07.749585 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 16:04:16 | demo_client | data_error | $0.0500 | success
+2025-10-27 16:04:16 | customer_support | data_error | $0.0983 | success
+2025-10-27T11:04:16.770918 | customer_support | data_error | $0.05 | simulated
+2025-10-27 16:04:25 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 16:04:25 | order_processing | queue_pressure | $0.0973 | success
+2025-10-27T11:04:25.792974 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 16:04:32 | demo_client | api_failure | $0.0500 | success
+2025-10-27 16:04:32 | order_processing | api_failure | $0.0968 | success
+2025-10-27T11:04:32.815164 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 16:04:38 | demo_client | data_error | $0.0500 | success
+2025-10-27 16:04:38 | invoice_processing | data_error | $0.0990 | success
+2025-10-27T11:04:38.831997 | invoice_processing | data_error | $0.05 | simulated
+2025-10-27 16:04:48 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 16:04:48 | order_processing | workflow_delay | $0.0913 | success
+2025-10-27T11:04:48.853025 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 16:04:56 | demo_client | api_failure | $0.0500 | success
+2025-10-27 16:04:56 | customer_support | api_failure | $0.0912 | success
+2025-10-27T11:04:56.871221 | customer_support | api_failure | $0.05 | simulated
+2025-10-27 16:05:05 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 16:05:05 | customer_support | workflow_delay | $0.0904 | success
+2025-10-27T11:05:05.891380 | customer_support | workflow_delay | $0.05 | simulated
+2025-10-27 16:05:15 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 16:05:15 | invoice_processing | queue_pressure | $0.0982 | success
+2025-10-27T11:05:15.910536 | invoice_processing | queue_pressure | $0.05 | simulated
+2025-10-27 16:05:23 | demo_client | api_failure | $0.0500 | success
+2025-10-27 16:05:23 | order_processing | api_failure | $0.0950 | success
+2025-10-27T11:05:23.936063 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 16:05:29 | demo_client | workflow_delay | $0.0500 | success
+2025-10-27 16:05:29 | order_processing | workflow_delay | $0.0949 | success
+2025-10-27T11:05:29.953596 | order_processing | workflow_delay | $0.05 | simulated
+2025-10-27 16:05:37 | demo_client | data_error | $0.0500 | success
+2025-10-27 16:05:37 | order_processing | data_error | $0.0967 | success
+2025-10-27T11:05:37.970857 | order_processing | data_error | $0.05 | simulated
+2025-10-27 16:05:42 | demo_client | data_error | $0.0500 | success
+2025-10-27 16:05:42 | order_processing | data_error | $0.0938 | success
+2025-10-27T11:05:42.996558 | order_processing | data_error | $0.05 | simulated
+2025-10-27 16:05:50 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 16:05:50 | customer_support | queue_pressure | $0.0979 | success
+2025-10-27T11:05:50.019518 | customer_support | queue_pressure | $0.05 | simulated
+2025-10-27 16:05:59 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 16:05:59 | order_processing | queue_pressure | $0.0943 | success
+2025-10-27T11:05:59.037908 | order_processing | queue_pressure | $0.05 | simulated
+2025-10-27 16:06:05 | demo_client | api_failure | $0.0500 | success
+2025-10-27 16:06:05 | order_processing | api_failure | $0.0975 | success
+2025-10-27T11:06:05.079985 | order_processing | api_failure | $0.05 | simulated
+2025-10-27 16:06:13 | demo_client | queue_pressure | $0.0500 | success
+2025-10-27 16:06:13 | invoice_processing | queue_pressure | $0.0965 | success
+2025-10-27T11:06:13.110681 | invoice_processing | queue_pressure | $0.05 | simulated
