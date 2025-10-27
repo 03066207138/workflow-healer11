@@ -13886,3 +13886,483 @@
 [2025-10-27 15:05:32] 🧪 Revalidating data pipeline for order_processing
 [2025-10-27 15:05:32] 🛠️ Performing custom action: notify_owner
 [2025-10-27 15:05:32] 🟢 Healing executed successfully for order_processing (data_error)
+[2025-10-27 15:05:39] ⚠️ order_processing anomaly detected → data_error
+[2025-10-27 15:05:39] 💡 Suggested healing actions: ['revalidate_pipeline', 'notify_owner']
+[2025-10-27 15:05:39] 🧪 Revalidating data pipeline for order_processing
+[2025-10-27 15:05:39] 🛠️ Performing custom action: notify_owner
+[2025-10-27 15:05:39] 🟢 Healing executed successfully for order_processing (data_error)
+[2025-10-27 15:05:47] ⚠️ order_processing anomaly detected → workflow_delay
+[2025-10-27 15:05:47] 💡 Suggested healing actions: ['optimize_scheduler', 'scale_up_workers']
+[2025-10-27 15:05:47] ⚙️ Optimizing workflow scheduler for order_processing
+[2025-10-27 15:05:47] 📈 Scaling up resources for order_processing
+[2025-10-27 15:05:47] 🟢 Healing executed successfully for order_processing (workflow_delay)
+[2025-10-27 15:05:55] ⚠️ order_processing anomaly detected → data_error
+[2025-10-27 15:05:55] 💡 Suggested healing actions: ['revalidate_pipeline', 'notify_owner']
+[2025-10-27 15:05:55] 🧪 Revalidating data pipeline for order_processing
+[2025-10-27 15:05:55] 🛠️ Performing custom action: notify_owner
+[2025-10-27 15:05:55] 🟢 Healing executed successfully for order_processing (data_error)
+[2025-10-27 15:06:02] ⚠️ customer_support anomaly detected → workflow_delay
+[2025-10-27 15:06:02] 💡 Suggested healing actions: ['optimize_scheduler', 'scale_up_workers']
+[2025-10-27 15:06:02] ⚙️ Optimizing workflow scheduler for customer_support
+[2025-10-27 15:06:02] 📈 Scaling up resources for customer_support
+[2025-10-27 15:06:02] 🟢 Healing executed successfully for customer_support (workflow_delay)
+[2025-10-27 15:06:08] ⚠️ invoice_processing anomaly detected → api_failure
+[2025-10-27 15:06:08] 💡 Suggested healing actions: ['switch_backup_endpoint', 'retry_request']
+[2025-10-27 15:06:08] 🛠️ Performing custom action: switch_backup_endpoint
+[2025-10-27 15:06:08] 🔄 Retrying operation for invoice_processing
+[2025-10-27 15:06:08] 🟢 Healing executed successfully for invoice_processing (api_failure)
+[2025-10-27 15:06:18] ⚠️ customer_support anomaly detected → workflow_delay
+[2025-10-27 15:06:18] 💡 Suggested healing actions: ['optimize_scheduler', 'scale_up_workers']
+[2025-10-27 15:06:18] ⚙️ Optimizing workflow scheduler for customer_support
+[2025-10-27 15:06:18] 📈 Scaling up resources for customer_support
+[2025-10-27 15:06:18] 🟢 Healing executed successfully for customer_support (workflow_delay)
+[2025-10-27 15:06:27] ⚠️ order_processing anomaly detected → data_error
+[2025-10-27 15:06:27] 💡 Suggested healing actions: ['revalidate_pipeline', 'notify_owner']
+[2025-10-27 15:06:27] 🧪 Revalidating data pipeline for order_processing
+[2025-10-27 15:06:27] 🛠️ Performing custom action: notify_owner
+[2025-10-27 15:06:27] 🟢 Healing executed successfully for order_processing (data_error)
+[2025-10-27 15:06:33] ⚠️ customer_support anomaly detected → data_error
+[2025-10-27 15:06:33] 💡 Suggested healing actions: ['revalidate_pipeline', 'notify_owner']
+[2025-10-27 15:06:33] 🧪 Revalidating data pipeline for customer_support
+[2025-10-27 15:06:33] 🛠️ Performing custom action: notify_owner
+[2025-10-27 15:06:33] 🟢 Healing executed successfully for customer_support (data_error)
+[2025-10-27 15:06:43] ⚠️ order_processing anomaly detected → queue_pressure
+[2025-10-27 15:06:43] 💡 Suggested healing actions: ['restart_queue', 'increase_batching']
+[2025-10-27 15:06:43] ♻️ Restarting service for order_processing
+[2025-10-27 15:06:43] 🛠️ Performing custom action: increase_batching
+[2025-10-27 15:06:43] 🟢 Healing executed successfully for order_processing (queue_pressure)
+[2025-10-27 15:06:53] ⚠️ invoice_processing anomaly detected → queue_pressure
+[2025-10-27 15:06:53] 💡 Suggested healing actions: ['restart_queue', 'increase_batching']
+[2025-10-27 15:06:53] ♻️ Restarting service for invoice_processing
+[2025-10-27 15:06:53] 🛠️ Performing custom action: increase_batching
+[2025-10-27 15:06:53] 🟢 Healing executed successfully for invoice_processing (queue_pressure)
+[2025-10-27 15:06:58] ⚠️ invoice_processing anomaly detected → workflow_delay
+[2025-10-27 15:06:58] 💡 Suggested healing actions: ['optimize_scheduler', 'scale_up_workers']
+[2025-10-27 15:06:58] ⚙️ Optimizing workflow scheduler for invoice_processing
+[2025-10-27 15:06:58] 📈 Scaling up resources for invoice_processing
+[2025-10-27 15:06:58] 🟢 Healing executed successfully for invoice_processing (workflow_delay)
+[2025-10-27 15:07:03] ⚠️ invoice_processing anomaly detected → queue_pressure
+[2025-10-27 15:07:03] 💡 Suggested healing actions: ['restart_queue', 'increase_batching']
+[2025-10-27 15:07:03] ♻️ Restarting service for invoice_processing
+[2025-10-27 15:07:03] 🛠️ Performing custom action: increase_batching
+[2025-10-27 15:07:03] 🟢 Healing executed successfully for invoice_processing (queue_pressure)
+[2025-10-27 15:07:10] ⚠️ invoice_processing anomaly detected → queue_pressure
+[2025-10-27 15:07:10] 💡 Suggested healing actions: ['restart_queue', 'increase_batching']
+[2025-10-27 15:07:10] ♻️ Restarting service for invoice_processing
+[2025-10-27 15:07:10] 🛠️ Performing custom action: increase_batching
+[2025-10-27 15:07:10] 🟢 Healing executed successfully for invoice_processing (queue_pressure)
+[2025-10-27 15:07:18] ⚠️ invoice_processing anomaly detected → queue_pressure
+[2025-10-27 15:07:18] 💡 Suggested healing actions: ['restart_queue', 'increase_batching']
+[2025-10-27 15:07:18] ♻️ Restarting service for invoice_processing
+[2025-10-27 15:07:18] 🛠️ Performing custom action: increase_batching
+[2025-10-27 15:07:18] 🟢 Healing executed successfully for invoice_processing (queue_pressure)
+[2025-10-27 15:07:28] ⚠️ order_processing anomaly detected → api_failure
+[2025-10-27 15:07:28] 💡 Suggested healing actions: ['switch_backup_endpoint', 'retry_request']
+[2025-10-27 15:07:28] 🛠️ Performing custom action: switch_backup_endpoint
+[2025-10-27 15:07:28] 🔄 Retrying operation for order_processing
+[2025-10-27 15:07:28] 🟢 Healing executed successfully for order_processing (api_failure)
+[2025-10-27 15:07:38] ⚠️ customer_support anomaly detected → queue_pressure
+[2025-10-27 15:07:38] 💡 Suggested healing actions: ['restart_queue', 'increase_batching']
+[2025-10-27 15:07:38] ♻️ Restarting service for customer_support
+[2025-10-27 15:07:38] 🛠️ Performing custom action: increase_batching
+[2025-10-27 15:07:38] 🟢 Healing executed successfully for customer_support (queue_pressure)
+[2025-10-27 15:07:46] ⚠️ customer_support anomaly detected → workflow_delay
+[2025-10-27 15:07:46] 💡 Suggested healing actions: ['optimize_scheduler', 'scale_up_workers']
+[2025-10-27 15:07:46] ⚙️ Optimizing workflow scheduler for customer_support
+[2025-10-27 15:07:46] 📈 Scaling up resources for customer_support
+[2025-10-27 15:07:46] 🟢 Healing executed successfully for customer_support (workflow_delay)
+[2025-10-27 15:07:51] ⚠️ invoice_processing anomaly detected → queue_pressure
+[2025-10-27 15:07:51] 💡 Suggested healing actions: ['restart_queue', 'increase_batching']
+[2025-10-27 15:07:51] ♻️ Restarting service for invoice_processing
+[2025-10-27 15:07:51] 🛠️ Performing custom action: increase_batching
+[2025-10-27 15:07:51] 🟢 Healing executed successfully for invoice_processing (queue_pressure)
+[2025-10-27 15:07:57] ⚠️ customer_support anomaly detected → data_error
+[2025-10-27 15:07:57] 💡 Suggested healing actions: ['revalidate_pipeline', 'notify_owner']
+[2025-10-27 15:07:57] 🧪 Revalidating data pipeline for customer_support
+[2025-10-27 15:07:57] 🛠️ Performing custom action: notify_owner
+[2025-10-27 15:07:57] 🟢 Healing executed successfully for customer_support (data_error)
+[2025-10-27 15:08:03] ⚠️ order_processing anomaly detected → data_error
+[2025-10-27 15:08:03] 💡 Suggested healing actions: ['revalidate_pipeline', 'notify_owner']
+[2025-10-27 15:08:03] 🧪 Revalidating data pipeline for order_processing
+[2025-10-27 15:08:03] 🛠️ Performing custom action: notify_owner
+[2025-10-27 15:08:03] 🟢 Healing executed successfully for order_processing (data_error)
+[2025-10-27 15:08:11] ⚠️ customer_support anomaly detected → data_error
+[2025-10-27 15:08:11] 💡 Suggested healing actions: ['revalidate_pipeline', 'notify_owner']
+[2025-10-27 15:08:11] 🧪 Revalidating data pipeline for customer_support
+[2025-10-27 15:08:11] 🛠️ Performing custom action: notify_owner
+[2025-10-27 15:08:11] 🟢 Healing executed successfully for customer_support (data_error)
+[2025-10-27 15:08:16] ⚠️ customer_support anomaly detected → queue_pressure
+[2025-10-27 15:08:16] 💡 Suggested healing actions: ['restart_queue', 'increase_batching']
+[2025-10-27 15:08:16] ♻️ Restarting service for customer_support
+[2025-10-27 15:08:16] 🛠️ Performing custom action: increase_batching
+[2025-10-27 15:08:16] 🟢 Healing executed successfully for customer_support (queue_pressure)
+[2025-10-27 15:08:22] ⚠️ invoice_processing anomaly detected → data_error
+[2025-10-27 15:08:22] 💡 Suggested healing actions: ['revalidate_pipeline', 'notify_owner']
+[2025-10-27 15:08:22] 🧪 Revalidating data pipeline for invoice_processing
+[2025-10-27 15:08:22] 🛠️ Performing custom action: notify_owner
+[2025-10-27 15:08:22] 🟢 Healing executed successfully for invoice_processing (data_error)
+[2025-10-27 15:08:27] ⚠️ invoice_processing anomaly detected → workflow_delay
+[2025-10-27 15:08:27] 💡 Suggested healing actions: ['optimize_scheduler', 'scale_up_workers']
+[2025-10-27 15:08:27] ⚙️ Optimizing workflow scheduler for invoice_processing
+[2025-10-27 15:08:27] 📈 Scaling up resources for invoice_processing
+[2025-10-27 15:08:27] 🟢 Healing executed successfully for invoice_processing (workflow_delay)
+[2025-10-27 15:08:37] ⚠️ invoice_processing anomaly detected → workflow_delay
+[2025-10-27 15:08:37] 💡 Suggested healing actions: ['optimize_scheduler', 'scale_up_workers']
+[2025-10-27 15:08:37] ⚙️ Optimizing workflow scheduler for invoice_processing
+[2025-10-27 15:08:37] 📈 Scaling up resources for invoice_processing
+[2025-10-27 15:08:37] 🟢 Healing executed successfully for invoice_processing (workflow_delay)
+[2025-10-27 15:08:42] ⚠️ order_processing anomaly detected → api_failure
+[2025-10-27 15:08:42] 💡 Suggested healing actions: ['switch_backup_endpoint', 'retry_request']
+[2025-10-27 15:08:42] 🛠️ Performing custom action: switch_backup_endpoint
+[2025-10-27 15:08:42] 🔄 Retrying operation for order_processing
+[2025-10-27 15:08:42] 🟢 Healing executed successfully for order_processing (api_failure)
+[2025-10-27 15:08:50] ⚠️ order_processing anomaly detected → workflow_delay
+[2025-10-27 15:08:50] 💡 Suggested healing actions: ['optimize_scheduler', 'scale_up_workers']
+[2025-10-27 15:08:50] ⚙️ Optimizing workflow scheduler for order_processing
+[2025-10-27 15:08:50] 📈 Scaling up resources for order_processing
+[2025-10-27 15:08:50] 🟢 Healing executed successfully for order_processing (workflow_delay)
+[2025-10-27 15:08:59] ⚠️ order_processing anomaly detected → workflow_delay
+[2025-10-27 15:08:59] 💡 Suggested healing actions: ['optimize_scheduler', 'scale_up_workers']
+[2025-10-27 15:08:59] ⚙️ Optimizing workflow scheduler for order_processing
+[2025-10-27 15:08:59] 📈 Scaling up resources for order_processing
+[2025-10-27 15:08:59] 🟢 Healing executed successfully for order_processing (workflow_delay)
+[2025-10-27 15:09:07] ⚠️ customer_support anomaly detected → workflow_delay
+[2025-10-27 15:09:07] 💡 Suggested healing actions: ['optimize_scheduler', 'scale_up_workers']
+[2025-10-27 15:09:07] ⚙️ Optimizing workflow scheduler for customer_support
+[2025-10-27 15:09:07] 📈 Scaling up resources for customer_support
+[2025-10-27 15:09:07] 🟢 Healing executed successfully for customer_support (workflow_delay)
+[2025-10-27 15:09:13] ⚠️ customer_support anomaly detected → api_failure
+[2025-10-27 15:09:13] 💡 Suggested healing actions: ['switch_backup_endpoint', 'retry_request']
+[2025-10-27 15:09:13] 🛠️ Performing custom action: switch_backup_endpoint
+[2025-10-27 15:09:13] 🔄 Retrying operation for customer_support
+[2025-10-27 15:09:13] 🟢 Healing executed successfully for customer_support (api_failure)
+[2025-10-27 15:09:22] ⚠️ order_processing anomaly detected → api_failure
+[2025-10-27 15:09:22] 💡 Suggested healing actions: ['switch_backup_endpoint', 'retry_request']
+[2025-10-27 15:09:22] 🛠️ Performing custom action: switch_backup_endpoint
+[2025-10-27 15:09:22] 🔄 Retrying operation for order_processing
+[2025-10-27 15:09:22] 🟢 Healing executed successfully for order_processing (api_failure)
+[2025-10-27 15:09:30] ⚠️ invoice_processing anomaly detected → queue_pressure
+[2025-10-27 15:09:30] 💡 Suggested healing actions: ['restart_queue', 'increase_batching']
+[2025-10-27 15:09:30] ♻️ Restarting service for invoice_processing
+[2025-10-27 15:09:30] 🛠️ Performing custom action: increase_batching
+[2025-10-27 15:09:30] 🟢 Healing executed successfully for invoice_processing (queue_pressure)
+[2025-10-27 15:09:38] ⚠️ customer_support anomaly detected → queue_pressure
+[2025-10-27 15:09:38] 💡 Suggested healing actions: ['restart_queue', 'increase_batching']
+[2025-10-27 15:09:38] ♻️ Restarting service for customer_support
+[2025-10-27 15:09:38] 🛠️ Performing custom action: increase_batching
+[2025-10-27 15:09:38] 🟢 Healing executed successfully for customer_support (queue_pressure)
+[2025-10-27 15:09:46] ⚠️ order_processing anomaly detected → workflow_delay
+[2025-10-27 15:09:46] 💡 Suggested healing actions: ['optimize_scheduler', 'scale_up_workers']
+[2025-10-27 15:09:46] ⚙️ Optimizing workflow scheduler for order_processing
+[2025-10-27 15:09:46] 📈 Scaling up resources for order_processing
+[2025-10-27 15:09:46] 🟢 Healing executed successfully for order_processing (workflow_delay)
+[2025-10-27 15:09:53] ⚠️ customer_support anomaly detected → queue_pressure
+[2025-10-27 15:09:53] 💡 Suggested healing actions: ['restart_queue', 'increase_batching']
+[2025-10-27 15:09:53] ♻️ Restarting service for customer_support
+[2025-10-27 15:09:53] 🛠️ Performing custom action: increase_batching
+[2025-10-27 15:09:53] 🟢 Healing executed successfully for customer_support (queue_pressure)
+[2025-10-27 15:10:03] ⚠️ invoice_processing anomaly detected → workflow_delay
+[2025-10-27 15:10:03] 💡 Suggested healing actions: ['optimize_scheduler', 'scale_up_workers']
+[2025-10-27 15:10:03] ⚙️ Optimizing workflow scheduler for invoice_processing
+[2025-10-27 15:10:03] 📈 Scaling up resources for invoice_processing
+[2025-10-27 15:10:03] 🟢 Healing executed successfully for invoice_processing (workflow_delay)
+[2025-10-27 15:10:11] ⚠️ invoice_processing anomaly detected → data_error
+[2025-10-27 15:10:11] 💡 Suggested healing actions: ['revalidate_pipeline', 'notify_owner']
+[2025-10-27 15:10:12] 🧪 Revalidating data pipeline for invoice_processing
+[2025-10-27 15:10:12] 🛠️ Performing custom action: notify_owner
+[2025-10-27 15:10:12] 🟢 Healing executed successfully for invoice_processing (data_error)
+[2025-10-27 15:10:17] ⚠️ invoice_processing anomaly detected → workflow_delay
+[2025-10-27 15:10:17] 💡 Suggested healing actions: ['optimize_scheduler', 'scale_up_workers']
+[2025-10-27 15:10:17] ⚙️ Optimizing workflow scheduler for invoice_processing
+[2025-10-27 15:10:17] 📈 Scaling up resources for invoice_processing
+[2025-10-27 15:10:17] 🟢 Healing executed successfully for invoice_processing (workflow_delay)
+[2025-10-27 15:10:24] ⚠️ customer_support anomaly detected → data_error
+[2025-10-27 15:10:24] 💡 Suggested healing actions: ['revalidate_pipeline', 'notify_owner']
+[2025-10-27 15:10:24] 🧪 Revalidating data pipeline for customer_support
+[2025-10-27 15:10:24] 🛠️ Performing custom action: notify_owner
+[2025-10-27 15:10:24] 🟢 Healing executed successfully for customer_support (data_error)
+[2025-10-27 15:10:29] ⚠️ customer_support anomaly detected → workflow_delay
+[2025-10-27 15:10:29] 💡 Suggested healing actions: ['optimize_scheduler', 'scale_up_workers']
+[2025-10-27 15:10:29] ⚙️ Optimizing workflow scheduler for customer_support
+[2025-10-27 15:10:29] 📈 Scaling up resources for customer_support
+[2025-10-27 15:10:29] 🟢 Healing executed successfully for customer_support (workflow_delay)
+[2025-10-27 15:10:35] ⚠️ order_processing anomaly detected → api_failure
+[2025-10-27 15:10:35] 💡 Suggested healing actions: ['switch_backup_endpoint', 'retry_request']
+[2025-10-27 15:10:35] 🛠️ Performing custom action: switch_backup_endpoint
+[2025-10-27 15:10:35] 🔄 Retrying operation for order_processing
+[2025-10-27 15:10:35] 🟢 Healing executed successfully for order_processing (api_failure)
+[2025-10-27 15:10:41] ⚠️ order_processing anomaly detected → data_error
+[2025-10-27 15:10:41] 💡 Suggested healing actions: ['revalidate_pipeline', 'notify_owner']
+[2025-10-27 15:10:41] 🧪 Revalidating data pipeline for order_processing
+[2025-10-27 15:10:41] 🛠️ Performing custom action: notify_owner
+[2025-10-27 15:10:41] 🟢 Healing executed successfully for order_processing (data_error)
+[2025-10-27 15:10:48] ⚠️ order_processing anomaly detected → api_failure
+[2025-10-27 15:10:48] 💡 Suggested healing actions: ['switch_backup_endpoint', 'retry_request']
+[2025-10-27 15:10:48] 🛠️ Performing custom action: switch_backup_endpoint
+[2025-10-27 15:10:48] 🔄 Retrying operation for order_processing
+[2025-10-27 15:10:48] 🟢 Healing executed successfully for order_processing (api_failure)
+[2025-10-27 15:10:57] ⚠️ order_processing anomaly detected → queue_pressure
+[2025-10-27 15:10:57] 💡 Suggested healing actions: ['restart_queue', 'increase_batching']
+[2025-10-27 15:10:57] ♻️ Restarting service for order_processing
+[2025-10-27 15:10:57] 🛠️ Performing custom action: increase_batching
+[2025-10-27 15:10:57] 🟢 Healing executed successfully for order_processing (queue_pressure)
+[2025-10-27 15:11:07] ⚠️ customer_support anomaly detected → workflow_delay
+[2025-10-27 15:11:07] 💡 Suggested healing actions: ['optimize_scheduler', 'scale_up_workers']
+[2025-10-27 15:11:07] ⚙️ Optimizing workflow scheduler for customer_support
+[2025-10-27 15:11:07] 📈 Scaling up resources for customer_support
+[2025-10-27 15:11:07] 🟢 Healing executed successfully for customer_support (workflow_delay)
+[2025-10-27 15:11:12] ⚠️ customer_support anomaly detected → data_error
+[2025-10-27 15:11:12] 💡 Suggested healing actions: ['revalidate_pipeline', 'notify_owner']
+[2025-10-27 15:11:12] 🧪 Revalidating data pipeline for customer_support
+[2025-10-27 15:11:12] 🛠️ Performing custom action: notify_owner
+[2025-10-27 15:11:12] 🟢 Healing executed successfully for customer_support (data_error)
+[2025-10-27 15:11:22] ⚠️ invoice_processing anomaly detected → data_error
+[2025-10-27 15:11:22] 💡 Suggested healing actions: ['revalidate_pipeline', 'notify_owner']
+[2025-10-27 15:11:22] 🧪 Revalidating data pipeline for invoice_processing
+[2025-10-27 15:11:22] 🛠️ Performing custom action: notify_owner
+[2025-10-27 15:11:22] 🟢 Healing executed successfully for invoice_processing (data_error)
+[2025-10-27 15:11:28] ⚠️ order_processing anomaly detected → workflow_delay
+[2025-10-27 15:11:28] 💡 Suggested healing actions: ['optimize_scheduler', 'scale_up_workers']
+[2025-10-27 15:11:28] ⚙️ Optimizing workflow scheduler for order_processing
+[2025-10-27 15:11:28] 📈 Scaling up resources for order_processing
+[2025-10-27 15:11:28] 🟢 Healing executed successfully for order_processing (workflow_delay)
+[2025-10-27 15:11:36] ⚠️ invoice_processing anomaly detected → api_failure
+[2025-10-27 15:11:36] 💡 Suggested healing actions: ['switch_backup_endpoint', 'retry_request']
+[2025-10-27 15:11:36] 🛠️ Performing custom action: switch_backup_endpoint
+[2025-10-27 15:11:36] 🔄 Retrying operation for invoice_processing
+[2025-10-27 15:11:36] 🟢 Healing executed successfully for invoice_processing (api_failure)
+[2025-10-27 15:11:45] ⚠️ order_processing anomaly detected → data_error
+[2025-10-27 15:11:45] 💡 Suggested healing actions: ['revalidate_pipeline', 'notify_owner']
+[2025-10-27 15:11:45] 🧪 Revalidating data pipeline for order_processing
+[2025-10-27 15:11:45] 🛠️ Performing custom action: notify_owner
+[2025-10-27 15:11:45] 🟢 Healing executed successfully for order_processing (data_error)
+[2025-10-27 15:11:53] ⚠️ invoice_processing anomaly detected → workflow_delay
+[2025-10-27 15:11:53] 💡 Suggested healing actions: ['optimize_scheduler', 'scale_up_workers']
+[2025-10-27 15:11:53] ⚙️ Optimizing workflow scheduler for invoice_processing
+[2025-10-27 15:11:53] 📈 Scaling up resources for invoice_processing
+[2025-10-27 15:11:53] 🟢 Healing executed successfully for invoice_processing (workflow_delay)
+[2025-10-27 15:12:01] ⚠️ customer_support anomaly detected → api_failure
+[2025-10-27 15:12:01] 💡 Suggested healing actions: ['switch_backup_endpoint', 'retry_request']
+[2025-10-27 15:12:01] 🛠️ Performing custom action: switch_backup_endpoint
+[2025-10-27 15:12:01] 🔄 Retrying operation for customer_support
+[2025-10-27 15:12:01] 🟢 Healing executed successfully for customer_support (api_failure)
+[2025-10-27 15:12:10] ⚠️ order_processing anomaly detected → data_error
+[2025-10-27 15:12:10] 💡 Suggested healing actions: ['revalidate_pipeline', 'notify_owner']
+[2025-10-27 15:12:10] 🧪 Revalidating data pipeline for order_processing
+[2025-10-27 15:12:10] 🛠️ Performing custom action: notify_owner
+[2025-10-27 15:12:10] 🟢 Healing executed successfully for order_processing (data_error)
+[2025-10-27 15:12:15] ⚠️ order_processing anomaly detected → api_failure
+[2025-10-27 15:12:15] 💡 Suggested healing actions: ['switch_backup_endpoint', 'retry_request']
+[2025-10-27 15:12:15] 🛠️ Performing custom action: switch_backup_endpoint
+[2025-10-27 15:12:15] 🔄 Retrying operation for order_processing
+[2025-10-27 15:12:15] 🟢 Healing executed successfully for order_processing (api_failure)
+[2025-10-27 15:12:20] ⚠️ invoice_processing anomaly detected → data_error
+[2025-10-27 15:12:20] 💡 Suggested healing actions: ['revalidate_pipeline', 'notify_owner']
+[2025-10-27 15:12:20] 🧪 Revalidating data pipeline for invoice_processing
+[2025-10-27 15:12:20] 🛠️ Performing custom action: notify_owner
+[2025-10-27 15:12:20] 🟢 Healing executed successfully for invoice_processing (data_error)
+[2025-10-27 15:12:28] ⚠️ order_processing anomaly detected → api_failure
+[2025-10-27 15:12:28] 💡 Suggested healing actions: ['switch_backup_endpoint', 'retry_request']
+[2025-10-27 15:12:28] 🛠️ Performing custom action: switch_backup_endpoint
+[2025-10-27 15:12:28] 🔄 Retrying operation for order_processing
+[2025-10-27 15:12:28] 🟢 Healing executed successfully for order_processing (api_failure)
+[2025-10-27 15:12:37] ⚠️ order_processing anomaly detected → data_error
+[2025-10-27 15:12:37] 💡 Suggested healing actions: ['revalidate_pipeline', 'notify_owner']
+[2025-10-27 15:12:37] 🧪 Revalidating data pipeline for order_processing
+[2025-10-27 15:12:37] 🛠️ Performing custom action: notify_owner
+[2025-10-27 15:12:37] 🟢 Healing executed successfully for order_processing (data_error)
+[2025-10-27 15:12:47] ⚠️ invoice_processing anomaly detected → api_failure
+[2025-10-27 15:12:47] 💡 Suggested healing actions: ['switch_backup_endpoint', 'retry_request']
+[2025-10-27 15:12:47] 🛠️ Performing custom action: switch_backup_endpoint
+[2025-10-27 15:12:47] 🔄 Retrying operation for invoice_processing
+[2025-10-27 15:12:47] 🟢 Healing executed successfully for invoice_processing (api_failure)
+[2025-10-27 15:12:52] ⚠️ customer_support anomaly detected → workflow_delay
+[2025-10-27 15:12:52] 💡 Suggested healing actions: ['optimize_scheduler', 'scale_up_workers']
+[2025-10-27 15:12:52] ⚙️ Optimizing workflow scheduler for customer_support
+[2025-10-27 15:12:52] 📈 Scaling up resources for customer_support
+[2025-10-27 15:12:52] 🟢 Healing executed successfully for customer_support (workflow_delay)
+[2025-10-27 15:12:57] ⚠️ invoice_processing anomaly detected → api_failure
+[2025-10-27 15:12:57] 💡 Suggested healing actions: ['switch_backup_endpoint', 'retry_request']
+[2025-10-27 15:12:57] 🛠️ Performing custom action: switch_backup_endpoint
+[2025-10-27 15:12:57] 🔄 Retrying operation for invoice_processing
+[2025-10-27 15:12:57] 🟢 Healing executed successfully for invoice_processing (api_failure)
+[2025-10-27 15:13:03] ⚠️ customer_support anomaly detected → data_error
+[2025-10-27 15:13:03] 💡 Suggested healing actions: ['revalidate_pipeline', 'notify_owner']
+[2025-10-27 15:13:03] 🧪 Revalidating data pipeline for customer_support
+[2025-10-27 15:13:03] 🛠️ Performing custom action: notify_owner
+[2025-10-27 15:13:03] 🟢 Healing executed successfully for customer_support (data_error)
+[2025-10-27 15:13:11] ⚠️ order_processing anomaly detected → api_failure
+[2025-10-27 15:13:11] 💡 Suggested healing actions: ['switch_backup_endpoint', 'retry_request']
+[2025-10-27 15:13:11] 🛠️ Performing custom action: switch_backup_endpoint
+[2025-10-27 15:13:11] 🔄 Retrying operation for order_processing
+[2025-10-27 15:13:11] 🟢 Healing executed successfully for order_processing (api_failure)
+[2025-10-27 15:13:17] ⚠️ customer_support anomaly detected → queue_pressure
+[2025-10-27 15:13:17] 💡 Suggested healing actions: ['restart_queue', 'increase_batching']
+[2025-10-27 15:13:17] ♻️ Restarting service for customer_support
+[2025-10-27 15:13:17] 🛠️ Performing custom action: increase_batching
+[2025-10-27 15:13:17] 🟢 Healing executed successfully for customer_support (queue_pressure)
+[2025-10-27 15:13:26] ⚠️ order_processing anomaly detected → api_failure
+[2025-10-27 15:13:26] 💡 Suggested healing actions: ['switch_backup_endpoint', 'retry_request']
+[2025-10-27 15:13:26] 🛠️ Performing custom action: switch_backup_endpoint
+[2025-10-27 15:13:26] 🔄 Retrying operation for order_processing
+[2025-10-27 15:13:26] 🟢 Healing executed successfully for order_processing (api_failure)
+[2025-10-27 15:13:36] ⚠️ customer_support anomaly detected → workflow_delay
+[2025-10-27 15:13:36] 💡 Suggested healing actions: ['optimize_scheduler', 'scale_up_workers']
+[2025-10-27 15:13:36] ⚙️ Optimizing workflow scheduler for customer_support
+[2025-10-27 15:13:36] 📈 Scaling up resources for customer_support
+[2025-10-27 15:13:36] 🟢 Healing executed successfully for customer_support (workflow_delay)
+[2025-10-27 15:13:46] ⚠️ customer_support anomaly detected → api_failure
+[2025-10-27 15:13:46] 💡 Suggested healing actions: ['switch_backup_endpoint', 'retry_request']
+[2025-10-27 15:13:46] 🛠️ Performing custom action: switch_backup_endpoint
+[2025-10-27 15:13:46] 🔄 Retrying operation for customer_support
+[2025-10-27 15:13:46] 🟢 Healing executed successfully for customer_support (api_failure)
+[2025-10-27 15:13:51] ⚠️ order_processing anomaly detected → queue_pressure
+[2025-10-27 15:13:51] 💡 Suggested healing actions: ['restart_queue', 'increase_batching']
+[2025-10-27 15:13:51] ♻️ Restarting service for order_processing
+[2025-10-27 15:13:51] 🛠️ Performing custom action: increase_batching
+[2025-10-27 15:13:51] 🟢 Healing executed successfully for order_processing (queue_pressure)
+[2025-10-27 15:13:58] ⚠️ invoice_processing anomaly detected → workflow_delay
+[2025-10-27 15:13:58] 💡 Suggested healing actions: ['optimize_scheduler', 'scale_up_workers']
+[2025-10-27 15:13:58] ⚙️ Optimizing workflow scheduler for invoice_processing
+[2025-10-27 15:13:58] 📈 Scaling up resources for invoice_processing
+[2025-10-27 15:13:58] 🟢 Healing executed successfully for invoice_processing (workflow_delay)
+[2025-10-27 15:14:04] ⚠️ customer_support anomaly detected → queue_pressure
+[2025-10-27 15:14:04] 💡 Suggested healing actions: ['restart_queue', 'increase_batching']
+[2025-10-27 15:14:04] ♻️ Restarting service for customer_support
+[2025-10-27 15:14:04] 🛠️ Performing custom action: increase_batching
+[2025-10-27 15:14:04] 🟢 Healing executed successfully for customer_support (queue_pressure)
+[2025-10-27 15:14:11] ⚠️ customer_support anomaly detected → queue_pressure
+[2025-10-27 15:14:11] 💡 Suggested healing actions: ['restart_queue', 'increase_batching']
+[2025-10-27 15:14:11] ♻️ Restarting service for customer_support
+[2025-10-27 15:14:11] 🛠️ Performing custom action: increase_batching
+[2025-10-27 15:14:11] 🟢 Healing executed successfully for customer_support (queue_pressure)
+[2025-10-27 15:14:20] ⚠️ invoice_processing anomaly detected → api_failure
+[2025-10-27 15:14:20] 💡 Suggested healing actions: ['switch_backup_endpoint', 'retry_request']
+[2025-10-27 15:14:20] 🛠️ Performing custom action: switch_backup_endpoint
+[2025-10-27 15:14:20] 🔄 Retrying operation for invoice_processing
+[2025-10-27 15:14:20] 🟢 Healing executed successfully for invoice_processing (api_failure)
+[2025-10-27 15:14:29] ⚠️ order_processing anomaly detected → workflow_delay
+[2025-10-27 15:14:29] 💡 Suggested healing actions: ['optimize_scheduler', 'scale_up_workers']
+[2025-10-27 15:14:29] ⚙️ Optimizing workflow scheduler for order_processing
+[2025-10-27 15:14:29] 📈 Scaling up resources for order_processing
+[2025-10-27 15:14:29] 🟢 Healing executed successfully for order_processing (workflow_delay)
+[2025-10-27 15:14:36] ⚠️ customer_support anomaly detected → data_error
+[2025-10-27 15:14:36] 💡 Suggested healing actions: ['revalidate_pipeline', 'notify_owner']
+[2025-10-27 15:14:36] 🧪 Revalidating data pipeline for customer_support
+[2025-10-27 15:14:36] 🛠️ Performing custom action: notify_owner
+[2025-10-27 15:14:36] 🟢 Healing executed successfully for customer_support (data_error)
+[2025-10-27 15:14:43] ⚠️ order_processing anomaly detected → workflow_delay
+[2025-10-27 15:14:43] 💡 Suggested healing actions: ['optimize_scheduler', 'scale_up_workers']
+[2025-10-27 15:14:43] ⚙️ Optimizing workflow scheduler for order_processing
+[2025-10-27 15:14:43] 📈 Scaling up resources for order_processing
+[2025-10-27 15:14:43] 🟢 Healing executed successfully for order_processing (workflow_delay)
+[2025-10-27 15:14:50] ⚠️ customer_support anomaly detected → queue_pressure
+[2025-10-27 15:14:50] 💡 Suggested healing actions: ['restart_queue', 'increase_batching']
+[2025-10-27 15:14:50] ♻️ Restarting service for customer_support
+[2025-10-27 15:14:50] 🛠️ Performing custom action: increase_batching
+[2025-10-27 15:14:50] 🟢 Healing executed successfully for customer_support (queue_pressure)
+[2025-10-27 15:14:59] ⚠️ order_processing anomaly detected → queue_pressure
+[2025-10-27 15:14:59] 💡 Suggested healing actions: ['restart_queue', 'increase_batching']
+[2025-10-27 15:14:59] ♻️ Restarting service for order_processing
+[2025-10-27 15:14:59] 🛠️ Performing custom action: increase_batching
+[2025-10-27 15:14:59] 🟢 Healing executed successfully for order_processing (queue_pressure)
+[2025-10-27 15:15:07] ⚠️ customer_support anomaly detected → workflow_delay
+[2025-10-27 15:15:07] 💡 Suggested healing actions: ['optimize_scheduler', 'scale_up_workers']
+[2025-10-27 15:15:07] ⚙️ Optimizing workflow scheduler for customer_support
+[2025-10-27 15:15:07] 📈 Scaling up resources for customer_support
+[2025-10-27 15:15:07] 🟢 Healing executed successfully for customer_support (workflow_delay)
+[2025-10-27 15:15:14] ⚠️ order_processing anomaly detected → workflow_delay
+[2025-10-27 15:15:14] 💡 Suggested healing actions: ['optimize_scheduler', 'scale_up_workers']
+[2025-10-27 15:15:14] ⚙️ Optimizing workflow scheduler for order_processing
+[2025-10-27 15:15:14] 📈 Scaling up resources for order_processing
+[2025-10-27 15:15:14] 🟢 Healing executed successfully for order_processing (workflow_delay)
+[2025-10-27 15:15:24] ⚠️ order_processing anomaly detected → queue_pressure
+[2025-10-27 15:15:24] 💡 Suggested healing actions: ['restart_queue', 'increase_batching']
+[2025-10-27 15:15:24] ♻️ Restarting service for order_processing
+[2025-10-27 15:15:24] 🛠️ Performing custom action: increase_batching
+[2025-10-27 15:15:24] 🟢 Healing executed successfully for order_processing (queue_pressure)
+[2025-10-27 15:15:31] ⚠️ invoice_processing anomaly detected → api_failure
+[2025-10-27 15:15:31] 💡 Suggested healing actions: ['switch_backup_endpoint', 'retry_request']
+[2025-10-27 15:15:31] 🛠️ Performing custom action: switch_backup_endpoint
+[2025-10-27 15:15:31] 🔄 Retrying operation for invoice_processing
+[2025-10-27 15:15:31] 🟢 Healing executed successfully for invoice_processing (api_failure)
+[2025-10-27 15:15:37] ⚠️ order_processing anomaly detected → workflow_delay
+[2025-10-27 15:15:37] 💡 Suggested healing actions: ['optimize_scheduler', 'scale_up_workers']
+[2025-10-27 15:15:37] ⚙️ Optimizing workflow scheduler for order_processing
+[2025-10-27 15:15:37] 📈 Scaling up resources for order_processing
+[2025-10-27 15:15:37] 🟢 Healing executed successfully for order_processing (workflow_delay)
+[2025-10-27 15:15:42] ⚠️ customer_support anomaly detected → api_failure
+[2025-10-27 15:15:42] 💡 Suggested healing actions: ['switch_backup_endpoint', 'retry_request']
+[2025-10-27 15:15:42] 🛠️ Performing custom action: switch_backup_endpoint
+[2025-10-27 15:15:42] 🔄 Retrying operation for customer_support
+[2025-10-27 15:15:42] 🟢 Healing executed successfully for customer_support (api_failure)
+[2025-10-27 15:15:48] ⚠️ order_processing anomaly detected → data_error
+[2025-10-27 15:15:48] 💡 Suggested healing actions: ['revalidate_pipeline', 'notify_owner']
+[2025-10-27 15:15:48] 🧪 Revalidating data pipeline for order_processing
+[2025-10-27 15:15:48] 🛠️ Performing custom action: notify_owner
+[2025-10-27 15:15:48] 🟢 Healing executed successfully for order_processing (data_error)
+[2025-10-27 15:15:54] ⚠️ customer_support anomaly detected → api_failure
+[2025-10-27 15:15:54] 💡 Suggested healing actions: ['switch_backup_endpoint', 'retry_request']
+[2025-10-27 15:15:54] 🛠️ Performing custom action: switch_backup_endpoint
+[2025-10-27 15:15:54] 🔄 Retrying operation for customer_support
+[2025-10-27 15:15:54] 🟢 Healing executed successfully for customer_support (api_failure)
+[2025-10-27 15:16:01] ⚠️ customer_support anomaly detected → queue_pressure
+[2025-10-27 15:16:01] 💡 Suggested healing actions: ['restart_queue', 'increase_batching']
+[2025-10-27 15:16:01] ♻️ Restarting service for customer_support
+[2025-10-27 15:16:01] 🛠️ Performing custom action: increase_batching
+[2025-10-27 15:16:01] 🟢 Healing executed successfully for customer_support (queue_pressure)
+[2025-10-27 15:16:08] ⚠️ customer_support anomaly detected → api_failure
+[2025-10-27 15:16:08] 💡 Suggested healing actions: ['switch_backup_endpoint', 'retry_request']
+[2025-10-27 15:16:08] 🛠️ Performing custom action: switch_backup_endpoint
+[2025-10-27 15:16:08] 🔄 Retrying operation for customer_support
+[2025-10-27 15:16:08] 🟢 Healing executed successfully for customer_support (api_failure)
+[2025-10-27 15:16:16] ⚠️ invoice_processing anomaly detected → queue_pressure
+[2025-10-27 15:16:16] 💡 Suggested healing actions: ['restart_queue', 'increase_batching']
+[2025-10-27 15:16:16] ♻️ Restarting service for invoice_processing
+[2025-10-27 15:16:16] 🛠️ Performing custom action: increase_batching
+[2025-10-27 15:16:16] 🟢 Healing executed successfully for invoice_processing (queue_pressure)
+[2025-10-27 15:16:24] ⚠️ order_processing anomaly detected → api_failure
+[2025-10-27 15:16:24] 💡 Suggested healing actions: ['switch_backup_endpoint', 'retry_request']
+[2025-10-27 15:16:24] 🛠️ Performing custom action: switch_backup_endpoint
+[2025-10-27 15:16:24] 🔄 Retrying operation for order_processing
+[2025-10-27 15:16:24] 🟢 Healing executed successfully for order_processing (api_failure)
+[2025-10-27 15:16:30] ⚠️ invoice_processing anomaly detected → queue_pressure
+[2025-10-27 15:16:30] 💡 Suggested healing actions: ['restart_queue', 'increase_batching']
+[2025-10-27 15:16:30] ♻️ Restarting service for invoice_processing
+[2025-10-27 15:16:30] 🛠️ Performing custom action: increase_batching
+[2025-10-27 15:16:30] 🟢 Healing executed successfully for invoice_processing (queue_pressure)
+[2025-10-27 15:16:37] ⚠️ invoice_processing anomaly detected → data_error
+[2025-10-27 15:16:37] 💡 Suggested healing actions: ['revalidate_pipeline', 'notify_owner']
+[2025-10-27 15:16:37] 🧪 Revalidating data pipeline for invoice_processing
+[2025-10-27 15:16:37] 🛠️ Performing custom action: notify_owner
+[2025-10-27 15:16:37] 🟢 Healing executed successfully for invoice_processing (data_error)
+[2025-10-27 15:16:44] ⚠️ order_processing anomaly detected → queue_pressure
+[2025-10-27 15:16:44] 💡 Suggested healing actions: ['restart_queue', 'increase_batching']
+[2025-10-27 15:16:44] ♻️ Restarting service for order_processing
+[2025-10-27 15:16:44] 🛠️ Performing custom action: increase_batching
+[2025-10-27 15:16:44] 🟢 Healing executed successfully for order_processing (queue_pressure)
+[2025-10-27 15:16:54] ⚠️ invoice_processing anomaly detected → queue_pressure
+[2025-10-27 15:16:54] 💡 Suggested healing actions: ['restart_queue', 'increase_batching']
+[2025-10-27 15:16:54] ♻️ Restarting service for invoice_processing
+[2025-10-27 15:16:54] 🛠️ Performing custom action: increase_batching
+[2025-10-27 15:16:54] 🟢 Healing executed successfully for invoice_processing (queue_pressure)
+[2025-10-27 15:17:00] ⚠️ customer_support anomaly detected → queue_pressure
+[2025-10-27 15:17:00] 💡 Suggested healing actions: ['restart_queue', 'increase_batching']
+[2025-10-27 15:17:00] ♻️ Restarting service for customer_support
+[2025-10-27 15:17:00] 🛠️ Performing custom action: increase_batching
+[2025-10-27 15:17:00] 🟢 Healing executed successfully for customer_support (queue_pressure)
+[2025-10-27 15:17:09] ⚠️ invoice_processing anomaly detected → data_error
+[2025-10-27 15:17:09] 💡 Suggested healing actions: ['revalidate_pipeline', 'notify_owner']
+[2025-10-27 15:17:09] 🧪 Revalidating data pipeline for invoice_processing
+[2025-10-27 15:17:09] 🛠️ Performing custom action: notify_owner
+[2025-10-27 15:17:09] 🟢 Healing executed successfully for invoice_processing (data_error)
+[2025-10-27 15:17:17] ⚠️ order_processing anomaly detected → api_failure
+[2025-10-27 15:17:17] 💡 Suggested healing actions: ['switch_backup_endpoint', 'retry_request']
+[2025-10-27 15:17:17] 🛠️ Performing custom action: switch_backup_endpoint
+[2025-10-27 15:17:17] 🔄 Retrying operation for order_processing
+[2025-10-27 15:17:17] 🟢 Healing executed successfully for order_processing (api_failure)
+[2025-10-27 15:17:22] ⚠️ invoice_processing anomaly detected → workflow_delay
+[2025-10-27 15:17:22] 💡 Suggested healing actions: ['optimize_scheduler', 'scale_up_workers']
+[2025-10-27 15:17:22] ⚙️ Optimizing workflow scheduler for invoice_processing
+[2025-10-27 15:17:22] 📈 Scaling up resources for invoice_processing
+[2025-10-27 15:17:22] 🟢 Healing executed successfully for invoice_processing (workflow_delay)
