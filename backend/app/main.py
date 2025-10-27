@@ -50,7 +50,7 @@ use_paywalls = bool(os.getenv("PAYWALLS_KEY"))
 # ============================================================
 app = FastAPI(
     title="IBM Workflow Healing Agent — Prototype-to-Profit Edition",
-    version="3.3"
+    version="3.0"
 )
 
 app.add_middleware(
@@ -113,23 +113,26 @@ def metrics_download():
     )
 
 # ============================================================
-# ⚡ Manual Healing Simulation
+# ⚡ Manual Healing Simulation (Prototype → Profit)
 # ============================================================
 @app.post("/simulate")
 def simulate(event: str = "workflow_delay"):
-    """Simulate one healing cycle using either Watsonx.ai or Groq backend."""
+    """
+    Simulate one healing cycle using either Watsonx.ai or Groq backend.
+    Monetize each healing event through Paywalls.ai.
+    """
     workflow = random.choice(["invoice_processing", "order_processing", "customer_support"])
     anomaly = event if event in policies.POLICY_MAP else random.choice(list(policies.POLICY_MAP.keys()))
     result = executor.heal(workflow, anomaly)
 
-    # 💰 Monetization
+    # 💰 Monetization: charge per healing
     billing_info = bill_healing_event(
         user_id="demo_client",
         heal_type=anomaly,
-        cost=0.05,  # micro-billing
+        cost=0.05,  # micro-billing per healing
     )
 
-    # Log locally
+    # Local monetization log
     try:
         recovery_pct = result.get("recovery_pct", 0.0)
         success = result.get("status", "") == "success"
@@ -153,30 +156,118 @@ def simulate(event: str = "workflow_delay"):
 # ============================================================
 @app.post("/sim/start")
 def start_simulation():
+    """Start continuous background simulation"""
     print("🚀 Continuous simulation started.")
     return sim.start()
 
 @app.post("/sim/stop")
 def stop_simulation():
+    """Stop continuous simulation"""
     print("🧊 Simulation stopped.")
     return sim.stop()
 
 # ============================================================
-# 💰 Local Monetization Log
+# 📊 Metrics Summary for Dashboard
+# ============================================================
+@app.get("/metrics/summary")
+def metrics_summary():
+    """Return summarized healing performance for dashboard."""
+    summary = metrics_logger.summary()
+    clean_summary = {}
+    for k, v in summary.items():
+        try:
+            val = float(v)
+            if math.isnan(val) or math.isinf(val):
+                val = 0.0
+            clean_summary[k] = round(val, 2)
+        except Exception:
+            clean_summary[k] = v
+
+    # 🧩 Anomaly Distribution
+    anomaly_mix = {}
+    try:
+        if os.path.exists(settings.METRICS_LOG_PATH):
+            df = pd.read_csv(settings.METRICS_LOG_PATH)
+            if not df.empty and "anomaly" in df.columns:
+                df = df.dropna(subset=["anomaly"])
+                anomaly_mix = df["anomaly"].value_counts().to_dict()
+    except Exception as e:
+        print(f"[Metrics Summary] ⚠️ Failed to parse anomaly mix: {e}")
+    clean_summary["anomaly_mix"] = anomaly_mix
+
+    # 🧠 Add last action
+    try:
+        if os.path.exists(settings.METRICS_LOG_PATH):
+            df = pd.read_csv(settings.METRICS_LOG_PATH)
+            clean_summary["last_action"] = str(df["action"].iloc[-1]) if "action" in df.columns else "N/A"
+    except Exception:
+        clean_summary["last_action"] = "N/A"
+    return clean_summary
+
+# ============================================================
+# 🔁 FlowXO Webhook Integration
+# ============================================================
+@app.post("/integrations/flowxo/webhook")
+async def flowxo_trigger(req: Request):
+    """
+    Triggered by FlowXO to execute healing externally.
+    """
+    data = await req.json()
+    workflow_id = data.get("workflow_id", "unknown_workflow")
+    anomaly = data.get("anomaly", "unknown_anomaly")
+    user_id = data.get("user_id", "demo_client")
+
+    # ✅ Log FlowXO event
+    metrics_logger.log_flowxo_event(workflow_id, anomaly, user_id)
+
+    # ✅ Execute healing logic
+    result = executor.heal(workflow_id, anomaly)
+    billing = bill_healing_event(user_id, anomaly, cost=0.05)
+
+    print(f"📂 [FlowXO] Logged → {metrics_logger.flowxo_log_path.resolve()}")
+
+    return {
+        "workflow": workflow_id,
+        "anomaly": anomaly,
+        "status": result.get("status"),
+        "recovery_pct": result.get("recovery_pct"),
+        "reward": result.get("reward"),
+        "billing": billing,
+    }
+
+# ============================================================
+# 🚀 Startup Message
+# ============================================================
+@app.on_event("startup")
+def startup_event():
+    print("\n🚀 IBM Workflow Healing Agent (Prototype-to-Profit Edition) started successfully!")
+    print(f"   ▪ App: {settings.APP_NAME}")
+    print(f"   ▪ FlowXO log path: {metrics_logger.flowxo_log_path.resolve()}")
+    if use_watsonx:
+        print("   ▪ Mode: IBM Watsonx.ai Cloud Reasoning 🧠")
+    elif use_groq:
+        print("   ▪ Mode: Groq Local Llama Inference ⚡")
+    else:
+        print("   ▪ Mode: Offline Fallback (Static Policies)")
+    print(f"   ▪ Paywalls.ai Integrated: {use_paywalls}")
+    print(f"   ▪ Loaded Policies: {list(policies.POLICY_MAP.keys())}\n")
+
+# ============================================================
+# 💰 Local Monetization Log (Backup)
 # ============================================================
 PAYWALL_LOG = "data/healing_revenue.log"
 os.makedirs("data", exist_ok=True)
 
 def log_revenue(workflow: str, anomaly: str, recovery_pct: float, success: bool):
-    """Backup local monetization record for each healing."""
+    """Backup: simulate local monetization for each healing event."""
     try:
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         base_price = 0.05
         multiplier = 1 + (recovery_pct / 100)
         cost = round(base_price * multiplier, 4)
         status = "success" if success else "partial"
-
         log_line = f"{timestamp} | {workflow} | {anomaly} | ${cost:.4f} | {status}\n"
+
         with open(PAYWALL_LOG, "a", encoding="utf-8") as f:
             f.write(log_line)
             f.flush()
@@ -186,139 +277,42 @@ def log_revenue(workflow: str, anomaly: str, recovery_pct: float, success: bool)
         print(f"[Paywalls.ai] ⚠️ Monetization log failed: {e}")
 
 # ============================================================
-# 💹 Unified Revenue Data Endpoint
+# 💹 Unified Revenue Data Endpoint for Streamlit Dashboard
 # ============================================================
 @app.get("/metrics/revenue")
 def get_revenue_data():
-    """Provides monetization data for Streamlit dashboard."""
-    data, total_revenue = [], 0.0
+    """
+    Provides monetization data for Streamlit dashboard,
+    synchronized with current healing session.
+    """
+    data = []
+    total_revenue = 0.0
+    total_heals = 0
+
+    # Get the timestamp of the last backend restart
+    restart_marker = datetime.now().strftime("%Y-%m-%d")
+
     if os.path.exists(PAYWALL_LOG):
         with open(PAYWALL_LOG, "r", encoding="utf-8") as f:
             for line in f.readlines():
-                parts = [p.strip() for p in line.split("|")]
-                if len(parts) >= 4:
-                    ts, workflow, anomaly, cost, *_ = parts
+                parts = line.strip().split("|")
+                if len(parts) >= 4 and restart_marker in parts[0]:
+                    ts, workflow, anomaly, cost, *_ = [p.strip() for p in parts]
                     try:
-                        cost_val = float(cost.replace("$", ""))
+                        cost_val = float(cost.replace("$", "").strip())
                     except:
                         cost_val = 0.0
+                    total_revenue += cost_val
+                    total_heals += 1
                     data.append({
                         "Timestamp": ts,
                         "Workflow": workflow,
                         "Anomaly": anomaly,
                         "Cost ($)": cost_val
                     })
-                    total_revenue += cost_val
+
     return {
         "total_revenue": round(total_revenue, 4),
-        "total_heals": len(data),
+        "total_heals": total_heals,
         "logs": data
     }
-
-# ============================================================
-# 📊 Metrics Summary Endpoint
-# ============================================================
-@app.get("/metrics/summary")
-def metrics_summary():
-    """Unified healing summary matching revenue count."""
-    clean_summary = metrics_logger.summary()
-
-    total_heals = 0
-    if os.path.exists(PAYWALL_LOG):
-        with open(PAYWALL_LOG, "r", encoding="utf-8") as f:
-            total_heals = len([line for line in f if line.strip()])
-
-    clean_summary["healings"] = total_heals
-    anomaly_mix = {}
-    try:
-        if os.path.exists(settings.METRICS_LOG_PATH):
-            df = pd.read_csv(settings.METRICS_LOG_PATH)
-            if not df.empty and "anomaly" in df.columns:
-                df = df.dropna(subset=["anomaly"])
-                anomaly_mix = df["anomaly"].value_counts().to_dict()
-    except Exception as e:
-        print(f"[Metrics Summary] ⚠️ Failed anomaly mix: {e}")
-
-    clean_summary["anomaly_mix"] = anomaly_mix
-    clean_summary["avg_recovery_pct"] = float(clean_summary.get("avg_recovery_pct", 0))
-    clean_summary["avg_reward"] = float(clean_summary.get("avg_reward", 0))
-    return clean_summary
-
-# ============================================================
-# 🔁 FlowXO Webhook Integration (Optimized & Safe)
-# ============================================================
-LAST_FLOWXO_EVENT = {"workflow_id": None, "anomaly": None, "timestamp": None}
-
-@app.post("/integrations/flowxo/webhook")
-async def flowxo_trigger(req: Request):
-    """Trigger healing externally via FlowXO webhook."""
-    try:
-        data = await req.json()
-        workflow_id = data.get("workflow_id", "unknown_workflow")
-        anomaly = data.get("anomaly", "unknown_anomaly")
-        user_id = data.get("user_id", "demo_client")
-
-        now = datetime.now()
-        global LAST_FLOWXO_EVENT
-        if (
-            LAST_FLOWXO_EVENT.get("workflow_id") == workflow_id
-            and LAST_FLOWXO_EVENT.get("anomaly") == anomaly
-            and LAST_FLOWXO_EVENT.get("timestamp")
-            and (now - LAST_FLOWXO_EVENT["timestamp"]).total_seconds() < 3
-        ):
-            print(f"⚠️ [FlowXO] Duplicate webhook ignored: {workflow_id} - {anomaly}")
-            return {"status": "ignored_duplicate", "workflow": workflow_id, "anomaly": anomaly}
-
-        LAST_FLOWXO_EVENT = {"workflow_id": workflow_id, "anomaly": anomaly, "timestamp": now}
-        print(f"📩 [FlowXO] Trigger received: {workflow_id} | {anomaly} | user={user_id}")
-
-        result = executor.heal(workflow_id, anomaly)
-        recovery_pct = result.get("recovery_pct", 0.0)
-        success = result.get("status", "") == "success"
-
-        try:
-            metrics_logger.log_flowxo_event(workflow_id, anomaly, user_id)
-        except Exception as e:
-            print(f"[FlowXO] ⚠️ Metrics logging failed: {e}")
-
-        billing = None
-        try:
-            billing = bill_healing_event(user_id, anomaly, cost=0.05)
-        except Exception as e:
-            print(f"[FlowXO] ⚠️ Paywalls billing failed: {e}")
-
-        try:
-            log_revenue(workflow_id, anomaly, recovery_pct, success)
-        except Exception as e:
-            print(f"[FlowXO] ⚠️ Revenue log failed: {e}")
-
-        response = {
-            "workflow": workflow_id,
-            "anomaly": anomaly,
-            "status": result.get("status", "unknown"),
-            "recovery_pct": recovery_pct,
-            "reward": result.get("reward", 0.0),
-            "engine": "Watsonx.ai" if use_watsonx else ("Groq Local" if use_groq else "Offline Policy"),
-            "billing": billing or {"status": "pending"},
-            "timestamp": now.strftime("%Y-%m-%d %H:%M:%S"),
-        }
-
-        print(f"✅ [FlowXO] Healing completed successfully → {workflow_id}:{anomaly}")
-        return response
-
-    except Exception as e:
-        print(f"❌ [FlowXO] Webhook processing error: {e}")
-        return {"status": "error", "detail": str(e)}
-
-# ============================================================
-# 🚀 Startup Message
-# ============================================================
-@app.on_event("startup")
-def startup_event():
-    print("\n🚀 IBM Workflow Healing Agent started successfully!")
-    print(f"   ▪ Paywalls.ai Integrated: {use_paywalls}")
-    print(f"   ▪ Mode: {'Watsonx.ai' if use_watsonx else ('Groq Local AI' if use_groq else 'Offline Simulation')}")
-    print(f"   ▪ Policies Loaded: {list(policies.POLICY_MAP.keys())}")
-    print(f"   ▪ Revenue Log: {Path(PAYWALL_LOG).resolve()}")
-    print(f"   ▪ Metrics Log: {Path(settings.METRICS_LOG_PATH).resolve()}")
-    print("===========================================================\n")

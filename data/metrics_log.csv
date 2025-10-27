@@ -2585,3 +2585,14 @@ ts,workflow,anomaly,action,status,latency_ms,recovery_pct,reward
 2025-10-27T14:40:27.742540+00:00,order_processing,workflow_delay,"optimize_scheduler, scale_up_workers",healed,9050,93.28,-0.02
 2025-10-27T14:40:34.824540+00:00,order_processing,api_failure,"switch_backup_endpoint, retry_request",healed,13375,83.19,0.12
 2025-10-27T14:40:42.930869+00:00,order_processing,api_failure,"switch_backup_endpoint, retry_request",healed,5391,75.06,0.18
+2025-10-27T14:40:47.990932+00:00,order_processing,api_failure,"switch_backup_endpoint, retry_request",healed,5277,90.51,0.01
+2025-10-27T14:40:54.047993+00:00,customer_support,workflow_delay,"optimize_scheduler, scale_up_workers",healed,11296,84.05,0.26
+2025-10-27T14:41:03.103242+00:00,order_processing,workflow_delay,"optimize_scheduler, scale_up_workers",healed,6869,96.21,0.21
+2025-10-27T14:41:10.179369+00:00,customer_support,api_failure,"switch_backup_endpoint, retry_request",healed,12877,77.69,0.21
+2025-10-27T14:41:17.255192+00:00,customer_support,data_error,"revalidate_pipeline, notify_owner",healed,4904,76.14,0.25
+2025-10-27T14:41:27.337242+00:00,customer_support,data_error,"revalidate_pipeline, notify_owner",healed,4066,92.56,0.21
+2025-10-27T14:41:32.418800+00:00,invoice_processing,data_error,"revalidate_pipeline, notify_owner",healed,8939,85.34,-0.1
+2025-10-27T14:41:40.500931+00:00,order_processing,api_failure,"switch_backup_endpoint, retry_request",healed,12647,90.54,0.0
+2025-10-27T14:41:50.581814+00:00,invoice_processing,workflow_delay,"optimize_scheduler, scale_up_workers",healed,9135,91.45,0.22
+2025-10-27T14:42:00.635728+00:00,customer_support,api_failure,"switch_backup_endpoint, retry_request",healed,6263,84.81,0.32
+2025-10-27T14:42:05.709121+00:00,customer_support,api_failure,"switch_backup_endpoint, retry_request",healed,4055,79.27,0.01
