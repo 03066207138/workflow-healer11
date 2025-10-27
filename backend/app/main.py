@@ -33,7 +33,7 @@ from .healing.executor import HealingExecutor
 from .healing import policies
 from .telemetry.simulator import sim
 from .utils.metrics_logger import MetricsLogger
-from .integrations.paywalls_client import bill_healing_event
+from .integrations.paywalls_client import bill_healing_event  # ✅ Monetization Integration
 
 # ============================================================
 # ⚙️ Initialize Core Components
@@ -50,7 +50,7 @@ use_paywalls = bool(os.getenv("PAYWALLS_KEY"))
 # ============================================================
 app = FastAPI(
     title="IBM Workflow Healing Agent — Prototype-to-Profit Edition",
-    version="3.3"
+    version="3.0"
 )
 
 app.add_middleware(
@@ -62,10 +62,11 @@ app.add_middleware(
 )
 
 # ============================================================
-# 🩺 Health Check
+# 🩺 Health Check Endpoint
 # ============================================================
 @app.get("/health")
 def health():
+    """Check backend and orchestrator readiness"""
     return {
         "status": "ok",
         "watsonx_ready": use_watsonx,
@@ -79,128 +80,239 @@ def health():
     }
 
 # ============================================================
-# 📜 Healing Logs
+# 📜 Healing Logs Endpoint
 # ============================================================
 @app.get("/healing/logs")
 def get_healing_logs(n: int = 50):
+    """Fetch the latest healing logs for the dashboard"""
     log_path = settings.HEALING_LOG_PATH
     if not os.path.exists(log_path):
         return {"logs": []}
     try:
         with open(log_path, "r", encoding="utf-8") as f:
-            lines = [line.strip() for line in f if line.strip()]
-        return {"logs": lines[-n:][::-1]}
+            lines = f.readlines()
+        logs = [line.strip() for line in lines if line.strip()][-n:]
+        logs.reverse()
+        return {"logs": logs}
     except Exception as e:
-        return {"logs": [f"⚠️ Error reading logs: {e}"]}
+        print(f"[Logs] ⚠️ Could not read logs: {e}")
+        return {"logs": [f"⚠️ Error reading logs: {str(e)}"]}
 
 # ============================================================
-# 📊 Download Metrics CSV
+# 📊 Metrics Download Endpoint
 # ============================================================
 @app.get("/metrics/download")
 def metrics_download():
+    """Download healing metrics as CSV"""
     if not os.path.exists(settings.METRICS_LOG_PATH):
         raise HTTPException(status_code=404, detail="No metrics file found.")
-    return FileResponse(settings.METRICS_LOG_PATH, media_type="text/csv", filename="metrics_log.csv")
+    return FileResponse(
+        settings.METRICS_LOG_PATH,
+        media_type="text/csv",
+        filename="metrics_log.csv",
+    )
 
 # ============================================================
-# ⚡ Manual Simulation
+# ⚡ Manual Healing Simulation (Prototype → Profit)
 # ============================================================
 @app.post("/simulate")
 def simulate(event: str = "workflow_delay"):
+    """
+    Simulate one healing cycle using either Watsonx.ai or Groq backend.
+    Monetize each healing event through Paywalls.ai.
+    """
     workflow = random.choice(["invoice_processing", "order_processing", "customer_support"])
     anomaly = event if event in policies.POLICY_MAP else random.choice(list(policies.POLICY_MAP.keys()))
     result = executor.heal(workflow, anomaly)
 
-    billing_info = bill_healing_event("demo_client", anomaly, 0.05)
+    # 💰 Monetization: charge per healing
+    billing_info = bill_healing_event(
+        user_id="demo_client",
+        heal_type=anomaly,
+        cost=0.05,  # micro-billing per healing
+    )
 
-    # Log to metrics file
+    # Local monetization log
     try:
-        recovery = result.get("recovery_pct", 0.0)
-        reward = result.get("reward", 0.0)
-        metrics_logger.log_metric(
-            workflow=workflow,
-            anomaly=anomaly,
-            recovery_pct=recovery,
-            reward=reward,
-            status=result.get("status", "success"),
-        )
+        recovery_pct = result.get("recovery_pct", 0.0)
+        success = result.get("status", "") == "success"
+        log_revenue(workflow, anomaly, recovery_pct, success)
     except Exception as e:
-        print(f"[Simulate] ⚠️ Metrics logging skipped: {e}")
+        print(f"[Simulate] ⚠️ Local log skipped: {e}")
 
     return {
         "workflow": workflow,
         "anomaly": anomaly,
+        "suggested_actions": result.get("actions", []),
         "status": result.get("status"),
         "recovery_pct": result.get("recovery_pct"),
         "reward": result.get("reward"),
-        "engine": "Watsonx.ai" if use_watsonx else ("Groq Local" if use_groq else "Offline"),
+        "engine": "Watsonx.ai" if use_watsonx else ("Groq Local" if use_groq else "Fallback"),
         "billing": billing_info,
     }
 
 # ============================================================
-# 🧪 Continuous Simulation
+# 🧪 Continuous Simulation Routes
 # ============================================================
 @app.post("/sim/start")
 def start_simulation():
+    """Start continuous background simulation"""
+    print("🚀 Continuous simulation started.")
     return sim.start()
 
 @app.post("/sim/stop")
 def stop_simulation():
+    """Stop continuous simulation"""
+    print("🧊 Simulation stopped.")
     return sim.stop()
 
 # ============================================================
-# 📊 Metrics Summary
+# 📊 Metrics Summary for Dashboard
 # ============================================================
 @app.get("/metrics/summary")
 def metrics_summary():
+    """Return summarized healing performance for dashboard."""
     summary = metrics_logger.summary()
-    clean = {}
+    clean_summary = {}
     for k, v in summary.items():
         try:
             val = float(v)
-            clean[k] = round(val, 2) if not math.isnan(val) and not math.isinf(val) else 0.0
-        except:
-            clean[k] = v
+            if math.isnan(val) or math.isinf(val):
+                val = 0.0
+            clean_summary[k] = round(val, 2)
+        except Exception:
+            clean_summary[k] = v
 
+    # 🧩 Anomaly Distribution
     anomaly_mix = {}
     try:
         if os.path.exists(settings.METRICS_LOG_PATH):
             df = pd.read_csv(settings.METRICS_LOG_PATH)
             if not df.empty and "anomaly" in df.columns:
+                df = df.dropna(subset=["anomaly"])
                 anomaly_mix = df["anomaly"].value_counts().to_dict()
-        clean["healings"] = len(df)
     except Exception as e:
         print(f"[Metrics Summary] ⚠️ Failed to parse anomaly mix: {e}")
-    clean["anomaly_mix"] = anomaly_mix
-    return clean
+    clean_summary["anomaly_mix"] = anomaly_mix
+
+    # 🧠 Add last action
+    try:
+        if os.path.exists(settings.METRICS_LOG_PATH):
+            df = pd.read_csv(settings.METRICS_LOG_PATH)
+            clean_summary["last_action"] = str(df["action"].iloc[-1]) if "action" in df.columns else "N/A"
+    except Exception:
+        clean_summary["last_action"] = "N/A"
+    return clean_summary
 
 # ============================================================
-# 💹 Revenue and Heal Count — from metrics_log.csv
+# 🔁 FlowXO Webhook Integration
+# ============================================================
+@app.post("/integrations/flowxo/webhook")
+async def flowxo_trigger(req: Request):
+    """
+    Triggered by FlowXO to execute healing externally.
+    """
+    data = await req.json()
+    workflow_id = data.get("workflow_id", "unknown_workflow")
+    anomaly = data.get("anomaly", "unknown_anomaly")
+    user_id = data.get("user_id", "demo_client")
+
+    # ✅ Log FlowXO event
+    metrics_logger.log_flowxo_event(workflow_id, anomaly, user_id)
+
+    # ✅ Execute healing logic
+    result = executor.heal(workflow_id, anomaly)
+    billing = bill_healing_event(user_id, anomaly, cost=0.05)
+
+    print(f"📂 [FlowXO] Logged → {metrics_logger.flowxo_log_path.resolve()}")
+
+    return {
+        "workflow": workflow_id,
+        "anomaly": anomaly,
+        "status": result.get("status"),
+        "recovery_pct": result.get("recovery_pct"),
+        "reward": result.get("reward"),
+        "billing": billing,
+    }
+
+# ============================================================
+# 🚀 Startup Message
+# ============================================================
+@app.on_event("startup")
+def startup_event():
+    print("\n🚀 IBM Workflow Healing Agent (Prototype-to-Profit Edition) started successfully!")
+    print(f"   ▪ App: {settings.APP_NAME}")
+    print(f"   ▪ FlowXO log path: {metrics_logger.flowxo_log_path.resolve()}")
+    if use_watsonx:
+        print("   ▪ Mode: IBM Watsonx.ai Cloud Reasoning 🧠")
+    elif use_groq:
+        print("   ▪ Mode: Groq Local Llama Inference ⚡")
+    else:
+        print("   ▪ Mode: Offline Fallback (Static Policies)")
+    print(f"   ▪ Paywalls.ai Integrated: {use_paywalls}")
+    print(f"   ▪ Loaded Policies: {list(policies.POLICY_MAP.keys())}\n")
+
+# ============================================================
+# 💰 Local Monetization Log (Backup)
+# ============================================================
+PAYWALL_LOG = "data/healing_revenue.log"
+os.makedirs("data", exist_ok=True)
+
+def log_revenue(workflow: str, anomaly: str, recovery_pct: float, success: bool):
+    """Backup: simulate local monetization for each healing event."""
+    try:
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        base_price = 0.05
+        multiplier = 1 + (recovery_pct / 100)
+        cost = round(base_price * multiplier, 4)
+        status = "success" if success else "partial"
+        log_line = f"{timestamp} | {workflow} | {anomaly} | ${cost:.4f} | {status}\n"
+
+        with open(PAYWALL_LOG, "a", encoding="utf-8") as f:
+            f.write(log_line)
+            f.flush()
+
+        print(f"[Paywalls.ai] 💰 Logged ${cost:.4f} for {workflow}:{anomaly}")
+    except Exception as e:
+        print(f"[Paywalls.ai] ⚠️ Monetization log failed: {e}")
+
+# ============================================================
+# 💹 Unified Revenue Data Endpoint for Streamlit Dashboard
 # ============================================================
 @app.get("/metrics/revenue")
 def get_revenue_data():
-    """Compute revenue and total heals directly from metrics_log.csv"""
-    if not os.path.exists(settings.METRICS_LOG_PATH):
-        return {"total_revenue": 0.0, "total_heals": 0, "logs": []}
+    """
+    Provides monetization data for Streamlit dashboard,
+    synchronized with current healing session.
+    """
+    data = []
+    total_revenue = 0.0
+    total_heals = 0
 
-    try:
-        df = pd.read_csv(settings.METRICS_LOG_PATH)
-        if df.empty:
-            return {"total_revenue": 0.0, "total_heals": 0, "logs": []}
+    # Get the timestamp of the last backend restart
+    restart_marker = datetime.now().strftime("%Y-%m-%d")
 
-        df["Cost ($)"] = 0.05 * (1 + df["recovery_pct"].fillna(0) / 100)
-        total_revenue = df["Cost ($)"].sum()
-        total_heals = len(df)
+    if os.path.exists(PAYWALL_LOG):
+        with open(PAYWALL_LOG, "r", encoding="utf-8") as f:
+            for line in f.readlines():
+                parts = line.strip().split("|")
+                if len(parts) >= 4 and restart_marker in parts[0]:
+                    ts, workflow, anomaly, cost, *_ = [p.strip() for p in parts]
+                    try:
+                        cost_val = float(cost.replace("$", "").strip())
+                    except:
+                        cost_val = 0.0
+                    total_revenue += cost_val
+                    total_heals += 1
+                    data.append({
+                        "Timestamp": ts,
+                        "Workflow": workflow,
+                        "Anomaly": anomaly,
+                        "Cost ($)": cost_val
+                    })
 
-        logs = df[["timestamp", "workflow", "anomaly", "Cost ($)"]].rename(
-            columns={"timestamp": "Timestamp", "workflow": "Workflow", "anomaly": "Anomaly"}
-        ).to_dict(orient="records")
-
-        return {
-            "total_revenue": round(total_revenue, 2),
-            "total_heals": total_heals,
-            "logs": logs,
-        }
-    except Exception as e:
-        print(f"[Revenue] ⚠️ Error reading metrics_log.csv: {e}")
-        return {"total_revenue": 0.0, "total_heals": 0, "logs": []}
+    return {
+        "total_revenue": round(total_revenue, 4),
+        "total_heals": total_heals,
+        "logs": data
+    }
