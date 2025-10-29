@@ -76,6 +76,20 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
+
+
+
+# ============================================================
+# 🔗 Include FlowXO Webhook Router
+# ============================================================
+from app.integrations import flowxo_client
+app.include_router(flowxo_client.router, prefix="/integrations", tags=["FlowXO"])
+
+
+
+
+
 # ============================================================
 # 🩺 Health Check
 # ============================================================
