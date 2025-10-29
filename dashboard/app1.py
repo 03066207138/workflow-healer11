@@ -1,7 +1,7 @@
 # ============================================================
 # 💰 Prototype-to-Profit: Workflow Healer (Streamlit Dashboard)
 # IBM × Paywalls.ai × FlowXO — AI-Powered Workflow Healing
-# v4.6 — Dark Optimized • Robust Schema • Elegant for Hackathon Demo
+# v4.7 — Dark Optimized • Robust Schema • Alerts + Slip Download
 # ============================================================
 
 import os
@@ -24,7 +24,7 @@ st.set_page_config(
 )
 
 # ============================================================
-# 🎨 Complete Dark Theme Styling
+# 🎨 Complete Dark Theme Styling (ensures all text stays visible)
 # ============================================================
 st.markdown("""
 <style>
@@ -37,149 +37,73 @@ st.markdown("""
   --red: #f87171;
   --yellow: #fde047;
 }
-
-/* ---------- GLOBAL BACKGROUND ---------- */
 body, .stApp {
   background: radial-gradient(circle at top left, var(--bg-1), var(--bg-2));
   color: var(--fg);
   font-family: "Inter", system-ui, sans-serif;
 }
-
-
-
-/* ---------- JSON Viewer (Fix Invisible Text) ---------- */
-[data-testid="stJson"] pre,
-.stJson, .stJson > div, .stJson pre code {
-  background-color: #1e293b !important;     /* dark background */
-  color: #e2e8f0 !important;                /* bright text */
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.85rem;
-  line-height: 1.4;
-  border-radius: 8px;
-  border: 1px solid rgba(96,165,250,0.3);
-  padding: 10px;
-}
-
-/* Highlight keys and punctuation for readability */
-.stJson span {
-  color: #93c5fd !important;                /* light blue keys */
-}
-.stJson span.string { color: #86efac !important; }  /* strings green */
-.stJson span.number { color: #facc15 !important; }  /* numbers yellow */
-.stJson span.boolean { color: #f87171 !important; } /* booleans red */
-.stJson span.null { color: #cbd5e1 !important; }    /* null grey */
-
-/* Make collapsed arrows visible */
-.stJson button {
-  color: #60a5fa !important;
-  background: transparent !important;
-  border: none !important;
-}
-
-
-
-
-
-/* ---------- TEXT COLORS ---------- */
-h1, h2, h3, h4, h5, h6, p, label, span, div {
-  color: var(--fg) !important;
-}
-
-/* ---------- SIDEBAR ---------- */
-section[data-testid="stSidebar"] {
-  background: #0f172a !important;
-  color: var(--fg) !important;
-  border-right: 1px solid rgba(255,255,255,0.1);
-}
-section[data-testid="stSidebar"] * {
-  color: var(--fg) !important;
-}
-
-
-/* ---------- BUTTONS (fixed label visibility) ---------- */
+/* Headings & general text */
+h1, h2, h3, h4, h5, h6, p, label, span, div { color: var(--fg) !important; }
+/* Sidebar */
+section[data-testid="stSidebar"] { background:#0f172a !important; color:var(--fg)!important; border-right:1px solid rgba(255,255,255,.08);}
+section[data-testid="stSidebar"] * { color:var(--fg)!important; }
+/* Buttons (labels forced white) */
 .stButton button {
   background: linear-gradient(135deg, #2563eb, #1d4ed8);
-  color: #ffffff !important;          /* ✅ force bright text */
-  text-shadow: 0 0 2px rgba(0,0,0,0.4);
-  border: none;
-  border-radius: 10px;
-  padding: 0.55rem 1.1rem;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 10px rgba(96,165,250,0.25);
+  color:#ffffff !important;
+  text-shadow:0 0 2px rgba(0,0,0,.4);
+  border:none; border-radius:10px; padding:.55rem 1.1rem;
+  font-weight:600; font-size:.95rem; transition:all .3s ease;
+  box-shadow:0 0 10px rgba(96,165,250,.25);
 }
-.stButton button:hover,
-.stButton button:focus,
-.stButton button:active {
-  color: #ffffff !important;          /* ✅ keep visible on hover */
-  background: linear-gradient(135deg, #1d4ed8, #2563eb);
-  box-shadow: 0 0 14px rgba(96,165,250,0.5);
-  transform: translateY(-1px);
-}
-
-
-/* ---------- SELECTBOXES ---------- */
+.stButton button:hover { background: linear-gradient(135deg,#1d4ed8,#2563eb); box-shadow:0 0 14px rgba(96,165,250,.5); transform:translateY(-1px); }
+/* Selects */
 div[data-baseweb="select"] > div {
-  background-color: #1e293b !important;
-  color: var(--fg) !important;
-  border: 1px solid rgba(96,165,250,0.3) !important;
-  border-radius: 8px;
+  background-color:#1e293b !important; color:var(--fg)!important;
+  border:1px solid rgba(96,165,250,.35)!important; border-radius:8px;
 }
-div[data-baseweb="select"] svg {
-  fill: var(--fg);
+div[data-baseweb="select"] svg { fill:var(--fg); }
+/* Download buttons */
+.stDownloadButton button{
+  background: linear-gradient(135deg,#22c55e,#16a34a);
+  color:#fff !important; border:none; border-radius:10px;
+  padding:.5rem 1rem; font-weight:600; transition:.3s;
+  box-shadow:0 0 8px rgba(52,211,153,.3);
 }
-
-/* ---------- DOWNLOAD BUTTONS ---------- */
-.stDownloadButton button {
-  background: linear-gradient(135deg, #22c55e, #16a34a);
-  color: #ffffff !important;
-  border: none;
-  border-radius: 10px;
-  padding: 0.5rem 1rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 8px rgba(52,211,153,0.3);
-}
-.stDownloadButton button:hover {
-  background: linear-gradient(135deg, #16a34a, #22c55e);
-  transform: translateY(-1px);
-  box-shadow: 0 0 12px rgba(52,211,153,0.5);
-}
-
-/* ---------- TEXTAREA / INPUTS ---------- */
+.stDownloadButton button:hover{ background:linear-gradient(135deg,#16a34a,#22c55e); transform:translateY(-1px); box-shadow:0 0 12px rgba(52,211,153,.5); }
+/* Inputs / Textareas */
 textarea, input {
-  background-color: #1e293b !important;
-  color: var(--fg) !important;
-  border: 1px solid rgba(96,165,250,0.3) !important;
-  border-radius: 8px !important;
+  background-color:#1e293b !important; color:var(--fg)!important;
+  border:1px solid rgba(96,165,250,.35)!important; border-radius:8px!important;
 }
-
-/* ---------- DATAFRAME / TABLE ---------- */
+/* DataFrames */
 .stDataFrame div, .stDataFrame td, .stDataFrame th {
-  color: var(--fg) !important;
-  background-color: rgba(15,23,42,0.8) !important;
-  border-color: rgba(255,255,255,0.1) !important;
+  color:var(--fg)!important; background-color:rgba(15,23,42,.8)!important; border-color:rgba(255,255,255,.08)!important;
 }
-
-/* ---------- METRICS ---------- */
-.metric {
-  text-align:center;
-  padding:10px;
-  border-radius:12px;
-  margin:6px;
-  box-shadow: 0 0 12px rgba(96,165,250,0.15);
+/* Metric chips */
+.metric{ text-align:center; padding:10px; border-radius:12px; margin:6px; box-shadow:0 0 12px rgba(96,165,250,.15); }
+.success{ background:rgba(52,211,153,.12); border:1px solid rgba(52,211,153,.4);}
+.warning{ background:rgba(250,204,21,.12); border:1px solid rgba(250,204,21,.4);}
+.info{ background:rgba(96,165,250,.12); border:1px solid rgba(96,165,250,.4);}
+.error{ background:rgba(239,68,68,.12); border:1px solid rgba(239,68,68,.4);}
+[data-testid="stMetricValue"]{ color:var(--accent); font-weight:700; }
+/* JSON viewer (fix invisible text) */
+[data-testid="stJson"] pre, .stJson, .stJson > div, .stJson pre code{
+  background:#1e293b !important; color:#e2e8f0 !important;
+  font-family:"JetBrains Mono",monospace; font-size:.85rem; line-height:1.4;
+  border-radius:8px; border:1px solid rgba(96,165,250,.3); padding:10px;
 }
-.success { background:rgba(52,211,153,0.12); border:1px solid rgba(52,211,153,0.4); }
-.warning { background:rgba(250,204,21,0.12); border:1px solid rgba(250,204,21,0.4); }
-.info    { background:rgba(96,165,250,0.12); border:1px solid rgba(96,165,250,0.4); }
-.error   { background:rgba(239,68,68,0.12); border:1px solid rgba(239,68,68,0.4); }
-[data-testid="stMetricValue"] { color: var(--accent); font-weight:700; }
+.stJson span{ color:#93c5fd !important; }        /* keys */
+.stJson span.string{ color:#86efac !important; } /* strings */
+.stJson span.number{ color:#facc15 !important; } /* numbers */
+.stJson span.boolean{ color:#f87171 !important; }/* booleans */
+/* Alerts polish */
+.stAlert{ border-radius:10px; box-shadow:0 0 10px rgba(96,165,250,.25); }
 </style>
 """, unsafe_allow_html=True)
 
 # ============================================================
-# 🧩 Helpers
+# 🔧 Helpers
 # ============================================================
 def toast(kind: str, msg: str):
     {"success": st.success, "warning": st.warning, "error": st.error}.get(kind, st.info)(msg)
@@ -210,7 +134,7 @@ def cached_health():
 # ============================================================
 # 🧠 Header
 # ============================================================
-st.markdown(f"""
+st.markdown("""
 <h1>💎 Prototype-to-Profit: AI Workflow Healer</h1>
 <p style="text-align:center; color:#cbd5e1;">
 Heal, Automate, and Monetize Workflows — Powered by <b>Paywalls.ai</b> & <b>FlowXO</b>.
@@ -219,7 +143,6 @@ Heal, Automate, and Monetize Workflows — Powered by <b>Paywalls.ai</b> & <b>Fl
 
 health = cached_health()
 mode = str(health.get("mode", "Offline Simulation"))
-
 if "offline" in mode.lower():
     st.warning("🧩 Running in **Offline Simulation Mode** — Real-Time APIs inactive.")
 elif "Watsonx" in mode:
@@ -228,7 +151,6 @@ elif "Groq" in mode:
     st.info("⚡ Local AI Mode via Groq — Fast Offline Testing.")
 else:
     st.info(f"Mode: {mode}")
-
 st.caption(f"🌐 Backend: {BACKEND}")
 
 # ============================================================
@@ -237,7 +159,7 @@ st.caption(f"🌐 Backend: {BACKEND}")
 st_autorefresh(interval=6000, key="refresh")
 
 # ============================================================
-# ⚙️ Sidebar
+# ⚙️ Sidebar Controls
 # ============================================================
 with st.sidebar:
     st.markdown("## ⚙️ Controls Panel")
@@ -255,7 +177,8 @@ with st.sidebar:
     if st.button("🚀 Start Simulation"):
         try:
             r = requests.post(f"{BACKEND}/sim/start", timeout=6)
-            toast("success" if r.status_code == 200 else "warning", "Simulation started!" if r.status_code == 200 else f"Failed ({r.status_code})")
+            toast("success" if r.status_code == 200 else "warning",
+                  "Simulation started!" if r.status_code == 200 else f"Failed ({r.status_code})")
         except Exception as e:
             toast("error", str(e))
 
@@ -274,7 +197,7 @@ with st.sidebar:
             res = requests.post(f"{BACKEND}/simulate?event={anomaly}", timeout=7)
             if res.status_code == 200:
                 j = res.json()
-                toast("success", f"✅ {j['workflow']} healed — Recovery {j['recovery_pct']}% — Billed via Paywalls.ai")
+                toast("success", f"✅ {j.get('workflow','?')} healed — Recovery {j.get('recovery_pct',0)}% — Billed via Paywalls.ai")
                 st.json(j)
             else:
                 toast("warning", f"Healing trigger failed ({res.status_code})")
@@ -289,7 +212,8 @@ with st.sidebar:
         payload = {"workflow_id": wf, "anomaly": a, "user_id": "demo_client"}
         try:
             res = requests.post(f"{BACKEND}/integrations/flowxo/webhook", json=payload, timeout=10)
-            toast("success" if res.status_code == 200 else "warning", "Webhook processed!" if res.status_code == 200 else "Failed")
+            toast("success" if res.status_code == 200 else "warning",
+                  "Webhook processed!" if res.status_code == 200 else f"Failed ({res.status_code})")
             if res.status_code == 200:
                 st.json(res.json())
         except Exception as e:
@@ -299,8 +223,27 @@ with st.sidebar:
 # 📊 Fetch Data
 # ============================================================
 metrics = safe_json_get(f"{BACKEND}/metrics/summary", default={}) or {}
-revenue = safe_json_get(f"{BACKEND}/metrics/revenue", default={}) or {}
-logs = (safe_json_get(f"{BACKEND}/healing/logs?n=80", default={"logs":[]}) or {"logs":[]})["logs"]
+revenue_payload = safe_json_get(f"{BACKEND}/metrics/revenue", default={}) or {}
+logs_resp = safe_json_get(f"{BACKEND}/healing/logs?n=80", default={"logs":[]}) or {"logs":[]}
+logs = logs_resp.get("logs", [])
+
+# ---- Normalize revenue rows to a uniform schema (ALWAYS define rev_df)
+def normalize_revenue_rows(rows):
+    normalized = []
+    for r in rows or []:
+        ts = r.get("Timestamp") or r.get("ts") or ""
+        user = r.get("User") or r.get("user") or r.get("Workflow") or "N/A"
+        heal_type = r.get("Healing Type") or r.get("heal_type") or r.get("Anomaly") or r.get("anomaly") or "N/A"
+        cost = r.get("Cost ($)") or r.get("amount") or r.get("cost") or 0
+        if isinstance(cost, str):
+            cost = cost.replace("$", "").strip()
+            try: cost = float(cost)
+            except: cost = 0.0
+        normalized.append({"Timestamp": ts, "User": user, "Healing Type": heal_type, "Cost ($)": float(cost)})
+    return pd.DataFrame(normalized)
+
+rev_df = normalize_revenue_rows(revenue_payload.get("logs", []))  # <-- defined once, used everywhere safely
+total_revenue = float(revenue_payload.get("total_revenue", 0) or 0.0)
 
 # ============================================================
 # ⚡ KPIs
@@ -310,70 +253,12 @@ c1, c2, c3, c4 = st.columns(4)
 c1.metric("🩺 Total Healings", f"{float(metrics.get('healings',0)):.0f}")
 c2.metric("⚙️ Avg Recovery %", f"{float(metrics.get('avg_recovery_pct',0)):.2f}")
 c3.metric("🎯 Avg Reward", f"{float(metrics.get('avg_reward',0)):.2f}")
-c4.metric("💰 Total Revenue ($)", f"{float(revenue.get('total_revenue',0)):.2f}")
+c4.metric("💰 Total Revenue ($)", f"{total_revenue:.2f}")
 
 st.divider()
 
-
-
-
-
-
 # ============================================================
-# 🚨 Real-Time Healing + Revenue Alerts
-# ============================================================
-st.divider()
-st.markdown("### 🚨 Real-Time Healing Alerts")
-
-# ---- Revenue and Healing Alerts ----
-if not rev_df.empty:
-    latest_tx = rev_df.iloc[-1]
-    latest_time = latest_tx["Timestamp"]
-    latest_user = latest_tx["User"]
-    latest_type = latest_tx["Healing Type"]
-    latest_cost = latest_tx["Cost ($)"]
-
-    st.info(
-        f"💰 **New Healing Revenue Recorded!**\n\n"
-        f"**Client:** `{latest_user}`  \n"
-        f"**Workflow Healed:** `{latest_type}`  \n"
-        f"**Billed Amount:** `${latest_cost:.4f}`  \n"
-        f"**Timestamp:** `{latest_time}`  \n"
-        f"🧾 Healing slip available for download below."
-    )
-else:
-    st.warning("⚠️ No recent billing records — start a healing simulation to generate revenue logs.")
-
-# ============================================================
-# 🧾 Generate Downloadable Healing Slip (Automatic)
-# ============================================================
-if not rev_df.empty:
-    latest_record = rev_df.iloc[-1].to_dict()
-    slip_text = f"""
-🧾 IBM Workflow Healer — Automated Healing Slip
-=========================================
-Client/User: {latest_record['User']}
-Workflow/Healing Type: {latest_record['Healing Type']}
-Cost Billed: ${latest_record['Cost ($)']:.4f}
-Timestamp: {latest_record['Timestamp']}
-
-✅ Healing completed successfully.
-💰 Payment processed via Paywalls.ai
-=========================================
-    """.strip()
-
-    st.download_button(
-        label="💾 Download Latest Healing Slip (PDF/Text)",
-        data=slip_text.encode("utf-8"),
-        file_name=f"healing_slip_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt",
-        mime="text/plain",
-        use_container_width=True
-    )
-else:
-    st.info("🧾 No healing slip available yet — perform at least one healing cycle.")
-
-# ============================================================
-# 📈 Anomaly Chart
+# 📈 Anomaly Distribution
 # ============================================================
 st.markdown("### 📊 Anomaly Distribution")
 mix = metrics.get("anomaly_mix", {}) or {}
@@ -384,35 +269,16 @@ else:
     st.info("📭 No anomaly data yet. Run healings to populate metrics.")
 
 # ============================================================
-# 💹 Revenue Logs (Safe Schema)
+# 💹 Revenue Logs
 # ============================================================
 st.markdown("## 💹 Monetization & Revenue Logs")
-
-def normalize_revenue_rows(rows):
-    normalized = []
-    for r in rows or []:
-        ts = r.get("Timestamp") or r.get("ts") or ""
-        user = r.get("User") or r.get("user") or r.get("Workflow") or "N/A"
-        heal_type = r.get("Healing Type") or r.get("heal_type") or r.get("Anomaly") or "N/A"
-        cost = r.get("Cost ($)") or r.get("amount") or r.get("cost") or 0
-        if isinstance(cost, str):
-            cost = cost.replace("$", "").strip()
-            try: cost = float(cost)
-            except: cost = 0.0
-        normalized.append({
-            "Timestamp": ts, "User": user,
-            "Healing Type": heal_type, "Cost ($)": float(cost)
-        })
-    return pd.DataFrame(normalized)
-
-rev_df = normalize_revenue_rows(revenue.get("logs", []))
 if not rev_df.empty:
     st.dataframe(rev_df, use_container_width=True)
 else:
     st.info("📭 No revenue records yet.")
 
 # ============================================================
-# 📜 Healing Activity Logs
+# 🩺 Healing Activity Logs
 # ============================================================
 st.markdown("## 🩺 Healing Activity Logs")
 if logs:
@@ -426,44 +292,88 @@ else:
     st.info("📭 No healing logs yet — start simulation to see updates.")
 
 # ============================================================
-# 📥 Downloads
+# 🚨 Real-Time Healing + Revenue Alerts  (uses rev_df safely)
+# ============================================================
+st.divider()
+st.markdown("### 🚨 Real-Time Healing Alerts")
+
+if not rev_df.empty:
+    latest_tx = rev_df.iloc[-1]
+    st.info(
+        f"💰 **New Healing Revenue Recorded!**\n\n"
+        f"**Client:** `{latest_tx['User']}`  \n"
+        f"**Workflow Healed:** `{latest_tx['Healing Type']}`  \n"
+        f"**Billed Amount:** `${latest_tx['Cost ($)']:.4f}`  \n"
+        f"**Timestamp:** `{latest_tx['Timestamp']}`  \n"
+        f"🧾 Healing slip available for download below."
+    )
+else:
+    st.warning("⚠️ No recent billing records — start a healing simulation to generate revenue logs.")
+
+# ============================================================
+# 📥 Downloads & Slip
 # ============================================================
 st.divider()
 st.markdown("### 📂 Download Logs & Reports")
 
 col1, col2, col3 = st.columns(3)
 with col1:
-    st.download_button("📜 Healing Log",
+    st.download_button(
+        "📜 Healing Log",
         data="\n".join(logs).encode("utf-8"),
-        file_name="healing_log.txt", mime="text/plain")
-
+        file_name="healing_log.txt",
+        mime="text/plain",
+        use_container_width=True
+    )
 with col2:
     csv_bytes = safe_bytes_get(f"{BACKEND}/metrics/download")
-    st.download_button("📊 Metrics CSV",
-        data=csv_bytes or b"", file_name="metrics_log.csv",
-        mime="text/csv", disabled=(csv_bytes is None))
-
+    st.download_button(
+        "📊 Metrics CSV",
+        data=csv_bytes or b"",
+        file_name="metrics_log.csv",
+        mime="text/csv",
+        disabled=(csv_bytes is None),
+        use_container_width=True
+    )
 with col3:
-    rev_text = "\n".join(
-        f"{row['Timestamp']} | {row['User']} | {row['Healing Type']} | ${row['Cost ($)']:.4f}"
-        for _, row in rev_df.iterrows()
-    ) if not rev_df.empty else "No revenue yet."
-    st.download_button("💰 Revenue Log",
+    rev_text = (
+        "\n".join(
+            f"{row['Timestamp']} | {row['User']} | {row['Healing Type']} | ${row['Cost ($)']:.4f}"
+            for _, row in rev_df.iterrows()
+        ) if not rev_df.empty else "No revenue yet."
+    )
+    st.download_button(
+        "💰 Revenue Log",
         data=rev_text.encode("utf-8"),
-        file_name="healing_revenue.txt", mime="text/plain")
+        file_name="healing_revenue.txt",
+        mime="text/plain",
+        use_container_width=True
+    )
 
-# ============================================================
-# 🧾 Healing Slip
-# ============================================================
-st.markdown("### 🧾 Active Healing Slip")
-active = [l for l in logs if "⚠️" in l or "anomaly" in l.lower()]
-if active:
-    slip = "\n".join(active[-20:])
-    st.text_area("Current Healings", slip, height=180)
-    st.download_button("🧾 Download Healing Slip",
-        data=slip.encode("utf-8"),
+# ---- Healing Slip (Text slip; always safe) ----
+st.markdown("### 🧾 Active / Latest Healing Slip")
+if not rev_df.empty:
+    latest = rev_df.iloc[-1].to_dict()
+    slip_text = f"""
+🧾 IBM Workflow Healer — Healing Slip
+=====================================
+Client/User: {latest['User']}
+Workflow / Healing Type: {latest['Healing Type']}
+Cost Billed: ${latest['Cost ($)']:.4f}
+Timestamp: {latest['Timestamp']}
+
+✅ Healing completed successfully.
+💰 Payment processed via Paywalls.ai
+=====================================
+""".strip()
+    st.text_area("Current Healing Slip", slip_text, height=180)
+    st.download_button(
+        "💾 Download Latest Healing Slip",
+        data=slip_text.encode("utf-8"),
         file_name=f"healing_slip_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt",
-        mime="text/plain")
+        mime="text/plain",
+        use_container_width=True
+    )
 else:
     st.success("✅ All workflows stable — no active anomalies detected.")
 
