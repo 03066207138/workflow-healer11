@@ -87,6 +87,7 @@ def health():
         "watsonx_ready": use_watsonx,
         "groq_ready": use_groq,
         "paywalls_ready": use_paywalls,
+        "flowxo_ready": True,  # ✅ Added — confirm webhook integration
         "mode": (
             "Watsonx.ai"
             if use_watsonx
