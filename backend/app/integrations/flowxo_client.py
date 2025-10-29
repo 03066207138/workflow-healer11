@@ -1,6 +1,5 @@
+import sys, os
 from fastapi import APIRouter, Request
-from app.healing.executor import HealingExecutor
-from app.integrations.paywalls_client import bill_healing_event
 
 router = APIRouter()
 executor = HealingExecutor()
