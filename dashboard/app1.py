@@ -60,22 +60,29 @@ section[data-testid="stSidebar"] * {
   color: var(--fg) !important;
 }
 
-/* ---------- BUTTONS ---------- */
+
+/* ---------- BUTTONS (fixed label visibility) ---------- */
 .stButton button {
   background: linear-gradient(135deg, #2563eb, #1d4ed8);
-  color: #ffffff !important;
+  color: #ffffff !important;          /* ✅ force bright text */
+  text-shadow: 0 0 2px rgba(0,0,0,0.4);
   border: none;
   border-radius: 10px;
-  padding: 0.5rem 1rem;
+  padding: 0.55rem 1.1rem;
   font-weight: 600;
+  font-size: 0.95rem;
   transition: all 0.3s ease;
-  box-shadow: 0 0 8px rgba(96,165,250,0.3);
+  box-shadow: 0 0 10px rgba(96,165,250,0.25);
 }
-.stButton button:hover {
+.stButton button:hover,
+.stButton button:focus,
+.stButton button:active {
+  color: #ffffff !important;          /* ✅ keep visible on hover */
   background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  box-shadow: 0 0 14px rgba(96,165,250,0.5);
   transform: translateY(-1px);
-  box-shadow: 0 0 12px rgba(96,165,250,0.6);
 }
+
 
 /* ---------- SELECTBOXES ---------- */
 div[data-baseweb="select"] > div {
