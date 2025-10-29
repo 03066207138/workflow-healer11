@@ -196,7 +196,7 @@ groq_ready = health.get("groq_ready", False)
 
 st.markdown("### 🔗 Integration Status")
 
-col1, col2, col3 = st.columns(4)
+col1, col2, col3 = st.columns(3)
 
 col2.metric("⚡ Groq Local AI", "✅ Ready" if groq_ready else "❌ Not Found")
 col3.metric("💰 Paywalls.ai", "✅ Connected" if paywalls_ready else "❌ Not Found")
