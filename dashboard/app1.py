@@ -76,6 +76,38 @@ textarea, input {
   background-color:#1e293b !important; color:var(--fg)!important;
   border:1px solid rgba(96,165,250,.35)!important; border-radius:8px!important;
 }
+
+
+/* ---------- TABLE VISIBILITY FIX ---------- */
+.stDataFrame {
+  background-color: #0f172a !important;
+}
+
+.stDataFrame table {
+  border-collapse: collapse !important;
+  width: 100% !important;
+}
+
+.stDataFrame th {
+  background-color: #1e293b !important;
+  color: #f8fafc !important;      /* bright white headers */
+  font-weight: 700 !important;
+  border-bottom: 2px solid rgba(96,165,250,0.5) !important;
+}
+
+.stDataFrame td {
+  color: #e2e8f0 !important;      /* readable text */
+  border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+}
+
+.stDataFrame tr:nth-child(even) td {
+  background-color: rgba(30,41,59,0.6) !important;  /* subtle alternate row */
+}
+
+.stDataFrame tr:hover td {
+  background-color: rgba(96,165,250,0.15) !important; /* light hover effect */
+}
+
 /* DataFrames */
 .stDataFrame div, .stDataFrame td, .stDataFrame th {
   color:var(--fg)!important; background-color:rgba(15,23,42,.8)!important; border-color:rgba(255,255,255,.08)!important;
