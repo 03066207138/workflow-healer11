@@ -46,6 +46,8 @@ except ImportError:
     from telemetry.simulator import sim
     from utils.metrics_logger import MetricsLogger
     from integrations.paywalls_client import bill_healing_event
+    from .integrations.flowxo_notifier import notify_flowxo
+
 
 # ============================================================
 # ⚙️ Initialize Core Components
