@@ -173,17 +173,38 @@ Heal, Automate, and Monetize Workflows — Powered by <b>Paywalls.ai</b> & <b>Fl
 </p>
 """, unsafe_allow_html=True)
 
+# ============================================================
+# 🧠 Backend Health Display (with Paywalls & FlowXO)
+# ============================================================
 health = cached_health()
 mode = str(health.get("mode", "Offline Simulation"))
+
+# --- Mode Display ---
 if "offline" in mode.lower():
     st.warning("🧩 Running in **Offline Simulation Mode** — Real-Time APIs inactive.")
 elif "Watsonx" in mode:
     st.success("🤖 Connected to IBM Watsonx.ai — Live Healing Active.")
 elif "Groq" in mode:
-    st.info("⚡ Local AI Mode via Groq — Fast Offline Testing.")
+    st.info("⚡ Local AI Mode via Groq — Fast Local Testing.")
 else:
-    st.info(f"Mode: {mode}")
-st.caption(f"🌐 Backend: {BACKEND}")
+    st.info(f"⚙️ Mode: {mode}")
+
+# --- Integration Status ---
+paywalls_ready = health.get("paywalls_ready", False)
+flowxo_ready = health.get("flowxo_ready", False)
+watson_ready = health.get("watsonx_ready", False)
+groq_ready = health.get("groq_ready", False)
+
+st.markdown("### 🔗 Integration Status")
+cols = st.columns(4)
+
+
+cols[0].metric("⚡ Groq Local AI", "✅ Ready" if groq_ready else "❌ Inactive")
+cols[1].metric("💰 Paywalls.ai", "✅ Connected" if paywalls_ready else "❌ Not Found")
+cols[2].metric("🌐 FlowXO Webhook", "✅ Active" if flowxo_ready else "❌ Inactive")
+
+st.caption(f"🌐 Backend Endpoint: `{BACKEND}`")
+
 
 # ============================================================
 # 🔁 Auto Refresh
