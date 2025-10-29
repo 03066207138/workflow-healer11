@@ -45,6 +45,41 @@ body, .stApp {
   font-family: "Inter", system-ui, sans-serif;
 }
 
+
+
+/* ---------- JSON Viewer (Fix Invisible Text) ---------- */
+[data-testid="stJson"] pre,
+.stJson, .stJson > div, .stJson pre code {
+  background-color: #1e293b !important;     /* dark background */
+  color: #e2e8f0 !important;                /* bright text */
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  border-radius: 8px;
+  border: 1px solid rgba(96,165,250,0.3);
+  padding: 10px;
+}
+
+/* Highlight keys and punctuation for readability */
+.stJson span {
+  color: #93c5fd !important;                /* light blue keys */
+}
+.stJson span.string { color: #86efac !important; }  /* strings green */
+.stJson span.number { color: #facc15 !important; }  /* numbers yellow */
+.stJson span.boolean { color: #f87171 !important; } /* booleans red */
+.stJson span.null { color: #cbd5e1 !important; }    /* null grey */
+
+/* Make collapsed arrows visible */
+.stJson button {
+  color: #60a5fa !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+
+
+
+
 /* ---------- TEXT COLORS ---------- */
 h1, h2, h3, h4, h5, h6, p, label, span, div {
   color: var(--fg) !important;
