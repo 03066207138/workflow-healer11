@@ -309,19 +309,6 @@ else:
 # else:
 #     st.info("📭 No revenue records yet.")
 
-# ============================================================
-# 🩺 Healing Activity Logs
-# ============================================================
-st.markdown("## 🩺 Healing Activity Logs")
-if logs:
-    for line in logs[:50]:
-        style, icon = "info", "💡"
-        if "⚠️" in line: style, icon = "warning", "🟡"
-        elif "✅" in line: style, icon = "success", "🟢"
-        elif "❌" in line: style, icon = "error", "🔴"
-        st.markdown(f"<div class='metric {style}'>{icon} {line}</div>", unsafe_allow_html=True)
-else:
-    st.info("📭 No healing logs yet — start simulation to see updates.")
 
 # ============================================================
 # 🚨 Real-Time Healing + Revenue Alerts  (uses rev_df safely)
@@ -410,3 +397,19 @@ else:
     st.success("✅ All workflows stable — no active anomalies detected.")
 
 st.caption(f"⏱️ Auto-refresh every 6s — Last updated: {datetime.now().strftime('%H:%M:%S')}")
+
+
+# ============================================================
+# 🩺 Healing Activity Logs
+# ============================================================
+st.markdown("## 🩺 Healing Activity Logs")
+if logs:
+    for line in logs[:50]:
+        style, icon = "info", "💡"
+        if "⚠️" in line: style, icon = "warning", "🟡"
+        elif "✅" in line: style, icon = "success", "🟢"
+        elif "❌" in line: style, icon = "error", "🔴"
+        st.markdown(f"<div class='metric {style}'>{icon} {line}</div>", unsafe_allow_html=True)
+else:
+    st.info("📭 No healing logs yet — start simulation to see updates.")
+
