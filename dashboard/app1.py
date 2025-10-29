@@ -183,25 +183,35 @@ mode = str(health.get("mode", "Offline Simulation"))
 if "offline" in mode.lower():
     st.warning("🧩 Running in **Offline Simulation Mode** — Real-Time APIs inactive.")
 elif "Watsonx" in mode:
-    st.success("🤖 Connected to IBM Watsonx.ai — Live Healing Active.")
+    st.success("🤖 Connected to **IBM Watsonx.ai** — Live Healing Active.")
 elif "Groq" in mode:
-    st.info("⚡ Local AI Mode via Groq — Fast Local Testing.")
+    st.info("⚡ Local AI Mode via **Groq** — Fast Local Testing.")
 else:
     st.info(f"⚙️ Mode: {mode}")
 
-# --- Integration Status ---
+# --- Integration Readiness ---
 paywalls_ready = health.get("paywalls_ready", False)
 flowxo_ready = health.get("flowxo_ready", False)
 watson_ready = health.get("watsonx_ready", False)
 groq_ready = health.get("groq_ready", False)
 
 st.markdown("### 🔗 Integration Status")
-cols = st.columns(4)
 
+col1, col2, col3, col4 = st.columns(4)
+col1.metric("💎 Watsonx.ai", "✅ Active" if watson_ready else "❌ Inactive")
+col2.metric("⚡ Groq Local AI", "✅ Ready" if groq_ready else "❌ Not Found")
+col3.metric("💰 Paywalls.ai", "✅ Connected" if paywalls_ready else "❌ Not Found")
+col4.metric("🌐 FlowXO Webhook", "✅ Active" if flowxo_ready else "❌ Inactive")
 
-cols[0].metric("⚡ Groq Local AI", "✅ Ready" if groq_ready else "❌ Inactive")
-cols[1].metric("💰 Paywalls.ai", "✅ Connected" if paywalls_ready else "❌ Not Found")
-cols[2].metric("🌐 FlowXO Webhook", "✅ Active" if flowxo_ready else "❌ Inactive")
+# --- Connection Summary ---
+if paywalls_ready and flowxo_ready:
+    st.success("🚀 Full monetization and automation loop active — Paywalls.ai + FlowXO connected successfully!")
+elif paywalls_ready:
+    st.warning("💰 Paywalls.ai active — waiting for FlowXO live webhook connection.")
+elif flowxo_ready:
+    st.warning("🌐 FlowXO webhook active — waiting for Paywalls.ai integration.")
+else:
+    st.error("⚠️ Both FlowXO and Paywalls.ai are inactive. Check backend or API keys.")
 
 st.caption(f"🌐 Backend Endpoint: `{BACKEND}`")
 
@@ -209,7 +219,7 @@ st.caption(f"🌐 Backend Endpoint: `{BACKEND}`")
 # ============================================================
 # 🔁 Auto Refresh
 # ============================================================
-st_autorefresh(interval=30000, key="refresh")
+st_autorefresh(interval=10000, key="refresh")
 
 # ============================================================
 # ⚙️ Sidebar Controls
