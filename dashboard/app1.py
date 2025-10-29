@@ -303,11 +303,11 @@ else:
 # ============================================================
 # 💹 Revenue Logs
 # ============================================================
-st.markdown("## 💹 Monetization & Revenue Logs")
-if not rev_df.empty:
-    st.dataframe(rev_df, use_container_width=True)
-else:
-    st.info("📭 No revenue records yet.")
+# st.markdown("## 💹 Monetization & Revenue Logs")
+# if not rev_df.empty:
+#     st.dataframe(rev_df, use_container_width=True)
+# else:
+#     st.info("📭 No revenue records yet.")
 
 # ============================================================
 # 🩺 Healing Activity Logs
