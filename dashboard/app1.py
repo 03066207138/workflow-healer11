@@ -355,7 +355,7 @@ st.markdown("### 🧾 Active / Latest Healing Slip")
 if not rev_df.empty:
     latest = rev_df.iloc[-1].to_dict()
     slip_text = f"""
-🧾 IBM Workflow Healer — Healing Slip
+🧾 Workflow Healer — Healing Slip
 =====================================
 Client/User: {latest['User']}
 Workflow / Healing Type: {latest['Healing Type']}
