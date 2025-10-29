@@ -37,18 +37,90 @@ st.markdown("""
   --red: #f87171;
   --yellow: #fde047;
 }
+
+/* ---------- GLOBAL BACKGROUND ---------- */
 body, .stApp {
   background: radial-gradient(circle at top left, var(--bg-1), var(--bg-2));
   color: var(--fg);
   font-family: "Inter", system-ui, sans-serif;
 }
+
+/* ---------- TEXT COLORS ---------- */
 h1, h2, h3, h4, h5, h6, p, label, span, div {
   color: var(--fg) !important;
 }
+
+/* ---------- SIDEBAR ---------- */
+section[data-testid="stSidebar"] {
+  background: #0f172a !important;
+  color: var(--fg) !important;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+section[data-testid="stSidebar"] * {
+  color: var(--fg) !important;
+}
+
+/* ---------- BUTTONS ---------- */
+.stButton button {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff !important;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(96,165,250,0.3);
+}
+.stButton button:hover {
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  transform: translateY(-1px);
+  box-shadow: 0 0 12px rgba(96,165,250,0.6);
+}
+
+/* ---------- SELECTBOXES ---------- */
+div[data-baseweb="select"] > div {
+  background-color: #1e293b !important;
+  color: var(--fg) !important;
+  border: 1px solid rgba(96,165,250,0.3) !important;
+  border-radius: 8px;
+}
+div[data-baseweb="select"] svg {
+  fill: var(--fg);
+}
+
+/* ---------- DOWNLOAD BUTTONS ---------- */
+.stDownloadButton button {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #ffffff !important;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(52,211,153,0.3);
+}
+.stDownloadButton button:hover {
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+  transform: translateY(-1px);
+  box-shadow: 0 0 12px rgba(52,211,153,0.5);
+}
+
+/* ---------- TEXTAREA / INPUTS ---------- */
+textarea, input {
+  background-color: #1e293b !important;
+  color: var(--fg) !important;
+  border: 1px solid rgba(96,165,250,0.3) !important;
+  border-radius: 8px !important;
+}
+
+/* ---------- DATAFRAME / TABLE ---------- */
 .stDataFrame div, .stDataFrame td, .stDataFrame th {
   color: var(--fg) !important;
   background-color: rgba(15,23,42,0.8) !important;
+  border-color: rgba(255,255,255,0.1) !important;
 }
+
+/* ---------- METRICS ---------- */
 .metric {
   text-align:center;
   padding:10px;
@@ -61,7 +133,6 @@ h1, h2, h3, h4, h5, h6, p, label, span, div {
 .info    { background:rgba(96,165,250,0.12); border:1px solid rgba(96,165,250,0.4); }
 .error   { background:rgba(239,68,68,0.12); border:1px solid rgba(239,68,68,0.4); }
 [data-testid="stMetricValue"] { color: var(--accent); font-weight:700; }
-.stDownloadButton button { width: 100%; border-radius: 8px; }
 </style>
 """, unsafe_allow_html=True)
 
