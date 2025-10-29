@@ -39,6 +39,7 @@ try:
     from .utils.metrics_logger import MetricsLogger
     from .integrations.paywalls_client import bill_healing_event
     from .integrations.flowxo_notifier import notify_flowxo
+    from .integrations import flowxo_client
 except ImportError:
     # Fallback for local execution
     from settings import settings
@@ -48,6 +49,7 @@ except ImportError:
     from utils.metrics_logger import MetricsLogger
     from integrations.paywalls_client import bill_healing_event
     from integrations.flowxo_notifier import notify_flowxo
+    from integrations import flowxo_client
 
 
 # ============================================================
@@ -86,7 +88,7 @@ app.add_middleware(
 # ============================================================
 # 🔗 Include FlowXO Webhook Router
 # ============================================================
-from app.integrations import flowxo_client
+
 app.include_router(flowxo_client.router, prefix="/integrations", tags=["FlowXO"])
 
 
