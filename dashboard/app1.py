@@ -176,6 +176,9 @@ Heal, Automate, and Monetize Workflows — Powered by <b>Paywalls.ai</b> & <b>Fl
 # ============================================================
 # 🧠 Backend Health Display (with Paywalls & FlowXO)
 # ============================================================
+# ============================================================
+# 🧠 Backend Health Display (with Paywalls & FlowXO)
+# ============================================================
 health = cached_health()
 mode = str(health.get("mode", "Offline Simulation"))
 
@@ -198,9 +201,9 @@ st.markdown("### 🔗 Integration Status")
 
 col1, col2, col3 = st.columns(3)
 
-col2.metric("⚡ Groq Local AI", "✅ Ready" if groq_ready else "❌ Not Found")
-col3.metric("💰 Paywalls.ai", "✅ Connected" if paywalls_ready else "❌ Not Found")
-col4.metric("🌐 FlowXO Webhook", "✅ Active" if flowxo_ready else "❌ Inactive")
+col1.metric("⚡ Groq Local AI", "✅ Ready" if groq_ready else "❌ Not Found")
+col2.metric("💰 Paywalls.ai", "✅ Connected" if paywalls_ready else "❌ Not Found")
+col3.metric("🌐 FlowXO Webhook", "✅ Active" if flowxo_ready else "❌ Inactive")
 
 # --- Connection Summary ---
 if paywalls_ready and flowxo_ready:
@@ -213,6 +216,7 @@ else:
     st.error("⚠️ Both FlowXO and Paywalls.ai are inactive. Check backend or API keys.")
 
 st.caption(f"🌐 Backend Endpoint: `{BACKEND}`")
+
 
 
 # ============================================================
