@@ -146,13 +146,16 @@ def download_metrics():
 # ============================================================
 @app.post("/simulate")
 def simulate(event: str = "workflow_delay"):
-    """Simulate a single healing cycle and monetize it."""
+    """Simulate a single healing cycle, log metrics, monetize, and notify FlowXO."""
+
+    # 🎯 Step 1: Pick workflow and anomaly
     workflow = random.choice(["invoice_processing", "order_processing", "customer_support"])
     anomaly = event if event in policies.POLICY_MAP else random.choice(list(policies.POLICY_MAP.keys()))
 
+    # 🧠 Step 2: Perform healing
     result = executor.heal(workflow, anomaly)
 
-    # 🧠 Log event (with 6s guard inside MetricsLogger)
+    # 📊 Step 3: Log metrics (with 6s guard inside MetricsLogger)
     metrics_logger.log({
         "workflow": workflow,
         "anomaly": anomaly,
@@ -163,9 +166,24 @@ def simulate(event: str = "workflow_delay"):
         "reward": result.get("reward", 0.0),
     })
 
-    # 💰 Monetize through Paywalls.ai
+    # 💰 Step 4: Monetize through Paywalls.ai (real or simulated)
     billing = bill_healing_event("demo_client", anomaly, cost=0.05)
 
+    # 🔁 Step 5: Notify FlowXO webhook (if configured)
+    try:
+        from .integrations.flowxo_notifier import notify_flowxo
+        notify_flowxo({
+            "workflow": workflow,
+            "anomaly": anomaly,
+            "status": result.get("status"),
+            "recovery_pct": result.get("recovery_pct"),
+            "reward": result.get("reward"),
+            "billing": billing,
+        })
+    except Exception as e:
+        print(f"[FlowXO Notify] ⚠️ Failed to send update: {e}")
+
+    # 🧾 Step 6: Return full response
     return {
         "workflow": workflow,
         "anomaly": anomaly,
