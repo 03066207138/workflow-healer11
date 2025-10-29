@@ -188,7 +188,7 @@ st.caption(f"🌐 Backend: {BACKEND}")
 # ============================================================
 # 🔁 Auto Refresh
 # ============================================================
-st_autorefresh(interval=6000, key="refresh")
+# st_autorefresh(interval=6000, key="refresh")
 
 # ============================================================
 # ⚙️ Sidebar Controls
