@@ -192,13 +192,12 @@ else:
 # --- Integration Readiness ---
 paywalls_ready = health.get("paywalls_ready", False)
 flowxo_ready = health.get("flowxo_ready", False)
-watson_ready = health.get("watsonx_ready", False)
 groq_ready = health.get("groq_ready", False)
 
 st.markdown("### 🔗 Integration Status")
 
-col1, col2, col3, col4 = st.columns(4)
-col1.metric("💎 Watsonx.ai", "✅ Active" if watson_ready else "❌ Inactive")
+col1, col2, col3 = st.columns(4)
+
 col2.metric("⚡ Groq Local AI", "✅ Ready" if groq_ready else "❌ Not Found")
 col3.metric("💰 Paywalls.ai", "✅ Connected" if paywalls_ready else "❌ Not Found")
 col4.metric("🌐 FlowXO Webhook", "✅ Active" if flowxo_ready else "❌ Inactive")
