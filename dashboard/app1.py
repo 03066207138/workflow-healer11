@@ -100,7 +100,7 @@ def cached_health():
 st.markdown(f"""
 <h1>💎 Prototype-to-Profit: AI Workflow Healer</h1>
 <p style="text-align:center; color:#cbd5e1;">
-Heal, Automate, and Monetize Workflows — Powered by <b>IBM watsonx.ai</b>, <b>Paywalls.ai</b> & <b>FlowXO</b>.
+Heal, Automate, and Monetize Workflows — Powered by <b>Paywalls.ai</b> & <b>FlowXO</b>.
 </p>
 """, unsafe_allow_html=True)
 
