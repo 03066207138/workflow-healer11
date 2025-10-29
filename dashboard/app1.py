@@ -314,6 +314,64 @@ c4.metric("💰 Total Revenue ($)", f"{float(revenue.get('total_revenue',0)):.2f
 
 st.divider()
 
+
+
+
+
+
+# ============================================================
+# 🚨 Real-Time Healing + Revenue Alerts
+# ============================================================
+st.divider()
+st.markdown("### 🚨 Real-Time Healing Alerts")
+
+# ---- Revenue and Healing Alerts ----
+if not rev_df.empty:
+    latest_tx = rev_df.iloc[-1]
+    latest_time = latest_tx["Timestamp"]
+    latest_user = latest_tx["User"]
+    latest_type = latest_tx["Healing Type"]
+    latest_cost = latest_tx["Cost ($)"]
+
+    st.info(
+        f"💰 **New Healing Revenue Recorded!**\n\n"
+        f"**Client:** `{latest_user}`  \n"
+        f"**Workflow Healed:** `{latest_type}`  \n"
+        f"**Billed Amount:** `${latest_cost:.4f}`  \n"
+        f"**Timestamp:** `{latest_time}`  \n"
+        f"🧾 Healing slip available for download below."
+    )
+else:
+    st.warning("⚠️ No recent billing records — start a healing simulation to generate revenue logs.")
+
+# ============================================================
+# 🧾 Generate Downloadable Healing Slip (Automatic)
+# ============================================================
+if not rev_df.empty:
+    latest_record = rev_df.iloc[-1].to_dict()
+    slip_text = f"""
+🧾 IBM Workflow Healer — Automated Healing Slip
+=========================================
+Client/User: {latest_record['User']}
+Workflow/Healing Type: {latest_record['Healing Type']}
+Cost Billed: ${latest_record['Cost ($)']:.4f}
+Timestamp: {latest_record['Timestamp']}
+
+✅ Healing completed successfully.
+💰 Payment processed via Paywalls.ai
+=========================================
+    """.strip()
+
+    st.download_button(
+        label="💾 Download Latest Healing Slip (PDF/Text)",
+        data=slip_text.encode("utf-8"),
+        file_name=f"healing_slip_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt",
+        mime="text/plain",
+        use_container_width=True
+    )
+else:
+    st.info("🧾 No healing slip available yet — perform at least one healing cycle.")
+
 # ============================================================
 # 📈 Anomaly Chart
 # ============================================================
