@@ -384,17 +384,6 @@ else:
 st.caption(f"⏱️ Auto-refresh every 10s — Last updated: {datetime.now().strftime('%H:%M:%S')}")
 
 
-# ============================================================
-# 📈 Anomaly Distribution
-# ============================================================
-st.markdown("### 📊 Anomaly Distribution")
-mix = metrics.get("anomaly_mix", {}) or {}
-if mix:
-    df = pd.DataFrame(list(mix.items()), columns=["Anomaly","Count"])
-    st.bar_chart(df.set_index("Anomaly"))
-else:
-    st.info("📭 No anomaly data yet. Run healings to populate metrics.")
-
 
 # ============================================================
 # 🩺 Healing Activity Logs
@@ -410,4 +399,15 @@ if logs:
 else:
     st.info("📭 No healing logs yet — start simulation to see updates.")
 
+
+# ============================================================
+# 📈 Anomaly Distribution
+# ============================================================
+st.markdown("### 📊 Anomaly Distribution")
+mix = metrics.get("anomaly_mix", {}) or {}
+if mix:
+    df = pd.DataFrame(list(mix.items()), columns=["Anomaly","Count"])
+    st.bar_chart(df.set_index("Anomaly"))
+else:
+    st.info("📭 No anomaly data yet. Run healings to populate metrics.")
 
