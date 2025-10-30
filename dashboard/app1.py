@@ -283,7 +283,7 @@ st.caption(f"🌐 Backend Endpoint: `{BACKEND}`")
 # ============================================================
 # 🔁 Auto Refresh
 # ============================================================
-st_autorefresh(interval=10000, key="refresh")
+st_autorefresh(interval=6000, key="refresh")
 
 # ============================================================
 # 📊 Fetch Data
@@ -324,16 +324,6 @@ c3.metric("🎯 Avg Reward", f"{float(metrics.get('avg_reward',0)):.2f}")
 c4.metric("💰 Total Revenue ($)", f"{total_revenue:.2f}")
 st.divider()
 
-# ============================================================
-# 📈 Anomaly Distribution
-# ============================================================
-st.markdown("### 📊 Anomaly Distribution")
-mix = metrics.get("anomaly_mix", {}) or {}
-if mix:
-    df = pd.DataFrame(list(mix.items()), columns=["Anomaly","Count"])
-    st.bar_chart(df.set_index("Anomaly"))
-else:
-    st.info("📭 No anomaly data yet. Run healings to populate metrics.")
 
 # ============================================================
 # 🚨 Real-Time Healing Alerts
@@ -393,6 +383,19 @@ else:
 
 st.caption(f"⏱️ Auto-refresh every 10s — Last updated: {datetime.now().strftime('%H:%M:%S')}")
 
+
+# ============================================================
+# 📈 Anomaly Distribution
+# ============================================================
+st.markdown("### 📊 Anomaly Distribution")
+mix = metrics.get("anomaly_mix", {}) or {}
+if mix:
+    df = pd.DataFrame(list(mix.items()), columns=["Anomaly","Count"])
+    st.bar_chart(df.set_index("Anomaly"))
+else:
+    st.info("📭 No anomaly data yet. Run healings to populate metrics.")
+
+
 # ============================================================
 # 🩺 Healing Activity Logs
 # ============================================================
@@ -406,3 +409,5 @@ if logs:
         st.markdown(f"<div class='metric {style}'>{icon} {line}</div>", unsafe_allow_html=True)
 else:
     st.info("📭 No healing logs yet — start simulation to see updates.")
+
+
