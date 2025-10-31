@@ -246,12 +246,15 @@ def cached_health():
     return safe_json_get(f"{BACKEND}/health", default={"status":"offline","mode":"Offline Simulation"})
 
 # ============================================================
-# ⚙️ Sidebar Controls
+# ⚙️ Sidebar Controls (Unified Panel)
 # ============================================================
 with st.sidebar:
-    st.markdown("## ⚙️ Controls Panel")
+    st.markdown("## ⚙️ Control Center")
 
-    if st.button("🔎 Check Backend"):
+    # -----------------------------------------
+    # 🔍 Backend Check
+    # -----------------------------------------
+    if st.button("🔎 Check Backend Connection"):
         h = cached_health()
         if h and h.get("status") == "ok":
             st.success(f"✅ Connected — Mode: {h.get('mode')}")
@@ -260,95 +263,94 @@ with st.sidebar:
             st.error("❌ Backend not reachable")
 
     st.divider()
+
+    # -----------------------------------------
+    # 🔁 Simulation Control
+    # -----------------------------------------
     st.markdown("### 🔁 Simulation Control")
-    if st.button("🚀 Start Simulation"):
-        requests.post(f"{BACKEND}/sim/start", timeout=6)
-        st.success("Simulation started!")
-    if st.button("🧊 Stop Simulation"):
-        requests.post(f"{BACKEND}/sim/stop", timeout=6)
-        st.warning("Simulation stopped.")
+    sim_col1, sim_col2 = st.columns(2)
+    with sim_col1:
+        if st.button("🚀 Start Simulation", use_container_width=True):
+            try:
+                requests.post(f"{BACKEND}/sim/start", timeout=6)
+                st.session_state.auto_refresh = True  # start auto-refresh
+                st.success("✅ Simulation started & auto-refresh enabled!")
+            except Exception as e:
+                st.error(f"❌ Failed to start simulation: {e}")
+    with sim_col2:
+        if st.button("🧊 Stop Simulation", use_container_width=True):
+            try:
+                requests.post(f"{BACKEND}/sim/stop", timeout=6)
+                st.session_state.auto_refresh = False  # stop auto-refresh
+                st.warning("⏸ Simulation stopped & auto-refresh paused.")
+            except Exception as e:
+                st.error(f"❌ Failed to stop simulation: {e}")
 
     st.divider()
-    st.markdown("### ⚡ Manual Healing")
-    anomaly = st.selectbox("Select anomaly", ["workflow_delay","queue_pressure","data_error","api_failure"])
-    if st.button("💥 Run Healing Cycle"):
-        res = requests.post(f"{BACKEND}/simulate?event={anomaly}", timeout=7)
-        if res.status_code == 200:
-            j = res.json()
-            toast("success", f"✅ {j.get('workflow','?')} healed — Recovery {j.get('recovery_pct',0)}%")
-            st.json(j)
 
-    st.divider()
-    st.markdown("### 🌐 FlowXO Webhook")
-    wf = st.selectbox("Workflow", ["invoice_processing","order_processing","customer_support"])
-    a = st.selectbox("Anomaly Type", ["workflow_delay","queue_pressure","data_error","api_failure"])
-    if st.button("🚨 Send Webhook"):
-        payload = {"workflow_id": wf, "anomaly": a, "user_id": "demo_client"}
-        res = requests.post(f"{BACKEND}/integrations/flowxo/webhook", json=payload, timeout=10)
-        st.success("Webhook processed!" if res.status_code == 200 else "Webhook failed.")
-
-# ============================================================
-# 🧠 Header & Status
-# ============================================================
-st.title("💎 Prototype-to-Profit: AI Workflow Healer")
-st.caption("Heal, Automate, and Monetize Workflows — Powered by Paywalls.ai & FlowXO.")
-
-health = cached_health()
-mode = str(health.get("mode", "Offline Simulation"))
-st.info(f"⚙️ Mode: {mode}")
-
-col1, col2, col3 = st.columns(3)
-col1.metric("⚡ Groq Local AI", "✅ Ready" if health.get("groq_ready") else "❌ Off")
-col2.metric("💰 Paywalls.ai", "✅ Connected" if health.get("paywalls_ready") else "❌ Off")
-col3.metric("🌐 FlowXO Webhook", "✅ Active" if health.get("flowxo_ready") else "❌ Inactive")
-
-# ============================================================
-# 🔁 Auto Refresh Control
-# ============================================================
-if "auto_refresh" not in st.session_state:
-    st.session_state.auto_refresh = False
-
-col_auto1, col_auto2 = st.columns([1, 1])
-with col_auto1:
-    if st.button("▶ Start Auto Refresh"):
-        st.session_state.auto_refresh = True
-        st.success("🔄 Auto refresh started (every 6 s).")
-with col_auto2:
-    if st.button("⏹ Stop Auto Refresh"):
-        st.session_state.auto_refresh = False
-        st.warning("⏸ Auto refresh stopped.")
-
-# ⏱ Only refresh if enabled
-if st.session_state.auto_refresh:
-    st_autorefresh(interval=6000, key="dynamic_refresh")
-
-
-
-# ============================================================
-# 📊 Metrics Fetch (must come before tabs)
-# ============================================================
-metrics = safe_json_get(f"{BACKEND}/metrics/summary", default={}) or {}
-revenue_payload = safe_json_get(f"{BACKEND}/metrics/revenue", default={}) or {}
-logs_resp = safe_json_get(f"{BACKEND}/healing/logs?n=80", default={"logs":[]}) or {"logs":[]}
-logs = logs_resp.get("logs", [])
-
-# ---- Normalize revenue and calculate totals ----
-def normalize_revenue_rows(rows):
-    df = []
-    for r in rows or []:
-        ts = r.get("Timestamp") or r.get("ts") or ""
-        user = r.get("User") or "N/A"
-        heal_type = r.get("Healing Type") or r.get("Anomaly") or "N/A"
-        cost = r.get("Cost ($)") or 0
+    # -----------------------------------------
+    # ⚙️ Manual Healing Trigger
+    # -----------------------------------------
+    st.markdown("### ⚡ Manual Healing Trigger")
+    anomaly = st.selectbox(
+        "Select Anomaly Type",
+        ["workflow_delay", "queue_pressure", "data_error", "api_failure"],
+        key="manual_anomaly"
+    )
+    if st.button("💥 Run Healing Cycle", use_container_width=True):
         try:
-            cost = float(str(cost).replace("$", ""))
-        except:
-            cost = 0
-        df.append({"Timestamp": ts, "User": user, "Healing Type": heal_type, "Cost ($)": cost})
-    return pd.DataFrame(df)
+            res = requests.post(f"{BACKEND}/simulate?event={anomaly}", timeout=7)
+            if res.status_code == 200:
+                j = res.json()
+                toast("success", f"✅ {j.get('workflow','?')} healed — Recovery {j.get('recovery_pct',0)}%")
+                st.json(j)
+            else:
+                st.warning(f"⚠️ Healing trigger failed ({res.status_code})")
+        except Exception as e:
+            st.error(f"❌ Error: {e}")
 
-rev_df = normalize_revenue_rows(revenue_payload.get("logs", []))
-total_revenue = float(revenue_payload.get("total_revenue", 0) or 0.0)
+    st.divider()
+
+    # -----------------------------------------
+    # 🌐 FlowXO Webhook Trigger
+    # -----------------------------------------
+    st.markdown("### 🌐 Send FlowXO Webhook")
+    wf = st.selectbox("Workflow", ["invoice_processing", "order_processing", "customer_support"], key="flowxo_wf")
+    a = st.selectbox("Anomaly Type", ["workflow_delay", "queue_pressure", "data_error", "api_failure"], key="flowxo_anomaly")
+    if st.button("🚨 Send Webhook", use_container_width=True):
+        try:
+            payload = {"workflow_id": wf, "anomaly": a, "user_id": "demo_client"}
+            res = requests.post(f"{BACKEND}/integrations/flowxo/webhook", json=payload, timeout=10)
+            if res.status_code == 200:
+                st.success("🌐 Webhook successfully sent to FlowXO!")
+                st.json(res.json())
+            else:
+                st.warning(f"⚠️ Webhook failed ({res.status_code})")
+        except Exception as e:
+            st.error(f"❌ Webhook error: {e}")
+
+    st.divider()
+
+    # -----------------------------------------
+    # 🔄 Auto Refresh Control
+    # -----------------------------------------
+    st.markdown("### 🔄 Auto Refresh Control")
+    if "auto_refresh" not in st.session_state:
+        st.session_state.auto_refresh = False
+
+    col_auto1, col_auto2 = st.columns(2)
+    with col_auto1:
+        if st.button("▶ Start Auto Refresh", use_container_width=True):
+            st.session_state.auto_refresh = True
+            st.success("🔄 Auto refresh started (every 6s).")
+    with col_auto2:
+        if st.button("⏹ Stop Auto Refresh", use_container_width=True):
+            st.session_state.auto_refresh = False
+            st.warning("⏸ Auto refresh stopped.")
+
+    # 🔁 Only run when enabled
+    if st.session_state.auto_refresh:
+        st_autorefresh(interval=6000, key="sidebar_auto_refresh")
 
 # ============================================================
 # 📊 Main Dashboard Tabs
