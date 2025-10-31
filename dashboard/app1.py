@@ -18,7 +18,7 @@ from streamlit_autorefresh import st_autorefresh
 BACKEND = os.getenv("HEALER_BACKEND_URL", "https://workflow-healer11-2.onrender.com").rstrip("/")
 
 st.set_page_config(
-    page_title="💰 Prototype to Profit – Workflow Healer(No Human in the Loop)",
+    page_title="💰 Prototype to Profit – Workflow Healer",
     layout="wide",
     page_icon="💎",
     initial_sidebar_state="expanded"
@@ -184,7 +184,7 @@ with st.sidebar:
 # ============================================================
 # 🧠 Header & Integration Status
 # ============================================================
-st.title("💎 Prototype-to-Profit: AI Workflow Healer")
+st.title("💎 Prototype-to-Profit: AI Workflow Healer(No Human in the Loop)")
 st.caption("Heal, Automate, and Monetize Workflows — Powered by Paywalls.ai & FlowXO.")
 
 health = cached_health()
