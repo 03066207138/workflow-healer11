@@ -6,7 +6,7 @@ import os
 import requests
 
 # 👇 Default FlowXO webhook (can also be set in .env)
-FLOWXO_HOOK_URL = os.getenv("FLOWXO_HOOK_URL", "https://flowxo.com/hooks/b/7vy5v8yb")
+FLOWXO_HOOK_URL = os.getenv("FLOWXO_HOOK_URL", "https://flowxo.com/hooks/a/9rxmp73b")
 
 
 def notify_flowxo(data: dict):
