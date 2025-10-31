@@ -259,152 +259,135 @@ col3.metric("🌐 FlowXO Webhook", "✅ Active" if health.get("flowxo_ready") el
 st_autorefresh(interval=6000, key="refresh")
 
 # ============================================================
-# 📊 Metrics
+# 📊 Main Dashboard Tabs
 # ============================================================
-metrics = safe_json_get(f"{BACKEND}/metrics/summary", default={}) or {}
-revenue_payload = safe_json_get(f"{BACKEND}/metrics/revenue", default={}) or {}
-logs_resp = safe_json_get(f"{BACKEND}/healing/logs?n=80", default={"logs":[]}) or {"logs":[]}
-logs = logs_resp.get("logs", [])
-
-def normalize_revenue_rows(rows):
-    df = []
-    for r in rows or []:
-        ts = r.get("Timestamp") or r.get("ts") or ""
-        user = r.get("User") or "N/A"
-        heal_type = r.get("Healing Type") or r.get("Anomaly") or "N/A"
-        cost = r.get("Cost ($)") or 0
-        try: cost = float(str(cost).replace("$", ""))
-        except: cost = 0
-        df.append({"Timestamp": ts, "User": user, "Healing Type": heal_type, "Cost ($)": cost})
-    return pd.DataFrame(df)
-
-rev_df = normalize_revenue_rows(revenue_payload.get("logs", []))
-total_revenue = float(revenue_payload.get("total_revenue", 0) or 0.0)
+tabs = st.tabs(["📊 Dashboard", "💾 Logs & Reports", "🧾 Healing Slips", "🎟️ Tickets", "⚙️ Controls"])
 
 # ============================================================
-# ⚡ KPIs
+# 📊 DASHBOARD TAB
 # ============================================================
-st.subheader("⚡ Healing & Monetization KPIs")
-c1, c2, c3, c4 = st.columns(4)
-c1.metric("🩺 Total Healings", f"{metrics.get('healings',0):.0f}")
-c2.metric("⚙️ Avg Recovery %", f"{metrics.get('avg_recovery_pct',0):.2f}")
-c3.metric("🎯 Avg Reward", f"{metrics.get('avg_reward',0):.2f}")
-c4.metric("💰 Total Revenue ($)", f"{total_revenue:.2f}")
+with tabs[0]:
+    st.subheader("⚡ Healing & Monetization KPIs")
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("🩺 Total Healings", f"{metrics.get('healings',0):.0f}")
+    c2.metric("⚙️ Avg Recovery %", f"{metrics.get('avg_recovery_pct',0):.2f}")
+    c3.metric("🎯 Avg Reward", f"{metrics.get('avg_reward',0):.2f}")
+    c4.metric("💰 Total Revenue ($)", f"{total_revenue:.2f}")
 
-
-# ============================================================
-# 🚨 Real-Time Healing Alerts + Slip Generation
-# ============================================================
-st.divider()
-st.markdown("### 🚨 Real-Time Healing Alerts & Slip Generator")
-
-if not rev_df.empty:
-    latest_tx = rev_df.iloc[-1]
-    st.info(
-        f"💰 **New Healing Recorded!**\n\n"
-        f"**Client:** `{latest_tx['User']}`  \n"
-        f"**Workflow Healed:** `{latest_tx['Healing Type']}`  \n"
-        f"**Billed Amount:** `${latest_tx['Cost ($)']:.4f}`  \n"
-        f"**Timestamp:** `{latest_tx['Timestamp']}`  \n"
-        f"🧾 Healing slip generated below."
-    )
-
-    # 🧾 Generate Healing Slip
-    slip_text = f"""
-    🧾 Workflow Healer — Healing Slip
-    =====================================
-    Client/User: {latest_tx['User']}
-    Workflow Healed: {latest_tx['Healing Type']}
-    Cost Billed: ${latest_tx['Cost ($)']:.4f}
-    Timestamp: {latest_tx['Timestamp']}
-
-    ✅ Healing completed successfully.
-    💰 Payment processed via Paywalls.ai
-    =====================================
-    """.strip()
-
-    st.text_area("📄 Healing Slip", slip_text, height=180)
-    st.download_button(
-        "💾 Download Healing Slip",
-        data=slip_text.encode("utf-8"),
-        file_name=f"healing_slip_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt",
-        mime="text/plain",
-        use_container_width=True
-    )
-
-else:
-    st.warning("⚠️ No recent billing records — start a healing simulation to generate a slip.")
-
-
-
-# ============================================================
-# 📥 Downloads
-# ============================================================
-st.subheader("📂 Download Logs & Reports")
-col1, col2 = st.columns(2)
-col1.download_button("📜 Healing Log", "\n".join(logs), "healing_log.txt")
-col2.download_button("💰 Revenue Log", rev_df.to_csv(index=False).encode(), "revenue.csv")
-
-
-
-
-# ============================================================
-# 🎟️ Ticket Creation & Management
-# ============================================================
-st.divider()
-st.subheader("🎟️ Create a Support Ticket")
-
-issue = st.text_input("Issue Title", placeholder="e.g. Healing failed or anomaly not recovered")
-details = st.text_area("Describe the issue", placeholder="Provide context or recovery failure details...")
-
-if st.button("🧾 Create Ticket"):
-    ticket = {
-        "ticket_id": f"TCKT-{datetime.now().strftime('%Y%m%d%H%M%S')}",
-        "issue": issue or "Unnamed Issue",
-        "details": details or "No details provided",
-        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "status": "Open"
-    }
-
-    os.makedirs("data", exist_ok=True)
-    with open("data/tickets.json", "a", encoding="utf-8") as f:
-        f.write(json.dumps(ticket) + "\n")
-
-    st.success(f"🎫 Ticket Created — ID: {ticket['ticket_id']}")
-    st.json(ticket)
-
-# ============================================================
-# 📋 Show All Tickets
-# ============================================================
-st.subheader("📋 Open Tickets")
-if os.path.exists("data/tickets.json"):
-    with open("data/tickets.json", "r", encoding="utf-8") as f:
-        tickets = [json.loads(line) for line in f.readlines() if line.strip()]
-    if tickets:
-        df_tickets = pd.DataFrame(tickets)
-        st.dataframe(df_tickets)
+    st.divider()
+    st.markdown("### 🚨 Real-Time Healing Alerts")
+    if not rev_df.empty:
+        latest_tx = rev_df.iloc[-1]
+        st.info(
+            f"💰 **New Healing Recorded!**\n\n"
+            f"**Client:** `{latest_tx['User']}`  \n"
+            f"**Workflow Healed:** `{latest_tx['Healing Type']}`  \n"
+            f"**Billed Amount:** `${latest_tx['Cost ($)']:.4f}`  \n"
+            f"**Timestamp:** `{latest_tx['Timestamp']}`"
+        )
     else:
-        st.info("✅ No open tickets yet — system stable.")
-else:
-    st.info("✅ Ticket system initialized — no tickets yet.")
+        st.warning("⚠️ No healing events recorded yet — start simulation to generate data.")
+
 
 # ============================================================
-# 🩺 Healing Logs
+# 💾 LOGS & REPORTS TAB
 # ============================================================
-st.subheader("🩺 Healing Activity Logs")
-if logs:
-    for line in logs[-30:]:
-        st.markdown(f"<div class='metric info'>💡 {line}</div>", unsafe_allow_html=True)
-else:
-    st.info("📭 No healing logs yet.")
+with tabs[1]:
+    st.subheader("📂 Download Logs & Reports")
+    col1, col2 = st.columns(2)
+    col1.download_button("📜 Healing Log", "\n".join(logs), "healing_log.txt")
+    col2.download_button("💰 Revenue Log", rev_df.to_csv(index=False).encode(), "revenue.csv")
+
+    st.subheader("🩺 Healing Activity Logs")
+    if logs:
+        for line in logs[-30:]:
+            st.markdown(f"<div class='metric info'>💡 {line}</div>", unsafe_allow_html=True)
+    else:
+        st.info("📭 No healing logs yet.")
+
+    st.subheader("📊 Anomaly Distribution")
+    mix = metrics.get("anomaly_mix", {}) or {}
+    if mix:
+        df = pd.DataFrame(list(mix.items()), columns=["Anomaly","Count"])
+        st.bar_chart(df.set_index("Anomaly"))
+    else:
+        st.info("📭 No anomaly data yet. Run healings to populate metrics.")
+
 
 # ============================================================
-# 📈 Anomaly Distribution
+# 🧾 HEALING SLIPS TAB
 # ============================================================
-st.subheader("📊 Anomaly Distribution")
-mix = metrics.get("anomaly_mix", {}) or {}
-if mix:
-    df = pd.DataFrame(list(mix.items()), columns=["Anomaly","Count"])
-    st.bar_chart(df.set_index("Anomaly"))
-else:
-    st.info("📭 No anomaly data yet. Run healings to populate metrics.")
+with tabs[2]:
+    st.subheader("🧾 Healing Slip Generator")
+    if not rev_df.empty:
+        latest_tx = rev_df.iloc[-1]
+        slip_text = f"""
+        🧾 Workflow Healer — Healing Slip
+        =====================================
+        Client/User: {latest_tx['User']}
+        Workflow Healed: {latest_tx['Healing Type']}
+        Cost Billed: ${latest_tx['Cost ($)']:.4f}
+        Timestamp: {latest_tx['Timestamp']}
+
+        ✅ Healing completed successfully.
+        💰 Payment processed via Paywalls.ai
+        =====================================
+        """.strip()
+        st.text_area("📄 Healing Slip", slip_text, height=180)
+        st.download_button(
+            "💾 Download Healing Slip",
+            data=slip_text.encode("utf-8"),
+            file_name=f"healing_slip_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt",
+            mime="text/plain",
+            use_container_width=True
+        )
+    else:
+        st.warning("⚠️ No billing records yet — start healing cycle to generate slip.")
+
+
+# ============================================================
+# 🎟️ TICKETS TAB
+# ============================================================
+with tabs[3]:
+    st.subheader("🎟️ Create a Support Ticket")
+    issue = st.text_input("Issue Title", placeholder="e.g. Healing failed or anomaly not recovered")
+    details = st.text_area("Describe the issue", placeholder="Provide context or recovery failure details...")
+
+    if st.button("🧾 Create Ticket"):
+        ticket = {
+            "ticket_id": f"TCKT-{datetime.now().strftime('%Y%m%d%H%M%S')}",
+            "issue": issue or "Unnamed Issue",
+            "details": details or "No details provided",
+            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "status": "Open"
+        }
+
+        os.makedirs("data", exist_ok=True)
+        with open("data/tickets.json", "a", encoding="utf-8") as f:
+            f.write(json.dumps(ticket) + "\n")
+
+        st.success(f"🎫 Ticket Created — ID: {ticket['ticket_id']}")
+        st.json(ticket)
+
+    st.subheader("📋 All Tickets")
+    if os.path.exists("data/tickets.json"):
+        with open("data/tickets.json", "r", encoding="utf-8") as f:
+            tickets = [json.loads(line) for line in f.readlines() if line.strip()]
+        if tickets:
+            st.dataframe(pd.DataFrame(tickets))
+        else:
+            st.info("✅ No tickets yet — system stable.")
+    else:
+        st.info("✅ Ticket system initialized — no tickets yet.")
+
+
+# ============================================================
+# ⚙️ CONTROLS TAB
+# ============================================================
+with tabs[4]:
+    st.subheader("⚙️ Simulation & Webhook Controls")
+    st.write("Use the sidebar or buttons here to trigger actions manually.")
+    st.button("🚀 Start Simulation", on_click=lambda: requests.post(f"{BACKEND}/sim/start"))
+    st.button("🧊 Stop Simulation", on_click=lambda: requests.post(f"{BACKEND}/sim/stop"))
+    st.button("💥 Run Healing Cycle", on_click=lambda: requests.post(f"{BACKEND}/simulate?event=workflow_delay"))
+ings to populate metrics.")
