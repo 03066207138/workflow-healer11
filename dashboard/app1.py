@@ -77,6 +77,45 @@ section[data-testid="stSidebar"] * { color:var(--fg)!important; }
   transform:translateY(-1px);
 }
 
+/* =========================
+   🔥 TAB BAR STYLING
+   ========================= */
+[data-baseweb="tab-list"] {
+  background-color: rgba(15, 23, 42, 0.9) !important;
+  border-radius: 14px !important;
+  padding: 0.4rem 0.6rem !important;
+  border: 1px solid rgba(96,165,250,0.3) !important;
+  box-shadow: 0 0 14px rgba(96,165,250,0.15) !important;
+  justify-content: center !important;
+}
+
+button[data-baseweb="tab"] {
+  color: #cbd5e1 !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  border-radius: 10px !important;
+  margin: 0 6px !important;
+  transition: all 0.25s ease-in-out !important;
+  padding: 0.4rem 0.9rem !important;
+  text-transform: none !important;
+}
+
+/* Active tab */
+button[data-baseweb="tab"][aria-selected="true"] {
+  background: linear-gradient(135deg, #2563eb, #60a5fa) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 12px rgba(96,165,250,0.4) !important;
+  transform: translateY(-1px);
+}
+
+/* Hover effect */
+button[data-baseweb="tab"]:hover {
+  background: rgba(96,165,250,0.15) !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+
 /* Selects */
 div[data-baseweb="select"] > div {
   background-color:#1e293b !important;
