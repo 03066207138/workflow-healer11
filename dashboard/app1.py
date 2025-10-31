@@ -268,7 +268,23 @@ revenue_payload = safe_json_get(f"{BACKEND}/metrics/revenue", default={}) or {}
 logs_resp = safe_json_get(f"{BACKEND}/healing/logs?n=80", default={"logs":[]}) or {"logs":[]}
 logs = logs_resp.get("logs", [])
 
+# ---- Normalize revenue and calculate totals ----
+def normalize_revenue_rows(rows):
+    df = []
+    for r in rows or []:
+        ts = r.get("Timestamp") or r.get("ts") or ""
+        user = r.get("User") or "N/A"
+        heal_type = r.get("Healing Type") or r.get("Anomaly") or "N/A"
+        cost = r.get("Cost ($)") or 0
+        try:
+            cost = float(str(cost).replace("$", ""))
+        except:
+            cost = 0
+        df.append({"Timestamp": ts, "User": user, "Healing Type": heal_type, "Cost ($)": cost})
+    return pd.DataFrame(df)
 
+rev_df = normalize_revenue_rows(revenue_payload.get("logs", []))
+total_revenue = float(revenue_payload.get("total_revenue", 0) or 0.0)
 
 # ============================================================
 # 📊 Main Dashboard Tabs
