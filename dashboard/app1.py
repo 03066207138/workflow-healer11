@@ -18,7 +18,7 @@ from streamlit_autorefresh import st_autorefresh
 BACKEND = os.getenv("HEALER_BACKEND_URL", "https://workflow-healer11-2.onrender.com").rstrip("/")
 
 st.set_page_config(
-    page_title="💰 Prototype to Profit – Workflow Healer",
+    page_title="💰 Prototype to Profit – Workflow Healer(No Human in the Loop)",
     layout="wide",
     page_icon="💎",
     initial_sidebar_state="expanded"
