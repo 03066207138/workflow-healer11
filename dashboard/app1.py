@@ -184,6 +184,16 @@ textarea, input {
   font-weight:700;
 }
 
+
+/* Auto-refresh control buttons */
+button[kind="primary"] {
+  background: linear-gradient(135deg,#3b82f6,#1d4ed8) !important;
+  color:#fff !important;
+  border-radius:8px !important;
+  box-shadow:0 0 10px rgba(59,130,246,.3) !important;
+}
+
+
 /* JSON viewer */
 [data-testid="stJson"] pre, .stJson, .stJson > div, .stJson pre code {
   background:#1e293b !important;
@@ -293,9 +303,24 @@ col2.metric("💰 Paywalls.ai", "✅ Connected" if health.get("paywalls_ready") 
 col3.metric("🌐 FlowXO Webhook", "✅ Active" if health.get("flowxo_ready") else "❌ Inactive")
 
 # ============================================================
-# 🔁 Auto Refresh
+# 🔁 Auto Refresh Control
 # ============================================================
-st_autorefresh(interval=6000, key="refresh")
+if "auto_refresh" not in st.session_state:
+    st.session_state.auto_refresh = False
+
+col_auto1, col_auto2 = st.columns([1, 1])
+with col_auto1:
+    if st.button("▶ Start Auto Refresh"):
+        st.session_state.auto_refresh = True
+        st.success("🔄 Auto refresh started (every 6 s).")
+with col_auto2:
+    if st.button("⏹ Stop Auto Refresh"):
+        st.session_state.auto_refresh = False
+        st.warning("⏸ Auto refresh stopped.")
+
+# ⏱ Only refresh if enabled
+if st.session_state.auto_refresh:
+    st_autorefresh(interval=6000, key="dynamic_refresh")
 
 
 
