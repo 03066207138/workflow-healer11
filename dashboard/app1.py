@@ -44,6 +44,43 @@ div[data-baseweb="select"]>div{ background-color:#1e293b!important; color:var(--
 .stDataFrame{ background-color:#0f172a!important; } .stDataFrame th{ background:#1e293b!important; color:#f8fafc!important; border-bottom:2px solid rgba(96,165,250,.5)!important; }
 .stDataFrame td{ color:#e2e8f0!important; border-bottom:1px solid rgba(255,255,255,.08)!important; }
 .metric{ text-align:center; padding:10px; border-radius:12px; margin:6px; box-shadow:0 0 12px rgba(96,165,250,.15); }
+/* ===============================
+   🎨 JSON Viewer Styling (Dark)
+   =============================== */
+[data-testid="stJson"] pre,
+.stJson,
+.stJson > div,
+.stJson pre code {
+  background: #1e293b !important;
+  color: #e2e8f0 !important;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  border-radius: 8px;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  padding: 10px;
+}
+
+/* Default key/value text color */
+.stJson span {
+  color: #93c5fd !important; /* bluish-gray for keys */
+}
+
+/* String values */
+.stJson span.string {
+  color: #86efac !important; /* soft green */
+}
+
+/* Numeric values */
+.stJson span.number {
+  color: #facc15 !important; /* warm yellow */
+}
+
+/* Boolean values (true/false) */
+.stJson span.boolean {
+  color: #f87171 !important; /* coral red */
+}
+
 .success{background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.4)} .info{background:rgba(96,165,250,.12);border:1px solid rgba(96,165,250,.4)}
 </style>
 """, unsafe_allow_html=True)
