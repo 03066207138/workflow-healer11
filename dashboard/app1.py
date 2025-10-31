@@ -390,4 +390,4 @@ with tabs[4]:
     st.button("🚀 Start Simulation", on_click=lambda: requests.post(f"{BACKEND}/sim/start"))
     st.button("🧊 Stop Simulation", on_click=lambda: requests.post(f"{BACKEND}/sim/stop"))
     st.button("💥 Run Healing Cycle", on_click=lambda: requests.post(f"{BACKEND}/simulate?event=workflow_delay"))
-ings to populate metrics.")
+
