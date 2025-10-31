@@ -38,13 +38,18 @@ st.markdown("""
   --red: #f87171;
   --yellow: #fde047;
 }
+
 body, .stApp {
   background: radial-gradient(circle at top left, var(--bg-1), var(--bg-2));
   color: var(--fg);
   font-family: "Inter", system-ui, sans-serif;
 }
+
 /* Headings & general text */
-h1, h2, h3, h4, h5, h6, p, label, span, div { color: var(--fg) !important; }
+h1, h2, h3, h4, h5, h6, p, label, span, div {
+  color: var(--fg) !important;
+}
+
 /* Sidebar */
 section[data-testid="stSidebar"] {
   background:#0f172a !important;
@@ -52,19 +57,26 @@ section[data-testid="stSidebar"] {
   border-right:1px solid rgba(255,255,255,.08);
 }
 section[data-testid="stSidebar"] * { color:var(--fg)!important; }
-/* Buttons */
+
+/* Buttons (labels forced white) */
 .stButton button {
   background: linear-gradient(135deg, #2563eb, #1d4ed8);
   color:#ffffff !important;
-  border:none; border-radius:10px;
+  text-shadow:0 0 2px rgba(0,0,0,.4);
+  border:none;
+  border-radius:10px;
   padding:.55rem 1.1rem;
   font-weight:600;
+  font-size:.95rem;
   transition:all .3s ease;
+  box-shadow:0 0 10px rgba(96,165,250,.25);
 }
 .stButton button:hover {
   background: linear-gradient(135deg,#1d4ed8,#2563eb);
+  box-shadow:0 0 14px rgba(96,165,250,.5);
   transform:translateY(-1px);
 }
+
 /* Selects */
 div[data-baseweb="select"] > div {
   background-color:#1e293b !important;
@@ -73,42 +85,86 @@ div[data-baseweb="select"] > div {
   border-radius:8px;
 }
 div[data-baseweb="select"] svg { fill:var(--fg); }
+
 /* Download buttons */
-.stDownloadButton button{
+.stDownloadButton button {
   background: linear-gradient(135deg,#22c55e,#16a34a);
   color:#fff !important;
-  border:none; border-radius:10px;
+  border:none;
+  border-radius:10px;
   padding:.5rem 1rem;
   font-weight:600;
   transition:.3s;
+  box-shadow:0 0 8px rgba(52,211,153,.3);
 }
-.stDownloadButton button:hover{
+.stDownloadButton button:hover {
   background:linear-gradient(135deg,#16a34a,#22c55e);
   transform:translateY(-1px);
+  box-shadow:0 0 12px rgba(52,211,153,.5);
 }
-/* Inputs */
+
+/* Inputs / Textareas */
 textarea, input {
   background-color:#1e293b !important;
   color:var(--fg)!important;
   border:1px solid rgba(96,165,250,.35)!important;
   border-radius:8px!important;
 }
-/* Tables */
+
+/* ---------- TABLE VISIBILITY FIX ---------- */
 .stDataFrame { background-color: #0f172a !important; }
+.stDataFrame table { border-collapse: collapse !important; width: 100% !important; }
 .stDataFrame th {
   background-color: #1e293b !important;
   color: #f8fafc !important;
+  font-weight: 700 !important;
+  border-bottom: 2px solid rgba(96,165,250,0.5) !important;
 }
 .stDataFrame td {
   color: #e2e8f0 !important;
   border-bottom: 1px solid rgba(255,255,255,0.08) !important;
 }
+.stDataFrame tr:nth-child(even) td { background-color: rgba(30,41,59,0.6) !important; }
+.stDataFrame tr:hover td { background-color: rgba(96,165,250,0.15) !important; }
+
 /* Metric chips */
-.metric{ text-align:center; padding:10px; border-radius:12px; margin:6px; }
-.success{ background:rgba(52,211,153,.12); border:1px solid rgba(52,211,153,.4);}
-.warning{ background:rgba(250,204,21,.12); border:1px solid rgba(250,204,21,.4);}
-.info{ background:rgba(96,165,250,.12); border:1px solid rgba(96,165,250,.4);}
-.error{ background:rgba(239,68,68,.12); border:1px solid rgba(239,68,68,.4);}
+.metric {
+  text-align:center;
+  padding:10px;
+  border-radius:12px;
+  margin:6px;
+  box-shadow:0 0 12px rgba(96,165,250,.15);
+}
+.success { background:rgba(52,211,153,.12); border:1px solid rgba(52,211,153,.4); }
+.warning { background:rgba(250,204,21,.12); border:1px solid rgba(250,204,21,.4); }
+.info { background:rgba(96,165,250,.12); border:1px solid rgba(96,165,250,.4); }
+.error { background:rgba(239,68,68,.12); border:1px solid rgba(239,68,68,.4); }
+
+[data-testid="stMetricValue"] {
+  color:var(--accent);
+  font-weight:700;
+}
+
+/* JSON viewer */
+[data-testid="stJson"] pre, .stJson, .stJson > div, .stJson pre code {
+  background:#1e293b !important;
+  color:#e2e8f0 !important;
+  font-family:"JetBrains Mono",monospace;
+  font-size:.85rem;
+  line-height:1.4;
+  border-radius:8px;
+  border:1px solid rgba(96,165,250,.3);
+  padding:10px;
+}
+.stJson span { color:#93c5fd !important; }
+.stJson span.string { color:#86efac !important; }
+.stJson span.number { color:#facc15 !important; }
+.stJson span.boolean { color:#f87171 !important; }
+
+.stAlert {
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(96,165,250,.25);
+}
 </style>
 """, unsafe_allow_html=True)
 
