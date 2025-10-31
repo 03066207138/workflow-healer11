@@ -329,6 +329,6 @@ def startup():
     print(f"▪ Metrics Path: {metrics_logger.path.resolve()}")
     print(f"▪ FlowXO Log Path: {metrics_logger.flowxo_log_path.resolve()}")
     print(f"▪ Loaded Policies: {list(policies.POLICY_MAP.keys())}\n")
-    print(f"[FlowXO Notify] ✅ Sent payload: {data}")
+    # print(f"[FlowXO Notify] ✅ Sent payload: {data}")
     print(f"[FlowXO Notify] Response: {response.status_code} | {response.text[:120]}")
 
