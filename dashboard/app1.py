@@ -258,6 +258,18 @@ col3.metric("🌐 FlowXO Webhook", "✅ Active" if health.get("flowxo_ready") el
 # ============================================================
 st_autorefresh(interval=6000, key="refresh")
 
+
+
+# ============================================================
+# 📊 Metrics Fetch (must come before tabs)
+# ============================================================
+metrics = safe_json_get(f"{BACKEND}/metrics/summary", default={}) or {}
+revenue_payload = safe_json_get(f"{BACKEND}/metrics/revenue", default={}) or {}
+logs_resp = safe_json_get(f"{BACKEND}/healing/logs?n=80", default={"logs":[]}) or {"logs":[]}
+logs = logs_resp.get("logs", [])
+
+
+
 # ============================================================
 # 📊 Main Dashboard Tabs
 # ============================================================
