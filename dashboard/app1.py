@@ -315,6 +315,52 @@ col1, col2 = st.columns(2)
 col1.download_button("📜 Healing Log", "\n".join(logs), "healing_log.txt")
 col2.download_button("💰 Revenue Log", rev_df.to_csv(index=False).encode(), "revenue.csv")
 
+
+
+# ============================================================
+# 🚨 Real-Time Healing Alerts + Slip Generation
+# ============================================================
+st.divider()
+st.markdown("### 🚨 Real-Time Healing Alerts & Slip Generator")
+
+if not rev_df.empty:
+    latest_tx = rev_df.iloc[-1]
+    st.info(
+        f"💰 **New Healing Recorded!**\n\n"
+        f"**Client:** `{latest_tx['User']}`  \n"
+        f"**Workflow Healed:** `{latest_tx['Healing Type']}`  \n"
+        f"**Billed Amount:** `${latest_tx['Cost ($)']:.4f}`  \n"
+        f"**Timestamp:** `{latest_tx['Timestamp']}`  \n"
+        f"🧾 Healing slip generated below."
+    )
+
+    # 🧾 Generate Healing Slip
+    slip_text = f"""
+    🧾 Workflow Healer — Healing Slip
+    =====================================
+    Client/User: {latest_tx['User']}
+    Workflow Healed: {latest_tx['Healing Type']}
+    Cost Billed: ${latest_tx['Cost ($)']:.4f}
+    Timestamp: {latest_tx['Timestamp']}
+
+    ✅ Healing completed successfully.
+    💰 Payment processed via Paywalls.ai
+    =====================================
+    """.strip()
+
+    st.text_area("📄 Healing Slip", slip_text, height=180)
+    st.download_button(
+        "💾 Download Healing Slip",
+        data=slip_text.encode("utf-8"),
+        file_name=f"healing_slip_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt",
+        mime="text/plain",
+        use_container_width=True
+    )
+
+else:
+    st.warning("⚠️ No recent billing records — start a healing simulation to generate a slip.")
+
+
 # ============================================================
 # 🩺 Healing Logs
 # ============================================================
