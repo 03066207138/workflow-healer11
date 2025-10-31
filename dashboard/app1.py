@@ -291,31 +291,6 @@ c2.metric("⚙️ Avg Recovery %", f"{metrics.get('avg_recovery_pct',0):.2f}")
 c3.metric("🎯 Avg Reward", f"{metrics.get('avg_reward',0):.2f}")
 c4.metric("💰 Total Revenue ($)", f"{total_revenue:.2f}")
 
-# ============================================================
-# 🚨 Healing Alerts
-# ============================================================
-st.subheader("🚨 Real-Time Healing Alerts")
-if not rev_df.empty:
-    latest_tx = rev_df.iloc[-1]
-    st.info(f"""
-💰 **New Healing Recorded!**  
-Client: `{latest_tx['User']}`  
-Workflow: `{latest_tx['Healing Type']}`  
-Amount: `${latest_tx['Cost ($)']:.4f}`  
-Timestamp: `{latest_tx['Timestamp']}`
-""")
-else:
-    st.warning("⚠️ No billing records yet. Run a healing simulation.")
-
-# ============================================================
-# 📥 Downloads
-# ============================================================
-st.subheader("📂 Download Logs & Reports")
-col1, col2 = st.columns(2)
-col1.download_button("📜 Healing Log", "\n".join(logs), "healing_log.txt")
-col2.download_button("💰 Revenue Log", rev_df.to_csv(index=False).encode(), "revenue.csv")
-
-
 
 # ============================================================
 # 🚨 Real-Time Healing Alerts + Slip Generation
@@ -359,6 +334,16 @@ if not rev_df.empty:
 
 else:
     st.warning("⚠️ No recent billing records — start a healing simulation to generate a slip.")
+
+
+
+# ============================================================
+# 📥 Downloads
+# ============================================================
+st.subheader("📂 Download Logs & Reports")
+col1, col2 = st.columns(2)
+col1.download_button("📜 Healing Log", "\n".join(logs), "healing_log.txt")
+col2.download_button("💰 Revenue Log", rev_df.to_csv(index=False).encode(), "revenue.csv")
 
 
 # ============================================================
