@@ -211,35 +211,48 @@ def stop_simulation():
     return sim.stop()
 
 # ============================================================
-# 📊 Metrics Summary for Dashboard
+# 📊 Metrics Summary for Dashboard (Dynamic)
 # ============================================================
 @app.get("/metrics/summary")
 def metrics_summary():
-    """Summarized healing performance."""
-    summary = metrics_logger.summary()
-    clean = {}
+    """Return live, recalculated healing performance metrics."""
+    import pandas as pd, os, math
+    summary = {}
 
-    for k, v in summary.items():
-        try:
-            val = float(v)
-            if math.isnan(val) or math.isinf(val):
-                val = 0.0
-            clean[k] = round(val, 2)
-        except Exception:
-            clean[k] = v
-
-    # 🧩 Anomaly mix
-    anomaly_mix = {}
     try:
+        # Load CSV
         if os.path.exists(settings.METRICS_LOG_PATH):
             df = pd.read_csv(settings.METRICS_LOG_PATH)
-            if not df.empty and "anomaly" in df.columns:
-                anomaly_mix = df["anomaly"].value_counts().to_dict()
-    except Exception as e:
-        print(f"[Metrics Summary] ⚠️ Failed anomaly mix: {e}")
 
-    clean["anomaly_mix"] = anomaly_mix
-    return clean
+            if not df.empty:
+                # Ensure proper columns
+                if "recovery_pct" in df.columns and "reward" in df.columns:
+                    summary["healings"] = int(len(df))
+                    summary["avg_recovery_pct"] = round(df["recovery_pct"].mean(), 2)
+                    summary["avg_reward"] = round(df["reward"].mean(), 2)
+                else:
+                    summary["healings"] = 0
+                    summary["avg_recovery_pct"] = 0.0
+                    summary["avg_reward"] = 0.0
+
+                # 🧩 Anomaly Mix
+                if "anomaly" in df.columns:
+                    summary["anomaly_mix"] = df["anomaly"].value_counts().to_dict()
+                else:
+                    summary["anomaly_mix"] = {}
+
+            else:
+                summary = {"healings": 0, "avg_recovery_pct": 0.0, "avg_reward": 0.0, "anomaly_mix": {}}
+
+        else:
+            summary = {"healings": 0, "avg_recovery_pct": 0.0, "avg_reward": 0.0, "anomaly_mix": {}}
+
+    except Exception as e:
+        print(f"[Metrics Summary] ⚠️ Failed to compute live metrics: {e}")
+        summary = {"healings": 0, "avg_recovery_pct": 0.0, "avg_reward": 0.0, "anomaly_mix": {}}
+
+    return summary
+
 
 # ============================================================
 # 🔁 FlowXO Webhook Integration
