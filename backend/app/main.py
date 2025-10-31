@@ -158,43 +158,32 @@ def simulate(event: str = "workflow_delay"):
     # 🧠 Step 2: Perform healing
     result = executor.heal(workflow, anomaly)
 
-    # 📊 Step 3: Log metrics (with 6s guard inside MetricsLogger)
+    # 📊 Step 3: Log metrics
     metrics_logger.log({
         "workflow": workflow,
         "anomaly": anomaly,
-        "action": result.get("actions", ["none"])[0] if result.get("actions") else "none",
         "status": result.get("status", "unknown"),
-        "latency_ms": random.randint(2000, 6000),
         "recovery_pct": result.get("recovery_pct", 0.0),
         "reward": result.get("reward", 0.0),
     })
 
-    # 💰 Step 4: Monetize through Paywalls.ai (real or simulated)
+    # 💰 Step 4: Monetize
     billing = bill_healing_event("demo_client", anomaly, cost=0.05)
 
-   # 🔁 Step 5: Notify FlowXO webhook (if configured)
-try:
-    from integrations.flowxo_notifier import notify_flowxo
-
-    # ✅ Send full payload with safe defaults (ensures FlowXO always gets clean JSON)
+    # 🔁 Step 5: Notify FlowXO
     payload = {
         "workflow": workflow,
         "anomaly": anomaly,
         "status": result.get("status", "healed"),
         "recovery_pct": float(result.get("recovery_pct", 0.0)),
         "reward": float(result.get("reward", 0.0)),
-        "billing": billing if billing else {"cost": 0.05, "client": "demo_client"},
+        "billing": billing,
         "timestamp": datetime.utcnow().isoformat()
     }
 
-    print(f"[FlowXO Notify] Sending payload → {payload}")  # Debug log
     notify_flowxo(payload)
 
-except Exception as e:
-    print(f"[FlowXO Notify] ⚠️ Failed to send update: {e}")
-
-
-    # 🧾 Step 6: Return full response
+    # ✅ Step 6: Return full response
     return {
         "workflow": workflow,
         "anomaly": anomaly,
