@@ -174,7 +174,7 @@ def simulate(event: str = "workflow_delay"):
 
    # 🔁 Step 5: Notify FlowXO webhook (if configured)
 try:
-    from .integrations.flowxo_notifier import notify_flowxo
+    from integrations.flowxo_notifier import notify_flowxo
 
     # ✅ Send full payload with safe defaults (ensures FlowXO always gets clean JSON)
     payload = {
