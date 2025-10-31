@@ -346,6 +346,48 @@ col1.download_button("📜 Healing Log", "\n".join(logs), "healing_log.txt")
 col2.download_button("💰 Revenue Log", rev_df.to_csv(index=False).encode(), "revenue.csv")
 
 
+
+
+# ============================================================
+# 🎟️ Ticket Creation & Management
+# ============================================================
+st.divider()
+st.subheader("🎟️ Create a Support Ticket")
+
+issue = st.text_input("Issue Title", placeholder="e.g. Healing failed or anomaly not recovered")
+details = st.text_area("Describe the issue", placeholder="Provide context or recovery failure details...")
+
+if st.button("🧾 Create Ticket"):
+    ticket = {
+        "ticket_id": f"TCKT-{datetime.now().strftime('%Y%m%d%H%M%S')}",
+        "issue": issue or "Unnamed Issue",
+        "details": details or "No details provided",
+        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "status": "Open"
+    }
+
+    os.makedirs("data", exist_ok=True)
+    with open("data/tickets.json", "a", encoding="utf-8") as f:
+        f.write(json.dumps(ticket) + "\n")
+
+    st.success(f"🎫 Ticket Created — ID: {ticket['ticket_id']}")
+    st.json(ticket)
+
+# ============================================================
+# 📋 Show All Tickets
+# ============================================================
+st.subheader("📋 Open Tickets")
+if os.path.exists("data/tickets.json"):
+    with open("data/tickets.json", "r", encoding="utf-8") as f:
+        tickets = [json.loads(line) for line in f.readlines() if line.strip()]
+    if tickets:
+        df_tickets = pd.DataFrame(tickets)
+        st.dataframe(df_tickets)
+    else:
+        st.info("✅ No open tickets yet — system stable.")
+else:
+    st.info("✅ Ticket system initialized — no tickets yet.")
+
 # ============================================================
 # 🩺 Healing Logs
 # ============================================================
